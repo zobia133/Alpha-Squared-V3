@@ -1,42 +1,44 @@
 /* ==========================================================================
    Alpha Squared — 2026 site
    Design system. Tokens matched to the EternaCloud reference execution:
-   dark plum base, tri-gradient (blue → purple → orange), one continuous
+   dark slate base, tri-gradient (blue → teal → orange), one continuous
    white sheet with dark inset panels, geometric sans at weight 500.
    ========================================================================== */
 
 :root {
   /* --- brand gradient --- */
   --blue:        #1c4eff;
-  --purple:      #ac24ff;
+  --teal:        #12b8b0;
   --orange:      #fe881b;
   --blue-lt:     #2ba7ff;
-  --purple-lt:   #ca45ff;
+  --teal-lt:     #2fd9cf;
 
-  --grad-btn:    linear-gradient(90deg, #1c4eff 0%, #ac24ff 50%, #fe881b 100%);
-  --grad-text:   linear-gradient(90deg, #2ba7ff 0%, #ca45ff 50%, #fe881b 100%);
-  --grad-ink:    linear-gradient(90deg, #a31bff 0%, #1b4dfe 76%, #6d6cff 98%);
+  --grad-btn:    linear-gradient(90deg, #1c4eff 0%, #12b8b0 50%, #fe881b 100%);
+  --grad-text:   linear-gradient(90deg, #2ba7ff 0%, #2fd9cf 50%, #fe881b 100%);
+  --grad-ink:    linear-gradient(90deg, #0f9e97 0%, #1b4dfe 74%, #4f7dff 98%);
 
   /* --- dark surfaces --- */
-  --bg:          #13101c;
-  --bg-deep:     #0c0913;
-  --panel:       #1a1526;
-  --panel-2:     #211a30;
+  --bg:          #101418;
+  --bg-deep:     #090c0f;
+  --panel:       #151a20;
+  --panel-2:     #1b222a;
   --hair:        rgba(255, 255, 255, .09);
   --hair-soft:   rgba(255, 255, 255, .055);
 
   /* --- light surfaces --- */
   --sheet:       #ffffff;
-  --sheet-soft:  #f6f5fb;
-  --sheet-hair:  rgba(26, 11, 84, .10);
+  --sheet-soft:  #f4f8f9;
+  --sheet-hair:  rgba(12, 42, 54, .10);
 
   /* --- ink --- */
-  --ink:         #1a0b54;
-  --ink-2:       #4b4470;
-  --ink-3:       #7b76a0;
+  /* ink-3 is the smallest text on white, so it is held at ~4.9:1 rather than
+     the lighter grey the reference uses, which failed AA. */
+  --ink:         #07222c;
+  --ink-2:       #3a525e;
+  --ink-3:       #5d757e;
   --on-dark:     #ffffff;
-  --on-dark-2:   rgba(255, 255, 255, .66);
-  --on-dark-3:   rgba(255, 255, 255, .42);
+  --on-dark-2:   rgba(255, 255, 255, .72);
+  --on-dark-3:   rgba(255, 255, 255, .5);
 
   /* --- metrics --- */
   --wrap:        1240px;
@@ -71,6 +73,7 @@ body {
   font-weight: 400;
   font-size: 17px;
   line-height: 1.62;
+  letter-spacing: -.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -83,7 +86,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ul { margin: 0; padding: 0; list-style: none; }
 
-::selection { background: rgba(172, 36, 255, .3); color: #fff; }
+::selection { background: rgba(18, 184, 176, .32); color: #fff; }
 
 /* ==========================================================================
    Typography
@@ -103,7 +106,8 @@ h1, h2, h3, h4 {
 .lead {
   margin: 0;
   font-size: clamp(1rem, 1.15vw, 1.075rem);
-  line-height: 1.66;
+  line-height: 1.68;
+  letter-spacing: -.008em;
   color: var(--on-dark-2);
 }
 
@@ -114,7 +118,7 @@ h1, h2, h3, h4 {
   color: transparent;
 }
 
-/* On the white sheet the gradient runs purple → blue, per the reference. */
+/* On the white sheet the gradient runs teal → blue, per the reference. */
 .page-light .grad { background: var(--grad-ink); -webkit-background-clip: text; background-clip: text; }
 
 .page-light,
@@ -179,7 +183,7 @@ h1, h2, h3, h4 {
   border-color: var(--sheet-hair);
   background: #fff;
   color: var(--ink);
-  box-shadow: 0 6px 22px rgba(26, 11, 84, .07);
+  box-shadow: 0 6px 22px rgba(12, 42, 54, .07);
 }
 
 /* ==========================================================================
@@ -210,7 +214,7 @@ h1, h2, h3, h4 {
   width: 100%;
   padding: 13px 26px;
   border-radius: calc(var(--r-btn) - 1px);
-  background: linear-gradient(90deg, #2b3bff 0%, #7b31ff 100%);
+  background: linear-gradient(90deg, #05545e 0%, #0a6f6d 55%, #0d7f78 100%);
   background-size: 220% 100%;
   background-position: 0% 50%;
   color: #fff;
@@ -266,7 +270,7 @@ h1, h2, h3, h4 {
 .loader__ring {
   width: 46px; height: 46px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, #1c4eff, #ac24ff, #fe881b, #1c4eff);
+  background: conic-gradient(from 0deg, #1c4eff, #12b8b0, #fe881b, #1c4eff);
   mask: radial-gradient(circle, transparent 58%, #000 60%);
   -webkit-mask: radial-gradient(circle, transparent 58%, #000 60%);
   animation: spin 1.4s linear infinite;
@@ -332,7 +336,7 @@ h1, h2, h3, h4 {
 .brand__mark {
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: conic-gradient(from 210deg, #1c4eff, #ac24ff, #fe881b, #1c4eff);
+  background: conic-gradient(from 210deg, #1c4eff, #12b8b0, #fe881b, #1c4eff);
   mask: radial-gradient(circle, transparent 52%, #000 54%);
   -webkit-mask: radial-gradient(circle, transparent 52%, #000 54%);
   flex: none;
@@ -354,10 +358,10 @@ h1, h2, h3, h4 {
   border-radius: 999px;
   font-size: .91rem;
   font-weight: 500;
-  color: #35304f;
+  color: #2c4650;
   transition: color .25s, background .25s;
 }
-.nav__links a:hover { color: var(--ink); background: rgba(26, 11, 84, .055); }
+.nav__links a:hover { color: var(--ink); background: rgba(12, 42, 54, .055); }
 .nav__links a.is-active { color: var(--blue); }
 
 .nav__cta { flex: none; }
@@ -409,16 +413,16 @@ h1, h2, h3, h4 {
   border-radius: 50%;
 
   /* Colour runs *around* the rim (orange near the top corners, through
-     purple, to blue at the sides) — that needs a conic gradient. A radial
+     teal, to blue at the sides) — that needs a conic gradient. A radial
      mask then keeps only the thin rim band, so the interior stays dark. */
   background: conic-gradient(from 0deg at 50% 50%,
       #ff9a3c   0deg,
       #ff8a2c  30deg,
-      #c14aff  62deg,
-      #6a5cff 112deg,
+      #2fd0c4  62deg,
+      #3c9cdb 112deg,
       #5560ff 180deg,
-      #6a5cff 248deg,
-      #c14aff 298deg,
+      #3c9cdb 248deg,
+      #2fd0c4 298deg,
       #ff8a2c 330deg,
       #ff9a3c 360deg);
   /* closest-side is load-bearing: the default farthest-corner would put
@@ -440,8 +444,8 @@ h1, h2, h3, h4 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 34% 34% at 50% 78%, rgba(150, 58, 255, .26), transparent 70%),
-    radial-gradient(ellipse 70% 44% at 50% 100%, rgba(96, 78, 255, .34), transparent 72%);
+    radial-gradient(ellipse 34% 34% at 50% 78%, rgba(26, 200, 190, .26), transparent 70%),
+    radial-gradient(ellipse 70% 44% at 50% 100%, rgba(52, 108, 235, .34), transparent 72%);
   filter: blur(52px);
   z-index: -2;
   pointer-events: none;
@@ -610,7 +614,7 @@ h1, h2, h3, h4 {
   color: transparent;
   /* the gradient can't cast a shadow through background-clip, so the glow
      is painted underneath with a filter instead */
-  filter: drop-shadow(0 0 26px rgba(150, 90, 255, .22));
+  filter: drop-shadow(0 0 26px rgba(30, 200, 190, .24));
 }
 
 .statband__l {
@@ -775,7 +779,7 @@ h1, h2, h3, h4 {
   transform: translateX(-50%);
   background:
     radial-gradient(ellipse 22% 46% at 50% 72%, rgba(255, 150, 50, .62), transparent 64%),
-    radial-gradient(ellipse 40% 58% at 50% 82%, rgba(168, 62, 255, .46), transparent 68%),
+    radial-gradient(ellipse 40% 58% at 50% 82%, rgba(20, 195, 186, .44), transparent 68%),
     radial-gradient(ellipse 72% 56% at 50% 94%, rgba(62, 92, 255, .30), transparent 72%);
   filter: blur(52px);
   pointer-events: none;
@@ -802,7 +806,7 @@ h1, h2, h3, h4 {
   inset: 0;
   border-radius: inherit;
   background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%),
-              rgba(172, 36, 255, .16), transparent 62%);
+              rgba(18, 184, 176, .16), transparent 62%);
   opacity: 0;
   transition: opacity .4s;
   pointer-events: none;
@@ -918,7 +922,7 @@ h1, h2, h3, h4 {
   left: 50%; top: -40%;
   width: 130%; height: 90%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse 46% 60% at 50% 100%, rgba(168, 48, 255, .3), transparent 70%);
+  background: radial-gradient(ellipse 46% 60% at 50% 100%, rgba(20, 195, 186, .3), transparent 70%);
   filter: blur(44px);
 }
 .proof > * { position: relative; }
@@ -963,19 +967,19 @@ h1, h2, h3, h4 {
 .page-light .card {
   border-color: var(--sheet-hair);
   background: #fff;
-  box-shadow: 0 10px 40px rgba(26, 11, 84, .06);
+  box-shadow: 0 10px 40px rgba(12, 42, 54, .06);
 }
 .page-light .card h3 { color: var(--ink); }
 .page-light .card p, .page-light .ticks li { color: var(--ink-2); }
 .page-light .card__label { border-color: var(--sheet-hair); background: var(--sheet-soft); color: var(--ink); }
-.page-light .card:hover { border-color: rgba(26, 11, 84, .18); }
+.page-light .card:hover { border-color: rgba(12, 42, 54, .18); }
 
 /* Dark inset panel living on the white sheet */
 .panel {
   position: relative;
   padding: clamp(38px, 5vw, 68px);
   border-radius: var(--r-panel);
-  background: linear-gradient(160deg, #1c1630 0%, #131020 62%, #16111f 100%);
+  background: linear-gradient(160deg, #141c22 0%, #0f151a 62%, #121820 100%);
   color: var(--on-dark);
   overflow: hidden;
 }
@@ -1009,7 +1013,7 @@ h1, h2, h3, h4 {
   background: #fff;
   font-size: .89rem;
   line-height: 1.5;
-  box-shadow: 0 8px 26px rgba(26, 11, 84, .055);
+  box-shadow: 0 8px 26px rgba(12, 42, 54, .055);
 }
 
 .cmp__i {
@@ -1024,8 +1028,8 @@ h1, h2, h3, h4 {
 .cmp__i svg { width: 10px; height: 10px; stroke: #fff; stroke-width: 3.4; fill: none; }
 
 .cmp--bad { color: var(--ink-3); }
-.cmp--bad .cmp__i { background: #d9d5e6; }
-.cmp--bad .cmp__i svg { stroke: #8a84a6; }
+.cmp--bad .cmp__i { background: #d3dee1; }
+.cmp--bad .cmp__i svg { stroke: #7e9299; }
 
 .globe { position: relative; aspect-ratio: 1; }
 .globe canvas { width: 100%; height: 100%; }
@@ -1040,62 +1044,77 @@ h1, h2, h3, h4 {
 .globe canvas { position: relative; z-index: 1; }
 
 /* ==========================================================================
-   Thread-wave capability block
+   Automation flow diagram — triggers on the left fork into the AI layer,
+   which forks back out into the systems it writes to.
    ========================================================================== */
 
-.threads { position: relative; margin-top: 56px; }
-
-.threads__cols {
+.autoflow {
   position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  margin-top: 46px;
+  padding: clamp(16px, 2.2vw, 28px);
+  border: 1px solid var(--sheet-hair);
+  border-radius: var(--r-panel);
+  background: #fff;
+  box-shadow: 0 14px 44px rgba(12, 42, 54, .07);
+  overflow: hidden;
 }
-
-.thread { position: relative; padding-left: 20px; }
-.thread::before {
+.autoflow::before {
   content: '';
   position: absolute;
-  left: 0; top: 6px; bottom: 0;
-  width: 1.5px;
-  border-radius: 2px;
-  background: linear-gradient(180deg, var(--tcol, var(--blue)), transparent);
+  inset: -30% -10%;
+  background:
+    radial-gradient(ellipse 26% 40% at 12% 30%, rgba(28, 78, 255, .12), transparent 70%),
+    radial-gradient(ellipse 24% 44% at 50% 60%, rgba(18, 184, 176, .14), transparent 70%),
+    radial-gradient(ellipse 26% 40% at 88% 30%, rgba(254, 136, 27, .11), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.autoflow svg { position: relative; z-index: 1; display: block; width: 100%; height: auto; }
+
+.autoflow__lab { fill: var(--ink-3); font-size: 12px; font-weight: 500; letter-spacing: .16em; }
+.autoflow__lab--end { text-anchor: end; }
+
+.autoflow__box {
+  fill: #fff;
+  stroke: rgba(12, 42, 54, .14);
+  stroke-width: 1.2;
+}
+.autoflow__node { filter: drop-shadow(0 6px 16px rgba(12, 42, 54, .08)); }
+.autoflow__dot { fill: url(#afWire); }
+.autoflow__t { fill: var(--ink); font-size: 19px; font-weight: 500; letter-spacing: -.01em; }
+
+.autoflow__wire { fill: none; stroke: url(#afWire); stroke-width: 2; opacity: .4; }
+.autoflow__pulse {
+  fill: none;
+  stroke: url(#afWire);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-dasharray: 1 26;
+  animation: afPulse 2.2s linear infinite;
+}
+.autoflow__pulse:nth-child(8) { animation-delay: .35s; }
+.autoflow__pulse:nth-child(9) { animation-delay: .7s; }
+.autoflow__pulse:nth-child(10) { animation-delay: .18s; }
+.autoflow__pulse:nth-child(11) { animation-delay: .52s; }
+.autoflow__pulse:nth-child(12) { animation-delay: .86s; }
+@keyframes afPulse { to { stroke-dashoffset: -54; } }
+
+.autoflow__halo { fill: rgba(18, 184, 176, .12); }
+.autoflow__core { fill: url(#afCore); filter: drop-shadow(0 14px 30px rgba(28, 78, 255, .3)); }
+.autoflow__ct { fill: #fff; font-size: 22px; font-weight: 500; text-anchor: middle; letter-spacing: -.01em; }
+.autoflow__cs { fill: rgba(255, 255, 255, .78); font-size: 12.5px; text-anchor: middle; letter-spacing: .07em; }
+.autoflow__cs--dim { fill: rgba(255, 255, 255, .5); }
+
+@media (prefers-reduced-motion: reduce) {
+  .autoflow__pulse { animation: none; opacity: 0; }
 }
 
-.thread__cap {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  padding: 7px 15px 7px 10px;
-  border: 1px solid var(--sheet-hair);
-  border-radius: 999px;
-  background: #fff;
-  font-size: .8rem;
-  font-weight: 500;
-  box-shadow: 0 6px 20px rgba(26, 11, 84, .07);
+/* below this the 1000-unit viewBox shrinks the labels past legibility, so the
+   panel scrolls sideways instead of scaling the type into nothing */
+@media (max-width: 760px) {
+  .autoflow { overflow-x: auto; }
+  .autoflow svg { min-width: 620px; }
 }
-.thread__cap::before {
-  content: '';
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--grad-btn);
-  mask: radial-gradient(circle, transparent 44%, #000 46%);
-  -webkit-mask: radial-gradient(circle, transparent 44%, #000 46%);
-}
-
-.thread ul { display: grid; gap: 13px; }
-.thread li { font-size: .93rem; color: var(--ink-2); }
-
-.threads__wave { margin-top: -10px; }
-.threads__wave svg { width: 100%; height: auto; overflow: visible; }
-
-/* stagger the four columns like the reference */
-.thread:nth-child(1) { padding-top: 62px; }
-.thread:nth-child(2) { padding-top: 34px; }
-.thread:nth-child(3) { padding-top: 12px; }
-.thread:nth-child(4) { padding-top: 0; }
 
 /* ==========================================================================
    Accordion (why-us panel)
@@ -1178,7 +1197,7 @@ h1, h2, h3, h4 {
   position: relative;
   aspect-ratio: 1 / .92;
   border-radius: 20px;
-  background: linear-gradient(160deg, #221a3a, #14101f);
+  background: linear-gradient(160deg, #182229, #10161b);
   overflow: hidden;
 }
 .why__viz canvas { width: 100%; height: 100%; }
@@ -1190,65 +1209,211 @@ h1, h2, h3, h4 {
 .svc {
   display: flex;
   flex-direction: column;
-  padding: 28px;
+  align-items: center;
+  text-align: center;
+  padding: 32px 26px;
   border: 1px solid var(--sheet-hair);
   border-radius: var(--r-card);
   background: #fff;
   transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .4s;
 }
-.svc:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(26, 11, 84, .1); border-color: transparent; }
+.svc:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(12, 42, 54, .1); border-color: transparent; }
 
+/* The tile carries the depth: gradient face, lit top edge, shaded base and a
+   cast shadow, so the flat glyph on top still reads as a raised app icon. */
 .svc__i {
   display: grid;
   place-items: center;
-  width: 46px; height: 46px;
+  width: 58px; height: 58px;
   margin-bottom: 22px;
-  border-radius: 13px;
+  border-radius: 18px;
   background: var(--grad-btn);
+  color: #fff;
+  box-shadow:
+    0 12px 22px -8px rgba(12, 42, 54, .45),
+    inset 0 1.5px 0 rgba(255, 255, 255, .45),
+    inset 0 -3px 7px rgba(0, 0, 0, .18);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
 }
-.svc__i svg { width: 21px; height: 21px; stroke: #fff; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.svc:hover .svc__i {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 18px 30px -10px rgba(12, 42, 54, .5),
+    inset 0 1.5px 0 rgba(255, 255, 255, .55),
+    inset 0 -3px 7px rgba(0, 0, 0, .18);
+}
+.svc__i svg {
+  width: 29px; height: 29px;
+  fill: currentColor;
+  stroke: none;
+  filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, .22));
+}
 
-.svc h3 { margin-bottom: 11px; font-size: 1.13rem; }
-.svc p { margin: 0 0 20px; font-size: .91rem; color: var(--ink-2); }
+.svc h3 { margin-bottom: 11px; font-size: 1.13rem; letter-spacing: -.025em; }
+.svc p { margin: 0 0 20px; font-size: .92rem; line-height: 1.64; color: var(--ink-2); }
 .svc .tlink { margin-top: auto; }
 
 .cs {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 340px;
-  padding: 28px;
+  border: 1px solid var(--hair);
   border-radius: var(--r-card);
-  background: linear-gradient(165deg, #241c3e, #131020);
+  background: linear-gradient(168deg, #141d25 0%, #0d1318 60%, #101920 100%);
   color: #fff;
   overflow: hidden;
-  transition: transform .5s var(--ease);
+  transition: transform .5s var(--ease), border-color .4s var(--ease), box-shadow .5s var(--ease);
 }
-.cs:hover { transform: translateY(-5px); }
+.cs:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--csGlow, rgba(20, 195, 186, .42)) 62%, transparent);
+  box-shadow: 0 28px 60px -30px var(--csGlow, rgba(20, 195, 186, .42));
+}
 .cs::before {
   content: '';
   position: absolute;
-  left: 50%; top: -34%;
-  width: 160%; height: 108%;
+  left: 50%; top: -26%;
+  width: 150%; height: 70%;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse 34% 56% at 50% 100%, var(--csGlow, rgba(168, 48, 255, .38)), transparent 66%);
-  filter: blur(34px);
+  background: radial-gradient(ellipse 36% 58% at 50% 100%, var(--csGlow, rgba(20, 195, 186, .38)), transparent 66%);
+  filter: blur(36px);
+  pointer-events: none;
 }
 .cs > * { position: relative; z-index: 1; }
+
+/* cover: a product screenshot where we have one, a tinted plate where we don't */
+.cs__shot {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--hair);
+  background: #0b1116;
+  overflow: hidden;
+}
+.cs__shot img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform .6s var(--ease);
+}
+.cs:hover .cs__shot img { transform: scale(1.045); }
+
+/* sits under the screenshot and carries the cover on its own if the file is
+   missing — main.js drops any img that fails to load */
+.cs__plate {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 40%, color-mix(in srgb, var(--csGlow, rgba(20, 195, 186, .42)) 45%, transparent), transparent 70%),
+    linear-gradient(160deg, #16212a, #0b1116);
+}
+.cs__plate b {
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: -.04em;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.cs__plate em {
+  max-width: 78%;
+  font-style: normal;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .64rem;
+  line-height: 1.7;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--on-dark-3);
+}
+
+.cs__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+
 .cs__tag {
   align-self: flex-start;
-  margin-bottom: auto;
-  padding: 6px 13px;
+  padding: 7px 12px;
   border: 1px solid var(--hair);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .06);
-  font-size: .76rem;
-  font-weight: 500;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .04);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .63rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--on-dark-2);
 }
-.cs h3 { margin: 22px 0 10px; font-size: 1.25rem; color: #fff; }
-.cs p { margin: 0 0 16px; font-size: .89rem; color: var(--on-dark-2); }
-.cs .tlink { color: #fff; }
+
+.cs__metric {
+  margin: 15px 0 0;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--hair-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .76rem;
+  line-height: 1.6;
+  color: var(--orange);
+}
+
+.cs__body h4 {
+  margin: 17px 0 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .63rem;
+  font-weight: 400;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--on-dark-3);
+}
+.cs__body > p:not(.cs__metric) {
+  margin: 0;
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--on-dark-2);
+}
+
+.cs__list { display: grid; gap: 7px; }
+.cs__list li {
+  position: relative;
+  padding-left: 15px;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--on-dark-2);
+}
+.cs__list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: .6em;
+  width: 6px; height: 1px;
+  background: var(--on-dark-3);
+}
+.cs__list--res li { color: #fff; }
+.cs__list--res li::before { background: var(--csGlow, var(--teal-lt)); height: 2px; top: .58em; }
+
+.cs__more {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--orange);
+}
+/* stretched hit area: the whole card is clickable, the link keeps the semantics */
+.cs__more::after { content: ''; position: absolute; inset: 0; }
+.cs__more .ar { transition: transform .35s var(--ease); }
+.cs:hover .cs__more .ar { transform: translateX(4px); }
 
 .team { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
 
@@ -1259,7 +1424,7 @@ h1, h2, h3, h4 {
   border: 1px solid var(--sheet-hair);
   border-radius: var(--r-card);
   background: #fff;
-  box-shadow: 0 10px 34px rgba(26, 11, 84, .06);
+  box-shadow: 0 10px 34px rgba(12, 42, 54, .06);
 }
 .person__av {
   flex: none;
@@ -1323,7 +1488,7 @@ h1, h2, h3, h4 {
   position: relative;
   padding: clamp(34px, 4.5vw, 60px);
   border-radius: var(--r-panel);
-  background: linear-gradient(160deg, #1d1732 0%, #131020 60%, #17111e 100%);
+  background: linear-gradient(160deg, #151f26 0%, #0f151a 60%, #121a20 100%);
   color: var(--on-dark);
   overflow: hidden;
 }
@@ -1406,7 +1571,7 @@ h1, h2, h3, h4 {
   font-size: .88rem;
   font-weight: 500;
   color: var(--ink-2);
-  box-shadow: 0 6px 20px rgba(26, 11, 84, .05);
+  box-shadow: 0 6px 20px rgba(12, 42, 54, .05);
   transition: transform .35s var(--ease), color .3s;
 }
 .integrations span:hover { transform: translateY(-2px); color: var(--ink); }
@@ -1482,7 +1647,7 @@ h1, h2, h3, h4 {
   padding: clamp(30px, 4vw, 52px);
   border: 1px solid var(--hair);
   border-radius: var(--r-panel);
-  background: linear-gradient(150deg, #1d1732 0%, #131020 62%, #17111e 100%);
+  background: linear-gradient(150deg, #151f26 0%, #0f151a 62%, #121a20 100%);
   overflow: hidden;
   transition: border-color .4s var(--ease), transform .5s var(--ease);
 }
@@ -1582,8 +1747,8 @@ h1, h2, h3, h4 {
   transform: translateX(-50%);
   background:
     radial-gradient(ellipse 26% 48% at 50% 96%, rgba(255, 158, 70, .34), transparent 64%),
-    radial-gradient(ellipse 48% 60% at 50% 100%, rgba(172, 88, 255, .42), transparent 68%),
-    radial-gradient(ellipse 78% 54% at 50% 108%, rgba(96, 116, 255, .34), transparent 72%);
+    radial-gradient(ellipse 48% 60% at 50% 100%, rgba(28, 205, 195, .42), transparent 68%),
+    radial-gradient(ellipse 78% 54% at 50% 108%, rgba(52, 118, 235, .34), transparent 72%);
   filter: blur(54px);
   pointer-events: none;
 }
@@ -1642,9 +1807,8 @@ h1, h2, h3, h4 {
   .statband__grid > div:nth-child(3n + 1)::before { display: none; }
   .geo { grid-template-columns: repeat(3, auto); gap: 18px 26px; }
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  #work .grid--3 { grid-template-columns: repeat(2, 1fr); }
   .flag, .why, .team { grid-template-columns: 1fr; gap: 42px; }
-  .threads__cols { grid-template-columns: repeat(2, 1fr); gap: 34px; }
-  .thread:nth-child(n) { padding-top: 0; }
   .compare { grid-template-columns: 1fr; }
   .compare .globe { order: -1; max-width: 380px; margin-inline: auto; }
 }
@@ -1679,7 +1843,6 @@ h1, h2, h3, h4 {
   .crosslink { grid-template-columns: 104px 1fr; gap: 14px; }
   /* canvas labels are dropped below 760px — the strip carries the names here */
   .geo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 20px; }
-  .threads__cols { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .flag__stats { grid-template-columns: 1fr; gap: 20px; }
   .hero { min-height: auto; padding-top: 132px; }
@@ -1694,8 +1857,8 @@ h1, h2, h3, h4 {
     background:
       radial-gradient(ellipse 62% 22% at 6% 6%,  rgba(255, 138, 44, .42), transparent 70%),
       radial-gradient(ellipse 62% 22% at 94% 6%, rgba(255, 138, 44, .42), transparent 70%),
-      radial-gradient(ellipse 78% 26% at 50% 20%, rgba(176, 62, 255, .34), transparent 72%),
-      radial-gradient(ellipse 90% 34% at 50% 92%, rgba(96, 78, 255, .32), transparent 74%);
+      radial-gradient(ellipse 78% 26% at 50% 20%, rgba(22, 198, 188, .34), transparent 72%),
+      radial-gradient(ellipse 90% 34% at 50% 92%, rgba(52, 108, 235, .32), transparent 74%);
   }
 }
 
@@ -1734,16 +1897,189 @@ h1, h2, h3, h4 {
   gap: clamp(34px, 5vw, 72px);
 }
 
+/* Blue-shaded variant of the pill label, used only for this section's eyebrow. */
+.whyus .badge {
+  border-color: rgba(43, 167, 255, .34);
+  background:
+    linear-gradient(90deg, rgba(28, 78, 255, .30) 0%, rgba(43, 167, 255, .14) 55%, rgba(255, 255, 255, .04) 100%);
+  box-shadow: 0 12px 30px -14px rgba(28, 78, 255, .75), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
 .whyus__viz {
   position: relative;
   width: 100%;
-  height: clamp(260px, 28vw, 380px);
+  height: clamp(320px, 31vw, 430px);
   border-radius: 20px;
-  background: linear-gradient(160deg, #221a3a, #14101f);
+  background: linear-gradient(160deg, #182229, #10161b);
   border: 1px solid var(--hair-soft);
   overflow: hidden;
 }
 .whyus__viz canvas { width: 100%; height: 100%; }
+
+/* Tabs drive both the copy stack and the panel on the right. */
+.whyus__tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 26px;
+  padding: 5px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .05);
+}
+.whyus__tab {
+  padding: 8px 17px;
+  border-radius: 999px;
+  font-size: .84rem;
+  font-weight: 500;
+  color: var(--on-dark-3);
+  transition: color .3s, background .3s;
+}
+.whyus__tab:hover { color: var(--on-dark-2); }
+.whyus__tab.is-on { color: #fff; background: rgba(255, 255, 255, .12); }
+.whyus__tab:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 2px; }
+
+/* Panes are stacked in one grid cell so the column never jumps height. */
+.whyus__copy { display: grid; margin-top: 22px; }
+.whycopy {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .38s var(--ease), transform .38s var(--ease);
+}
+.whycopy.is-on { opacity: 1; visibility: visible; transform: none; }
+
+.whyview {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .42s var(--ease);
+}
+.whyview.is-on { opacity: 1; visibility: visible; }
+
+/* --- AI agent trace, typed at runtime by main.js --- */
+.aicon {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.aicon__bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+.aicon__bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, .14); }
+.aicon__title {
+  margin-left: 8px;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--on-dark-3);
+}
+.aicon__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--teal-lt);
+}
+.aicon__live s { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-lt); }
+.whyview.is-on .aicon__live s { animation: aiPulse 1.7s var(--ease-soft) infinite; }
+
+.aicon__feed {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 16px;
+  overflow: hidden;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .76rem;
+  line-height: 1.85;
+}
+.aicon__ln { display: flex; gap: 9px; white-space: pre-wrap; }
+.aicon__ln b {
+  flex: none;
+  width: 46px;
+  font-weight: 500;
+  color: var(--on-dark-3);
+}
+.aicon__ln--meta { color: var(--on-dark-3); }
+.aicon__ln--user span { color: var(--on-dark); }
+.aicon__ln--tool span { color: var(--teal-lt); }
+.aicon__ln--agent b { color: var(--teal-lt); }
+.aicon__ln--agent span { color: var(--on-dark); }
+.aicon__ln.is-typing span::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--teal-lt);
+  animation: aiCaret .9s steps(1) infinite;
+}
+.aicon__ok { margin-left: 8px; color: var(--on-dark-3); }
+
+.aicon__replay {
+  align-self: flex-start;
+  margin: 0 16px 14px;
+  padding: 7px 14px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  font-size: .74rem;
+  color: var(--on-dark-2);
+  opacity: 0;
+  transition: opacity .35s, color .25s, border-color .25s, background .25s;
+}
+.aicon__replay.is-ready { opacity: 1; }
+.aicon__replay:hover { color: #fff; border-color: rgba(47, 217, 207, .5); background: rgba(18, 184, 176, .12); }
+.aicon__replay:focus-visible { outline: 2px solid var(--teal-lt); outline-offset: 2px; }
+.aicon__replay .ar { display: inline-block; margin-left: 4px; }
+
+@keyframes aiPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
+@keyframes aiCaret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+/* --- engineering bench roster --- */
+.bench {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 10px 6px;
+}
+.bench li {
+  display: grid;
+  grid-template-columns: 104px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 20px;
+  border-top: 1px solid var(--hair-soft);
+  opacity: 0;
+  transform: translateY(8px);
+}
+.bench li:first-child { border-top: 0; }
+.whyview.is-on .bench li { animation: benchIn .5s var(--ease) forwards; }
+.whyview.is-on .bench li:nth-child(2) { animation-delay: .07s; }
+.whyview.is-on .bench li:nth-child(3) { animation-delay: .14s; }
+.whyview.is-on .bench li:nth-child(4) { animation-delay: .21s; }
+.whyview.is-on .bench li:nth-child(5) { animation-delay: .28s; }
+.bench b { font-size: .88rem; font-weight: 500; }
+.bench span { font-size: .78rem; color: var(--on-dark-3); }
+.bench em { font-size: .74rem; font-style: normal; color: var(--teal-lt); white-space: nowrap; }
+
+@keyframes benchIn { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .whyview.is-on .bench li { animation: none; opacity: 1; transform: none; }
+  .whyview.is-on .aicon__live s { animation: none; }
+  .aicon__ln.is-typing span::after { animation: none; }
+}
 
 /* the stat band, inline under the map instead of a standalone section */
 .statband--inline { margin-top: clamp(42px, 5vw, 70px); }
@@ -1763,12 +2099,202 @@ h1, h2, h3, h4 {
 
 .agent__viz { position: relative; }
 
+/* The globe used to float loose on the white sheet with no frame, so the
+   agent now sits inside a call-panel card: tinted brand wash, hairline
+   border, live-call bar on top and the voice waveform closing it out. */
+.agent__card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 20px 22px;
+  border: 1px solid var(--sheet-hair);
+  border-radius: 22px;
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgba(18, 184, 176, .16), transparent 60%),
+    radial-gradient(90% 70% at 82% 96%, rgba(28, 78, 255, .12), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, #f4f8f9 100%);
+  box-shadow: 0 26px 60px -24px rgba(12, 42, 54, .3);
+}
+
+/* glow puddle under the globe so the sphere sits in the card, not on it */
+.agent__card::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 72%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47, 217, 207, .22), transparent 66%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.agent__card > * { position: relative; z-index: 1; }
+
+.agent__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+/* both pills are live controls: the left one drops to the booking section,
+   the right one opens the chat assistant */
+.agent__live,
+.agent__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--sheet-hair);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .78);
+  backdrop-filter: blur(8px);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), color .3s, border-color .3s;
+}
+
+.agent__live:hover,
+.agent__meta:hover,
+.agent__live:focus-visible,
+.agent__meta:focus-visible {
+  transform: translateY(-2px);
+  border-color: transparent;
+  color: var(--ink);
+  box-shadow: 0 10px 22px -10px rgba(12, 42, 54, .5);
+}
+
+.agent__live .ar {
+  font-weight: 400;
+  transition: transform .3s var(--ease);
+}
+.agent__live:hover .ar { transform: translateX(3px); }
+
+.agent__live i {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #12b8b0;
+  box-shadow: 0 0 0 0 rgba(18, 184, 176, .5);
+  animation: agentLive 1.9s var(--ease-soft) infinite;
+}
+@keyframes agentLive {
+  0%   { box-shadow: 0 0 0 0 rgba(18, 184, 176, .5); }
+  70%  { box-shadow: 0 0 0 7px rgba(18, 184, 176, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(18, 184, 176, 0); }
+}
+
+.agent__meta svg { width: 13px; height: 13px; fill: currentColor; }
+
+/* the sphere is the agent, so it is also the way in: clicking it opens the
+   assistant in voice mode and it introduces itself out loud */
 .agent__globe {
+  display: block;
   position: relative;
   width: 100%;
-  height: clamp(260px, 30vw, 400px);
+  height: clamp(240px, 27vw, 360px);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }
-.agent__globe canvas { width: 100%; height: 100%; }
+
+/* The headline is the only thing carrying this block on the bare white sheet,
+   so it gets a soft brand wash behind it, a heavier cut and an underlined
+   gradient line to pull the eye before the globe does. */
+.agent__copy { position: relative; }
+
+.agent__copy::before {
+  content: '';
+  position: absolute;
+  left: -12%;
+  top: -22%;
+  width: 86%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 34%, rgba(18, 184, 176, .20), transparent 62%),
+    radial-gradient(circle at 68% 58%, rgba(28, 78, 255, .14), transparent 66%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.agent__copy > * { position: relative; z-index: 1; }
+
+.agent__copy .d2 {
+  font-size: clamp(2.15rem, 4.6vw, 3.9rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -.035em;
+}
+
+.agent__copy .d2 .grad {
+  background: linear-gradient(92deg, #0e9c95 0%, #1b4dfe 56%, #fe881b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* the splitter leaves the gradient span position:relative, so the rule can
+   hang an underline off it without extra markup */
+.agent__copy .d2 .grad::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -.04em;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--grad-btn);
+  opacity: .3;
+}
+
+/* the proof points float loose on the wash as plain list rows, so they get
+   their own translucent card with hairline dividers to stay legible */
+.agent__copy .ticks {
+  gap: 0;
+  padding: 2px 20px;
+  border: 1px solid var(--sheet-hair);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 32px rgba(12, 42, 54, .07);
+}
+
+.agent__copy .ticks li {
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid var(--sheet-hair);
+  font-size: .95rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.agent__copy .ticks li:first-child { border-top: 0; }
+
+.agent__copy .ticks li::before {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+}
+
+.agent__copy .ticks li::after {
+  left: 5px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translateY(-50%);
+}
+
+.agent__globe canvas { display: block; width: 100%; height: 100%; }
 
 /* transcript line — reads as the agent speaking, not as a caption */
 .agent__caption {
@@ -1776,12 +2302,12 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 11px;
   max-width: 420px;
-  margin: 6px auto 0;
+  margin: 16px auto 0;
   padding: 12px 18px;
   border: 1px solid var(--sheet-hair);
   border-radius: 999px;
   background: #fff;
-  box-shadow: 0 10px 30px rgba(26, 11, 84, .08);
+  box-shadow: 0 10px 30px rgba(12, 42, 54, .08);
   font-size: .88rem;
   color: var(--ink);
 }
@@ -1816,44 +2342,66 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   Case-study cards — real product screenshots instead of a bare gradient
+   Industries — compact sector tiles on the white sheet. Same card language as
+   .svc, but each tile is tinted from its own accent (--ic, set inline and
+   cycled through the brand ramp) so ten labels don't read as a dull grid.
    ========================================================================== */
 
-.cs { min-height: 420px; }
-
-/* .cs > * makes every child relative/z-1; the shot has to opt back out */
-.cs .cs__shot {
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 66%;
-  z-index: 0;
-  overflow: hidden;
-  /* masked rather than scrimmed to a flat colour: the card's gradient and its
-     ::before glow both sit behind the shot, so any solid fade-out colour would
-     leave a seam. Dissolving the image itself leaves none. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 46%, rgba(0,0,0,.55) 74%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 0%, #000 46%, rgba(0,0,0,.55) 74%, transparent 100%);
-}
-.cs__shot img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  opacity: .86;
-  transition: transform .6s var(--ease);
-}
-.cs:hover .cs__shot img { transform: scale(1.04); }
-
-/* a light darkening pass so the tag and the card's top edge stay calm
-   whatever the screenshot underneath is doing */
-.cs__shot::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(12, 9, 24, .42) 0%, rgba(12, 9, 24, .12) 38%, transparent 72%);
+.inds {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  margin-top: clamp(44px, 5vw, 56px);
 }
 
-/* the tag sits over the screenshot, so it needs its own backdrop */
-.cs__tag { backdrop-filter: blur(6px); background: rgba(10, 8, 20, .42); }
+.ind {
+  --ic: var(--teal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 26px 14px;
+  border: 1px solid color-mix(in srgb, var(--ic) 32%, transparent);
+  border-radius: var(--r-card);
+  background: linear-gradient(170deg, color-mix(in srgb, var(--ic) 16%, #fff), #fff 78%);
+  text-align: center;
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .4s;
+}
+.ind:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--ic) 46%, transparent);
+  box-shadow: 0 18px 38px -12px color-mix(in srgb, var(--ic) 48%, transparent);
+}
+
+.ind__i {
+  display: grid;
+  place-items: center;
+  width: 46px; height: 46px;
+  border: 1px solid color-mix(in srgb, var(--ic) 30%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ic) 18%, #fff);
+  color: var(--ic);
+  transition: background .4s, color .4s, border-color .4s, transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.ind:hover .ind__i {
+  transform: scale(1.06);
+  border-color: transparent;
+  background: var(--ic);
+  color: #fff;
+  box-shadow: 0 10px 20px -7px color-mix(in srgb, var(--ic) 70%, transparent);
+}
+.ind__i svg { width: 22px; height: 22px; fill: currentColor; }
+
+.ind h3 {
+  font-size: .94rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.018em;
+  color: var(--ink);
+}
+
+@media (max-width: 1080px) { .inds { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 680px)  { .inds { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
 
 /* ==========================================================================
    Team — a real photograph for the principal, initials for everyone else
@@ -1863,7 +2411,7 @@ h1, h2, h3, h4 {
 .person__av--photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
 /* the principal leads the list, so give the card a little more presence */
-.person--lead { border-color: rgba(26, 11, 84, .16); box-shadow: 0 16px 44px rgba(26, 11, 84, .10); }
+.person--lead { border-color: rgba(12, 42, 54, .16); box-shadow: 0 16px 44px rgba(12, 42, 54, .10); }
 .person--lead .person__av { width: 76px; height: 76px; }
 
 /* ==========================================================================
@@ -1882,11 +2430,13 @@ h1, h2, h3, h4 {
 
 /* ==========================================================================
    Contact — enquiry form beside the booking calendar.
-   This block sits at the foot of the WHITE sheet, not on the dark page, so
-   every surface here is light: white cards, ink text, hairlines in --sheet-hair.
+   Two-tone on purpose: the form is a dark inset panel (the sheet's own
+   language) and the calendar stays white because Cal.com paints its own card.
+   The brand gradient is the through-line between them.
    ========================================================================== */
 
 .contact {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(22px, 3vw, 34px);
@@ -1894,15 +2444,101 @@ h1, h2, h3, h4 {
   text-align: left;
 }
 
+/* colour wash sitting under both cards so they read as one unit */
+.contact::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: -6%;
+  width: 96%; height: 112%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse 34% 40% at 6% 12%, rgba(28, 78, 255, .20), transparent 68%),
+    radial-gradient(ellipse 36% 44% at 96% 30%, rgba(18, 184, 176, .20), transparent 70%),
+    radial-gradient(ellipse 30% 34% at 70% 100%, rgba(254, 136, 27, .16), transparent 70%);
+  filter: blur(58px);
+  pointer-events: none;
+}
+
 .contact__card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: clamp(26px, 3vw, 38px);
+  padding: clamp(28px, 3vw, 40px);
   border: 1px solid var(--sheet-hair);
   border-radius: var(--r-panel);
   background: #fff;
-  box-shadow: 0 14px 44px rgba(26, 11, 84, .07);
+  box-shadow: 0 14px 44px rgba(12, 42, 54, .07);
+  overflow: hidden;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
 }
+.contact__card > * { position: relative; z-index: 1; }
+
+/* gradient cap on the top edge, flipped per card so the pair is not a mirror */
+.contact__card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--grad-btn);
+}
+.contact__cal::before { background: linear-gradient(90deg, var(--teal) 0%, var(--blue-lt) 46%, var(--orange) 100%); }
+
+.contact__card:hover { transform: translateY(-4px); box-shadow: 0 26px 64px rgba(12, 42, 54, .13); }
+
+/* --- left card: dark inset panel --- */
+.contact__card--form {
+  border-color: transparent;
+  background: linear-gradient(160deg, #141c22 0%, #0f151a 62%, #121820 100%);
+  box-shadow: 0 22px 60px rgba(9, 16, 22, .3);
+}
+.contact__card--form::after {
+  content: '';
+  position: absolute;
+  left: -14%; bottom: -34%;
+  width: 78%; height: 62%;
+  background:
+    radial-gradient(circle, rgba(28, 78, 255, .5), transparent 66%),
+    radial-gradient(circle at 70% 40%, rgba(18, 184, 176, .34), transparent 68%);
+  filter: blur(46px);
+  pointer-events: none;
+}
+.contact__card--form:hover { box-shadow: 0 30px 74px rgba(9, 16, 22, .38); }
+
+/* --- right card: light, with a teal corner bloom --- */
+.contact__cal::after {
+  content: '';
+  position: absolute;
+  right: -16%; top: -26%;
+  width: 66%; height: 54%;
+  background: radial-gradient(circle, rgba(18, 184, 176, .22), transparent 68%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.contact__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: .71rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.contact__kicker b {
+  display: inline-grid;
+  place-items: center;
+  width: 27px; height: 27px;
+  border-radius: 9px;
+  background: var(--grad-btn);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.contact__kicker--alt b { background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%); }
+.contact__card--form .contact__kicker { color: var(--on-dark-3); }
 
 .contact__card h3 {
   margin: 0 0 6px;
@@ -1912,10 +2548,45 @@ h1, h2, h3, h4 {
   color: var(--ink);
 }
 .contact__card > p {
-  margin: 0 0 24px;
+  margin: 0 0 18px;
   font-size: .89rem;
   line-height: 1.6;
   color: var(--ink-2);
+}
+.contact__card > p a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.contact__card--form h3 { color: var(--on-dark); }
+.contact__card--form > p { color: var(--on-dark-2); }
+
+.contact__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+}
+.contact__chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border: 1px solid var(--sheet-hair);
+  border-radius: 999px;
+  background: var(--sheet-soft);
+  font-size: .745rem;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.contact__chips li::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--grad-btn);
+}
+.contact__card--form .contact__chips li {
+  border-color: rgba(255, 255, 255, .13);
+  background: rgba(255, 255, 255, .05);
+  color: var(--on-dark-2);
 }
 
 .field { display: block; margin-bottom: 15px; }
@@ -1946,9 +2617,26 @@ h1, h2, h3, h4 {
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: rgba(172, 36, 255, .5);
+  border-color: rgba(18, 184, 176, .5);
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(172, 36, 255, .12);
+  box-shadow: 0 0 0 3px rgba(18, 184, 176, .14);
+}
+
+/* inputs sitting on the dark panel */
+.contact__card--form .field span { color: var(--on-dark-3); }
+.contact__card--form .field input,
+.contact__card--form .field textarea {
+  border-color: rgba(255, 255, 255, .13);
+  background: rgba(255, 255, 255, .045);
+  color: #fff;
+}
+.contact__card--form .field input::placeholder,
+.contact__card--form .field textarea::placeholder { color: rgba(255, 255, 255, .38); opacity: 1; }
+.contact__card--form .field input:focus,
+.contact__card--form .field textarea:focus {
+  border-color: rgba(47, 217, 207, .6);
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 3px rgba(18, 184, 176, .2);
 }
 
 .contact__row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -1956,13 +2644,65 @@ h1, h2, h3, h4 {
 .contact form .btn { margin-top: 9px; width: 100%; justify-content: center; }
 .contact__note { margin: 14px 0 0; font-size: .78rem; color: var(--ink-3); }
 .contact__note a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+.contact__card--form .contact__note { color: var(--on-dark-3); }
+.contact__card--form .contact__note a { color: var(--on-dark); }
+
+/* host block above the calendar — replaces Cal.com's own header, which is
+   hidden via hideEventTypeDetails. Doubles as the link to Abdullah's site. */
+.calhost {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 2px 0 18px;
+  padding: 14px 16px;
+  border: 1px solid var(--sheet-hair);
+  border-radius: var(--r-card);
+  background: var(--sheet-soft);
+  text-decoration: none;
+  transition: border-color .3s var(--ease), background .3s var(--ease), transform .35s var(--ease);
+}
+.calhost:hover {
+  transform: translateY(-2px);
+  border-color: rgba(18, 184, 176, .45);
+  background: #fff;
+}
+.calhost__av {
+  flex: none;
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 22px rgba(12, 42, 54, .16);
+}
+.calhost__txt { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.calhost__txt b {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.calhost__txt em {
+  font-style: normal;
+  font-size: .78rem;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+.calhost__link {
+  margin-top: 3px;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--teal);
+}
+.calhost__link .ar { display: inline-block; transition: transform .35s var(--ease); }
+.calhost:hover .calhost__link .ar { transform: translate(3px, -3px); }
 
 /* Cal.com paints its own white card, so this frame just holds the height and
    lets the widget scroll inside rather than stretching the page. */
 .contact__cal { padding-bottom: clamp(20px, 2vw, 26px); }
+.contact__cal .contact__chips { margin-bottom: 18px; }
 .cal-embed {
   min-width: 0;
-  height: 560px;
+  height: 470px;
   margin-top: 4px;
   border: 1px solid var(--sheet-hair);
   border-radius: var(--r-card);
@@ -1972,14 +2712,475 @@ h1, h2, h3, h4 {
 
 @media (max-width: 1080px) {
   .whyus, .agent, .contact { grid-template-columns: 1fr; }
-  .cal-embed { height: 520px; }
+  .cal-embed { height: 440px; }
+}
+
+@media (max-width: 460px) {
+  .calhost { gap: 13px; padding: 12px 13px; }
+  .calhost__av { width: 68px; height: 68px; }
 }
 
 @media (max-width: 560px) {
   .contact__row { grid-template-columns: 1fr; }
-  .cs { min-height: 360px; }
 }
 
 /* the About Us hero now carries the world map the homepage used to open with,
    so it needs the bottom padding back that .hero--page took away */
 .hero--map { padding-bottom: 0; }
+
+/* ==========================================================================
+   AI chat — opened from the "Voice agent" pill. A dark panel docked bottom
+   right so it reads as the product, not as a page section: transcript in the
+   middle, and a composer that swaps between a text field and a mic orb.
+   ========================================================================== */
+
+.chat[hidden] { display: none; }
+
+/* ── floating launcher ── */
+.botdock {
+  position: fixed;
+  right: clamp(10px, 2.4vw, 26px);
+  bottom: clamp(10px, 2.4vw, 26px);
+  z-index: 880;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  transition: opacity .3s var(--ease-soft), transform .4s var(--ease);
+}
+
+.botfab {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 58px; height: 58px;
+  padding: 0;
+  border: 0;
+  border-radius: 19px;
+  background: var(--grad-btn);
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .4), 0 20px 38px -16px rgba(0, 0, 0, .85);
+  cursor: pointer;
+  animation: botfabIn .7s var(--ease) both 1.2s;
+  transition: transform .4s var(--ease);
+}
+.botfab:hover { transform: translateY(-3px) scale(1.04); }
+.botfab svg { position: relative; width: 26px; height: 26px; fill: #fff; }
+
+/* the bot nods while the bubble is up, so the eye goes to it */
+.botdock.is-hinting .botfab svg { animation: botNod 2.2s var(--ease-soft) infinite; }
+
+.botfab__ping {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(18, 184, 176, .6);
+  animation: botfabPing 2.6s var(--ease-soft) infinite;
+}
+
+@keyframes botfabPing {
+  0%   { opacity: .8; transform: scale(1); }
+  70%  { opacity: 0;  transform: scale(1.45); }
+  100% { opacity: 0;  transform: scale(1.45); }
+}
+@keyframes botfabIn {
+  0%   { opacity: 0; transform: translateY(26px) scale(.6); }
+  60%  { opacity: 1; transform: translateY(-5px) scale(1.06); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes botNod {
+  0%, 68%, 100% { transform: rotate(0); }
+  76% { transform: rotate(-9deg); }
+  84% { transform: rotate(7deg); }
+  92% { transform: rotate(-3deg); }
+}
+
+/* ── "ask me anything" bubble ── */
+.botdock__hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(260px, calc(100vw - 110px));
+  padding: 11px 10px 11px 15px;
+  border: 1px solid var(--hair);
+  border-radius: 16px 16px 4px 16px;
+  background: linear-gradient(180deg, #161c23 0%, #0d1216 100%);
+  box-shadow: 0 26px 52px -22px rgba(0, 0, 0, .8);
+  color: var(--on-dark);
+  opacity: 0;
+  transform: translateX(14px) scale(.9);
+  transform-origin: 100% 100%;
+  pointer-events: none;
+  transition: opacity .3s var(--ease-soft), transform .5s var(--ease);
+}
+.botdock.is-hinting .botdock__hint {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.botdock__msg { display: grid; gap: 2px; min-width: 0; }
+.botdock__msg b { font-size: .92rem; letter-spacing: -.01em; }
+.botdock__msg em { font-style: normal; font-size: .74rem; color: var(--on-dark-3); }
+
+.botdock__x {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 24px; height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  cursor: pointer;
+  transition: background .25s var(--ease-soft);
+}
+.botdock__x:hover { background: rgba(255, 255, 255, .18); }
+.botdock__x svg { width: 11px; height: 11px; fill: var(--on-dark-3); }
+
+.chat.is-open + .botdock {
+  opacity: 0;
+  transform: scale(.8);
+  pointer-events: none;
+}
+
+.chat {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+}
+
+.chat__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 16, 21, .52);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity .35s var(--ease-soft);
+}
+.chat.is-open .chat__scrim { opacity: 1; }
+
+.chat__panel {
+  position: absolute;
+  right: clamp(10px, 2.4vw, 26px);
+  bottom: clamp(10px, 2.4vw, 26px);
+  display: flex;
+  flex-direction: column;
+  width: min(410px, calc(100vw - 20px));
+  height: min(640px, calc(100vh - 20px));
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  border-radius: 22px;
+  background:
+    radial-gradient(120% 60% at 50% 0%, rgba(18, 184, 176, .16), transparent 62%),
+    linear-gradient(180deg, #161c23 0%, #0d1216 100%);
+  box-shadow: 0 44px 100px -34px rgba(0, 0, 0, .8);
+  color: var(--on-dark);
+  opacity: 0;
+  transform: translateY(20px) scale(.97);
+  transform-origin: 100% 100%;
+  transition: opacity .3s var(--ease-soft), transform .45s var(--ease);
+}
+.chat.is-open .chat__panel { opacity: 1; transform: none; }
+
+/* ── header ── */
+.chat__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 14px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.chat__avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 13px;
+  background: var(--grad-btn);
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, .4), 0 8px 18px -8px rgba(0, 0, 0, .8);
+}
+.chat__avatar svg { width: 21px; height: 21px; fill: #fff; }
+
+.chat__id { display: grid; gap: 3px; margin-right: auto; min-width: 0; }
+.chat__id strong { font-size: .98rem; letter-spacing: -.02em; }
+
+.chat__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .74rem;
+  color: var(--on-dark-3);
+}
+.chat__status i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #2fd9cf;
+  animation: agentPulse 1.8s var(--ease-soft) infinite;
+}
+
+.chat__x {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px; height: 32px;
+  border: 1px solid var(--hair);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--on-dark-2);
+  cursor: pointer;
+  transition: background .25s, color .25s;
+}
+.chat__x:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.chat__x svg { width: 13px; height: 13px; fill: currentColor; }
+
+/* ── text / voice switch ── */
+.chat__modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin: 12px 16px 0;
+  padding: 4px;
+  border: 1px solid var(--hair-soft);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.chat__mode {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--on-dark-3);
+  cursor: pointer;
+  transition: background .3s var(--ease), color .3s;
+}
+.chat__mode:hover { color: var(--on-dark); }
+.chat__mode.is-on {
+  background: var(--grad-btn);
+  color: #fff;
+  box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .9);
+}
+
+/* ── transcript ── */
+.chat__log {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 16px 4px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, .18) transparent;
+}
+.chat__log::-webkit-scrollbar { width: 6px; }
+.chat__log::-webkit-scrollbar-thumb { border-radius: 6px; background: rgba(255, 255, 255, .16); }
+
+.chat__msg {
+  max-width: 84%;
+  padding: 11px 15px;
+  border-radius: 16px;
+  font-size: .89rem;
+  line-height: 1.55;
+  animation: chatIn .35s var(--ease) both;
+}
+@keyframes chatIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.chat__msg--bot {
+  align-self: flex-start;
+  border: 1px solid var(--hair-soft);
+  border-bottom-left-radius: 6px;
+  background: rgba(255, 255, 255, .06);
+  color: var(--on-dark);
+}
+
+.chat__msg--me {
+  align-self: flex-end;
+  border-bottom-right-radius: 6px;
+  background: var(--grad-btn);
+  color: #fff;
+  box-shadow: 0 10px 22px -12px rgba(0, 0, 0, .9);
+}
+
+/* three-dot typing bubble, same shell as a bot message */
+.chat__typing { display: flex; gap: 4px; align-items: center; padding: 14px 15px; }
+.chat__typing i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--on-dark-3);
+  animation: chatDot 1.2s var(--ease-soft) infinite;
+}
+.chat__typing i:nth-child(2) { animation-delay: .15s; }
+.chat__typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes chatDot {
+  0%, 60%, 100% { opacity: .3; transform: translateY(0); }
+  30%           { opacity: 1;  transform: translateY(-3px); }
+}
+
+/* ── suggested openers ── */
+.chat__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 12px 16px 2px;
+}
+.chat__chips:empty { display: none; }
+
+.chat__chip {
+  padding: 7px 12px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  background: transparent;
+  font: inherit;
+  font-size: .78rem;
+  color: var(--on-dark-2);
+  cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s, transform .25s var(--ease);
+}
+.chat__chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(47, 217, 207, .6);
+  background: rgba(47, 217, 207, .12);
+  color: #fff;
+}
+
+/* ── composer ── */
+.chat__form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 16px 0;
+  padding: 6px 6px 6px 16px;
+  border: 1px solid var(--hair);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .05);
+  transition: border-color .3s;
+}
+.chat__form:focus-within { border-color: rgba(47, 217, 207, .55); }
+.chat__form[hidden] { display: none; }
+
+.chat__input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: .88rem;
+  color: #fff;
+}
+.chat__input::placeholder { color: var(--on-dark-3); }
+.chat__input:focus { outline: none; }
+
+.chat__send {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px; height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--grad-btn);
+  color: #fff;
+  cursor: pointer;
+  transition: transform .3s var(--ease), opacity .3s;
+}
+.chat__send:hover { transform: scale(1.07); }
+.chat__send svg { width: 15px; height: 15px; fill: currentColor; }
+
+/* ── voice console ── */
+.chat__voice {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 16px 16px 4px;
+}
+.chat__voice[hidden] { display: none; }
+
+.chat__orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px; height: 64px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--grad-btn);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 14px 30px -12px rgba(18, 184, 176, .8);
+  transition: transform .3s var(--ease);
+}
+.chat__orb:hover { transform: scale(1.05); }
+.chat__orb svg { width: 25px; height: 25px; fill: currentColor; }
+
+/* the ring only pulses while the mic is actually listening */
+.chat__orb-ring {
+  position: absolute;
+  inset: -6px;
+  border: 1.5px solid rgba(47, 217, 207, .7);
+  border-radius: 50%;
+  opacity: 0;
+}
+.chat__orb.is-live .chat__orb-ring { animation: chatOrb 1.6s var(--ease-soft) infinite; }
+@keyframes chatOrb {
+  0%   { opacity: .8; transform: scale(1); }
+  100% { opacity: 0;  transform: scale(1.5); }
+}
+
+.chat__vstate {
+  margin: 0;
+  font-size: .8rem;
+  color: var(--on-dark-3);
+  text-align: center;
+}
+
+.chat__vwave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 22px;
+}
+.chat__vwave i {
+  display: block;
+  width: 3px;
+  min-height: 3px;
+  border-radius: 2px;
+  background: var(--grad-btn);
+  opacity: .6;
+  transition: height .12s linear;
+}
+
+.chat__foot {
+  margin: 10px 16px 14px;
+  font-size: .72rem;
+  text-align: center;
+  color: var(--on-dark-3);
+}
+.chat__link {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--teal-lt);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .chat__panel {
+    right: 0; bottom: 0;
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0;
+    border: 0;
+  }
+}

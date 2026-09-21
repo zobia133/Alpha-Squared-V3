@@ -306,6 +306,17 @@
   }
 
   /* ══════════════════════════════════════════════════════════════════
+     8b. Case-study covers — a card that ships before its screenshot does
+     falls back to the .cs__plate sitting behind the image.
+     ══════════════════════════════════════════════════════════════════ */
+  function shotFallback() {
+    document.querySelectorAll('.cs__shot img').forEach(function (img) {
+      img.addEventListener('error', function () { img.remove(); });
+      if (img.complete && img.naturalWidth === 0) img.remove();
+    });
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
      9. Accordion + typical/alpha toggle
      ══════════════════════════════════════════════════════════════════ */
   var ACC_COPY = {
@@ -572,15 +583,15 @@
           var x = g.x0 + (col + 0.5) * g.stepX;
           var y = g.y0 + (row + 0.5) * g.stepY;
 
-          // colour drifts blue → purple → orange west-to-east, brand gradient
+          // colour drifts blue → teal → orange west-to-east, brand gradient
           var t = col / LAND_COLS;
           var cr, cg, cb;
           if (t < 0.5) {
             var k = t / 0.5;
-            cr = 43 + k * 159; cg = 167 - k * 98; cb = 255;
+            cr = 43 + k * 4; cg = 167 + k * 50; cb = 255 - k * 48;
           } else {
             var k2 = (t - 0.5) / 0.5;
-            cr = 202 + k2 * 52; cg = 69 + k2 * 67; cb = 255 - k2 * 228;
+            cr = 47 + k2 * 207; cg = 217 - k2 * 81; cb = 207 - k2 * 180;
           }
 
           // Gentle vertical fade so the map settles into the background.
@@ -814,7 +825,7 @@
     var el = document.getElementById('agentLine');
     if (!el || REDUCED) return;
     var lines = [
-      'Good afternoon — Alpha Squared, how can I help?',
+      'Good afternoon, Alpha Squared here. How can I help?',
       'I can see Thursday at 10, or Friday morning. Which suits?',
       'Booked. I\u2019ve put the details in your CRM.'
     ];
@@ -826,6 +837,368 @@
       setTimeout(function () { el.textContent = lines[i]; el.style.opacity = 1; }, 260);
     }, 5400);                                          // matches the envelope cycle
     el.style.transition = 'opacity .26s ease';
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
+     12b. Chat assistant — opened by the "Voice agent" pill on the AI
+     block. One assistant, two ways in: type, or talk. Voice uses
+     SpeechRecognition in and speechSynthesis out, both progressive —
+     where the browser has neither, this stays a plain text chat.
+     ══════════════════════════════════════════════════════════════════ */
+  function chatBot() {
+    var root = document.getElementById('a2chat');
+    if (!root) return;
+
+    var log    = document.getElementById('chatLog');
+    var chips  = document.getElementById('chatChips');
+    var form   = document.getElementById('chatForm');
+    var input  = document.getElementById('chatInput');
+    var panel  = root.querySelector('.chat__panel');
+    var voice  = document.getElementById('chatVoice');
+    var orb    = document.getElementById('chatOrb');
+    var vstate = document.getElementById('chatVState');
+    var vwave  = document.getElementById('chatVWave');
+
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var TTS = window.speechSynthesis;
+    var rec = null, listening = false, mode = 'text', lastFocus = null, waveRAF = 0, greeted = false;
+
+    /* ── what it knows. First match wins, so order is priority. ──── */
+    var OPENER = 'Hi — Alpha Squared assistant here. Ask me what we build, how we work, or what a project runs to. Say "book a call" and I\'ll hand you the calendar.';
+
+    var WELCOME = 'Hi, you\'re through to the Alpha Squared voice agent. Ask me what we build, how we work, or what a project costs — or just say, book a call.';
+
+    var RULES = [
+      { k: /\b(book|call|meeting|schedule|demo|talk to (a )?human|speak to someone)\b/,
+        a: 'Happy to set that up. Twenty minutes with Abdullah, no form in between — the calendar is in the "Let\'s talk" section at the bottom of this page. Or email info@alphasquared.co and we\'ll come back within two business days.',
+        go: '#contact' },
+
+      { k: /\b(price|pricing|cost|budget|rate|how much|quote)\b/,
+        a: 'We scope before we price, so there is no menu. Most engagements start as a fixed-scope discovery of two to three weeks, then move to a monthly pod. Tell me the operation and roughly what you want automated, and we will give you an honest read on scope and cost.' },
+
+      { k: /\b(how long|timeline|timeframe|deadline|how fast|when can)\b/,
+        a: 'Discovery runs two to three weeks. A first production release is usually six to twelve weeks after that, depending on how many integrations sit in the way. We ship in increments, so you see working software long before the end date.' },
+
+      { k: /\b(voice|phone|call answer|receptionist|front desk|ivr)\b/,
+        a: 'Voice agents are live for a real client today — the AI Front Desk. It answers inbound calls, understands intent, checks live availability, books the job and writes it straight into the CRM with no human in the loop. That is the same kind of agent you are talking to now.' },
+
+      { k: /\b(ai|automation|llm|gpt|agent|ocr|document)\b/,
+        a: 'AI and automation is the fastest-moving part of what we do: voice agents on real inbound calls, OCR microservices reading real documents, and agentic assistants wired into live CRMs. We treat AI as engineering with a measurable job, not a demo.' },
+
+      { k: /\b(truck|trucking|fleet|dispatch|driver|freight|logistic|transport|eld|driveaway)\b/,
+        a: 'Trucking is where we automate deepest. We built the dispatch platform for Alliance Driveaway — one-way driveaway jobs where the vehicle being moved is the freight — covering dispatch, contractor drivers, documents and settlements. If you are running on spreadsheets and phone calls, that is exactly the problem we solve.' },
+
+      { k: /\b(integrat|api|quickbooks|salesforce|hubspot|erp|netsuite|webhook|sync)\b/,
+        a: 'Integrations are usually the hard half of the job, so we treat them as first-class work. We have shipped deep QuickBooks sync for load-to-invoice, HubSpot CRM writes straight off a live phone call, and plenty of custom APIs in between. Tell me what systems have to stay in sync and I will tell you how we would wire them.' },
+
+      { k: /\b(mobile|ios|android|app store|play store|react native|flutter|swift|kotlin)\b/,
+        a: 'Native iOS and Android, built to survive the field — offline-tolerant sync, GPS, camera, signatures and push. The Alliance driver apps run exactly that way, because a driver in a dead zone still has to close out a job.' },
+
+      { k: /\b(stack|tech|technolog|laravel|vue|node|react|php|python|aws|azure|database)\b/,
+        a: 'Mostly Laravel and Node on the backend, Vue and React on the front, Swift and Kotlin for mobile, Postgres or MySQL for data, and AWS or Azure for infrastructure. We pick boring, well-supported tools on purpose — you should be able to hire for your own codebase later.' },
+
+      { k: /\b(support|maintain|maintenance|sla|uptime|monitoring|after launch|warranty|bug)\b/,
+        a: 'We stay after launch. Releases, monitoring, on-call support and a live roadmap — the same team that built it keeps it running. Most clients move onto a monthly support and roadmap arrangement once the first release is out.' },
+
+      { k: /\b(process|how do you work|methodolog|agile|sprint|standup|communicat|progress|update)\b/,
+        a: 'Plan, design, build, operate — one team across all four. You get a working increment every sprint, a shared board you can see at any time, and direct access to the people writing the code. No account manager sitting between you and the build.' },
+
+      { k: /\b(legacy|existing (system|app|software)|rebuild|rewrite|migrat|take over|inherit|rescue)\b/,
+        a: 'We take over existing systems often. First step is a short audit — what is worth keeping, what is quietly costing you, and what has to be replaced first. Then we modernise in stages so the business never has to stop while we work.' },
+
+      { k: /\b(contract|engagement|retainer|monthly|ownership|own the code|source code|ip|licen[sc]e)\b/,
+        a: 'Fixed-scope discovery first, then a monthly pod you can scale up or down. You own the code and the IP outright — repositories, infrastructure and accounts are in your name from day one.' },
+
+      { k: /\b(industr|sector|vertical|healthcare|clinic|energy|retail|fintech|education|public safety|marketplace)\b/,
+        a: 'Ten sectors so far: trucking and transport, energy and industrial, healthcare, public safety, field services, retail and POS, fintech, marketplaces, education and media. Different domains, same pattern — operations that cannot afford downtime.' },
+
+      { k: /\b(why (you|alpha)|what makes you|different from|competitor|instead of)\b/,
+        a: 'Three reasons clients give us: senior engineers only, domain depth we already paid for on someone else\'s budget, and the fact that we stay after launch. Fifty-two repeat clients is the number I would judge us on.' },
+
+      { k: /\b(service|what do you do|offer|capabilit|build)\b/,
+        a: 'Six lines: operations platforms, mobile apps, AI and automation, product and UX design, dedicated engineering teams, and cloud, DevOps and long-term support. The Services page breaks each of them down.' },
+
+      { k: /\b(case stud|portfolio|example|work|client|reference)\b/,
+        a: 'Alliance Driveaway dispatch, the AI Front Desk voice agent, WhoIFollow, FluidsData and internal messaging work for Coca-Cola, among others. The Case Studies page has the problem, the solution and the outcome for each.' },
+
+      { k: /\b(team|who are you|about|company|where are you|located|canada)\b/,
+        a: 'Alpha Squared is a Canadian software studio in Edmonton, Alberta, shipping since 2012 — 265+ projects, 17 countries, 52 repeat clients. Senior engineers only, embedded with your team rather than thrown over a wall.' },
+
+      { k: /\b(secur|compliance|soc ?2|nda|data|privacy|gdpr|pipeda)\b/,
+        a: 'Security is on the Trust page: least-privilege access, encrypted data at rest and in transit, audited deploys, and NDAs signed before anything sensitive changes hands. Tell me your compliance regime and I will get the right engineer on the call.' },
+
+      { k: /\b(hire|team|staff|augment|developer|pod|capacity)\b/,
+        a: 'Dedicated teams: a vetted senior pod embedded with yours, running your rituals and your board. It gets you capacity without the twelve-week local hiring cycle, and you can scale it down as cleanly as you scaled it up.' },
+
+      { k: /\b(hi|hey|hello|salam|good (morning|afternoon|evening))\b/,
+        a: 'Hello. What are you building — or what is currently breaking? Either one is a good place to start.' },
+
+      { k: /\b(thank|thanks|cheers|great|nice|awesome)\b/,
+        a: 'Any time. If you want this in front of an engineer instead, the booking calendar is at the bottom of the page.' }
+    ];
+
+    var FALLBACK = 'I can speak to what we build, how we work, timelines, pricing and security. If it is more specific than that, the fastest path is twenty minutes with the team — the calendar is at the bottom of this page.';
+
+    var CHIPS = [
+      'What do you build?',
+      'How much does a project cost?',
+      'Tell me about the voice agent',
+      'Can you integrate with QuickBooks?',
+      'Do you support it after launch?',
+      'Book a call'
+    ];
+
+    function answer(q) {
+      var t = q.toLowerCase();
+      for (var i = 0; i < RULES.length; i++) {
+        if (RULES[i].k.test(t)) return RULES[i];
+      }
+      return { a: FALLBACK };
+    }
+
+    /* ── transcript ─────────────────────────────────────────────── */
+    function bubble(who, text) {
+      var el = document.createElement('div');
+      el.className = 'chat__msg chat__msg--' + who;
+      el.textContent = text;                            // never innerHTML: user text
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+      return el;
+    }
+
+    function typing() {
+      var el = document.createElement('div');
+      el.className = 'chat__msg chat__msg--bot chat__typing';
+      el.innerHTML = '<i></i><i></i><i></i>';
+      log.appendChild(el);
+      log.scrollTop = log.scrollHeight;
+      return el;
+    }
+
+    function speak(text) {
+      if (!TTS || mode !== 'voice') return;
+      TTS.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      var v = pickVoice();
+      if (v) u.voice = v;
+      u.lang = v ? v.lang : 'en-US';
+      u.rate = 1.03; u.pitch = 1;
+      u.onstart = function () { setVState('Speaking…'); runWave(true); };
+      u.onend = function () { runWave(false); setVState(SR ? 'Tap to talk' : 'Type below — this browser has no mic support'); };
+      TTS.speak(u);
+    }
+
+    /* Chrome fills the voice list asynchronously, so this is re-run rather
+       than resolved once at startup. */
+    var picked = null;
+    function pickVoice() {
+      if (picked || !TTS) return picked;
+      var all = TTS.getVoices() || [];
+      var want = ['Google UK English Female', 'Google US English', 'Microsoft Aria', 'Microsoft Jenny', 'Samantha'];
+      for (var w = 0; w < want.length; w++) {
+        for (var i = 0; i < all.length; i++) {
+          if (all[i].name.indexOf(want[w]) === 0) { picked = all[i]; return picked; }
+        }
+      }
+      for (var j = 0; j < all.length; j++) {
+        if (/^en\b|^en[-_]/i.test(all[j].lang)) { picked = all[j]; return picked; }
+      }
+      return null;
+    }
+    if (TTS && typeof TTS.addEventListener === 'function') {
+      TTS.addEventListener('voiceschanged', function () { picked = null; pickVoice(); });
+    }
+
+    /* Spoken greeting the first time voice mode is entered — opening the
+       panel is the user gesture browsers require before audio may play. */
+    function welcome() {
+      if (greeted) return;
+      greeted = true;
+      bubble('bot', WELCOME);
+      setTimeout(function () { speak(WELCOME); }, 360);
+    }
+
+    function send(text) {
+      text = (text || '').trim();
+      if (!text) return;
+      chips.innerHTML = '';
+      bubble('me', text);
+
+      var hit = answer(text);
+      var dots = typing();
+      setTimeout(function () {
+        dots.remove();
+        bubble('bot', hit.a);
+        speak(hit.a);
+        if (hit.go) {
+          var jump = document.createElement('button');
+          jump.type = 'button';
+          jump.className = 'chat__chip';
+          jump.textContent = 'Open the calendar →';
+          jump.addEventListener('click', function () { close(); goTo(hit.go); });
+          chips.appendChild(jump);
+        }
+      }, 620 + Math.min(text.length * 12, 700));
+    }
+
+    function goTo(hash) {
+      var t = document.querySelector(hash);
+      if (!t) return;
+      if (lenis) lenis.scrollTo(t, { offset: -90 });
+      else t.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function seedChips() {
+      chips.innerHTML = '';
+      CHIPS.forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chat__chip';
+        b.textContent = c;
+        b.addEventListener('click', function () { send(c); });
+        chips.appendChild(b);
+      });
+    }
+
+    /* ── voice ──────────────────────────────────────────────────── */
+    var bars = [];
+    for (var i = 0; i < 22; i++) { var b = document.createElement('i'); vwave.appendChild(b); bars.push(b); }
+
+    function setVState(s) { vstate.textContent = s; }
+
+    function runWave(on) {
+      if (!on) {
+        cancelAnimationFrame(waveRAF);
+        waveRAF = 0;
+        bars.forEach(function (bar) { bar.style.height = '3px'; });
+        return;
+      }
+      if (waveRAF) return;
+      (function frame(ts) {
+        waveRAF = requestAnimationFrame(frame);
+        for (var j = 0; j < bars.length; j++) {
+          var centre = 1 - Math.abs(j - (bars.length - 1) / 2) / ((bars.length - 1) / 2);
+          var lv = Math.abs(Math.sin(ts / 150 + j * 0.6)) * Math.abs(Math.sin(ts / 420));
+          bars[j].style.height = (3 + lv * centre * 18).toFixed(1) + 'px';
+        }
+      })(0);
+    }
+
+    function startListening() {
+      if (!SR) { setVState('This browser has no speech input — switch to Text'); return; }
+      if (listening) { rec.stop(); return; }
+      if (!rec) {
+        rec = new SR();
+        rec.lang = 'en-US';
+        rec.interimResults = false;
+        rec.maxAlternatives = 1;
+        rec.onstart = function () { listening = true; orb.classList.add('is-live'); setVState('Listening…'); runWave(true); };
+        rec.onerror = function (e) {
+          listening = false; orb.classList.remove('is-live'); runWave(false);
+          setVState(e.error === 'not-allowed' ? 'Mic blocked — allow access, or use Text' : 'Didn\'t catch that. Tap to try again');
+        };
+        rec.onend = function () { listening = false; orb.classList.remove('is-live'); runWave(false); };
+        rec.onresult = function (e) {
+          var said = e.results[0][0].transcript;
+          setVState('Thinking…');
+          send(said);
+        };
+      }
+      if (TTS) TTS.cancel();
+      try { rec.start(); } catch (err) { /* already running */ }
+    }
+
+    function setMode(next) {
+      mode = next;
+      root.querySelectorAll('.chat__mode').forEach(function (m) {
+        var on = m.getAttribute('data-mode') === next;
+        m.classList.toggle('is-on', on);
+        m.setAttribute('aria-selected', String(on));
+      });
+      var isVoice = next === 'voice';
+      voice.hidden = !isVoice;
+      form.hidden = isVoice;
+      if (isVoice) {
+        setVState(SR ? 'Tap to talk' : 'No speech input here — switch to Text');
+        welcome();
+      } else {
+        if (TTS) TTS.cancel();
+        if (listening && rec) rec.stop();
+        runWave(false);
+        input.focus();
+      }
+    }
+
+    /* ── open / close ───────────────────────────────────────────── */
+    function open(startMode) {
+      var next = startMode || mode || 'text';
+      if (!root.hidden) { setMode(next); return; }
+      lastFocus = document.activeElement;
+      root.hidden = false;
+      requestAnimationFrame(function () { root.classList.add('is-open'); });
+      if (lenis) lenis.stop();
+      document.body.style.overflow = 'hidden';
+      var fresh = !log.childElementCount;
+      if (fresh && next !== 'voice') bubble('bot', OPENER);   // voice mode greets out loud instead
+      setMode(next);
+      if (fresh) seedChips();
+      setTimeout(function () { (mode === 'voice' ? orb : input).focus(); }, 380);
+    }
+
+    function close() {
+      if (root.hidden) return;
+      root.classList.remove('is-open');
+      if (TTS) TTS.cancel();
+      if (listening && rec) rec.stop();
+      runWave(false);
+      if (lenis) lenis.start();
+      document.body.style.overflow = '';
+      setTimeout(function () { root.hidden = true; }, 340);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('[data-chat-open]').forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(t.getAttribute('data-chat-open') || 'text');
+      });
+    });
+
+    root.querySelectorAll('[data-chat-close]').forEach(function (t) {
+      t.addEventListener('click', function () { close(); });
+    });
+
+    // close first, then scroll: Lenis is stopped while the panel owns the screen
+    root.querySelectorAll('[data-chat-goto]').forEach(function (t) {
+      t.addEventListener('click', function () { close(); goTo(t.getAttribute('data-chat-goto')); });
+    });
+
+    root.querySelectorAll('.chat__mode').forEach(function (m) {
+      m.addEventListener('click', function () { setMode(m.getAttribute('data-mode')); });
+    });
+
+    orb.addEventListener('click', startListening);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      send(input.value);
+      input.value = '';
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !root.hidden) close();
+    });
+
+    // keep tabbing inside the panel while it owns the screen
+    panel.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = panel.querySelectorAll('button, input, a[href]');
+      f = Array.prototype.filter.call(f, function (n) { return n.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
   }
 
   /* ══════════════════════════════════════════════════════════════════
@@ -891,8 +1264,8 @@
           var x = g.x0 + (col - col0 + 0.5) * g.step;
           var y = g.y0 + (row - row0 + 0.5) * g.step;
           var t = (col - col0) / cols;
-          var cr = 43 + t * 159, cg2 = 167 - t * 98;
-          ctx.fillStyle = 'rgba(' + (cr | 0) + ',' + (cg2 | 0) + ',255,0.30)';
+          var cr = 43 + t * 4, cg2 = 167 + t * 50, cb2 = 255 - t * 48;
+          ctx.fillStyle = 'rgba(' + (cr | 0) + ',' + (cg2 | 0) + ',' + (cb2 | 0) + ',0.30)';
           ctx.beginPath();
           ctx.arc(x, y, g.r, 0, Math.PI * 2);
           ctx.fill();
@@ -905,8 +1278,8 @@
         var R = (p.hq ? 5.5 : 3.6) + pulse * (p.hq ? 2.6 : 1.3);
 
         var halo = ctx.createRadialGradient(q.x, q.y, 0, q.x, q.y, R * 4);
-        halo.addColorStop(0, 'rgba(202,69,255,' + (0.34 + pulse * 0.26).toFixed(3) + ')');
-        halo.addColorStop(1, 'rgba(202,69,255,0)');
+        halo.addColorStop(0, 'rgba(47,217,207,' + (0.34 + pulse * 0.26).toFixed(3) + ')');
+        halo.addColorStop(1, 'rgba(47,217,207,0)');
         ctx.fillStyle = halo;
         ctx.beginPath(); ctx.arc(q.x, q.y, R * 4, 0, Math.PI * 2); ctx.fill();
 
@@ -923,6 +1296,125 @@
       });
     }
     requestAnimationFrame(frame);
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
+     12b. Why Alpha Squared — tabbed proof panel. The AI tab types an
+          agent trace line by line. Typing only runs while that tab is
+          open, so a hidden panel never leaves timers burning.
+     ══════════════════════════════════════════════════════════════════ */
+  function whyTabs() {
+    var tabs = [].slice.call(document.querySelectorAll('.whyus__tab'));
+    if (!tabs.length) return;
+
+    var views = [].slice.call(document.querySelectorAll('.whyview'));
+    var copies = [].slice.call(document.querySelectorAll('.whycopy'));
+    var feed = document.getElementById('aiFeed');
+    var replay = document.getElementById('aiReplay');
+
+    var TRACE = [
+      { k: 'meta',  b: '06:14',  t: 'inbound call · Alliance Driveaway' },
+      { k: 'user',  b: 'caller', t: 'Can you move the Calgary pickup to Thursday?' },
+      { k: 'tool',  b: '▸',      t: 'crm.lookup("Calgary pickup")', ok: 'load #4471' },
+      { k: 'tool',  b: '▸',      t: 'calendar.findSlot(Thu, 2 drivers)', ok: '10:00' },
+      { k: 'tool',  b: '▸',      t: 'crm.update(#4471 → Thu 10:00)', ok: 'saved' },
+      { k: 'agent', b: 'agent',  t: 'Moved to Thursday at 10. Both drivers notified.' }
+    ];
+
+    var timers = [];
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function clearTimers() {
+      timers.forEach(clearTimeout);
+      timers = [];
+    }
+
+    function lineEl(l) {
+      var row = document.createElement('div');
+      row.className = 'aicon__ln aicon__ln--' + l.k;
+      var b = document.createElement('b');
+      b.textContent = l.b;
+      row.appendChild(b);
+      row.appendChild(document.createElement('span'));
+      return row;
+    }
+
+    function markDone(row, l) {
+      row.classList.remove('is-typing');
+      if (!l.ok) return;
+      var ok = document.createElement('i');
+      ok.className = 'aicon__ok';
+      ok.textContent = '✓ ' + l.ok;
+      row.appendChild(ok);
+    }
+
+    function play(idx) {
+      if (idx >= TRACE.length) {
+        if (replay) replay.classList.add('is-ready');
+        return;
+      }
+      var l = TRACE[idx];
+      var row = lineEl(l);
+      row.classList.add('is-typing');
+      feed.appendChild(row);
+
+      var span = row.firstChild.nextSibling;
+      var i = 0;
+      (function step() {
+        span.textContent = l.t.slice(0, ++i);
+        if (i < l.t.length) { later(step, 16 + Math.random() * 24); return; }
+        markDone(row, l);
+        later(function () { play(idx + 1); }, 340);
+      })();
+    }
+
+    function runTrace() {
+      if (!feed) return;
+      clearTimers();
+      feed.textContent = '';
+      if (replay) replay.classList.remove('is-ready');
+
+      if (REDUCED) {
+        TRACE.forEach(function (l) {
+          var row = lineEl(l);
+          row.firstChild.nextSibling.textContent = l.t;
+          markDone(row, l);
+          feed.appendChild(row);
+        });
+        if (replay) replay.classList.add('is-ready');
+        return;
+      }
+      later(function () { play(0); }, 240);
+    }
+
+    function show(view) {
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-view') === view;
+        t.classList.toggle('is-on', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+      });
+      views.forEach(function (v) { v.classList.toggle('is-on', v.getAttribute('data-view') === view); });
+      copies.forEach(function (c) { c.classList.toggle('is-on', c.getAttribute('data-view') === view); });
+
+      if (view === 'ai') runTrace();
+      else clearTimers();
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(t.getAttribute('data-view')); });
+      t.addEventListener('keydown', function (e) {
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        var next = tabs[(i + d + tabs.length) % tabs.length];
+        next.focus();
+        show(next.getAttribute('data-view'));
+      });
+    });
+
+    if (replay) replay.addEventListener('click', runTrace);
+
+    show('map');
   }
 
   /* ══════════════════════════════════════════════════════════════════
@@ -968,7 +1460,7 @@
         var rr = R * (1.06 + phase * 0.9);
         var ra = (1 - phase) * 0.5 * lv;
         if (ra <= 0.004) continue;
-        ctx.strokeStyle = 'rgba(202,69,255,' + ra.toFixed(3) + ')';
+        ctx.strokeStyle = 'rgba(47,217,207,' + ra.toFixed(3) + ')';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.arc(cx, cy, rr, 0, Math.PI * 2);
@@ -978,7 +1470,7 @@
       // rim ring in the brand gradient
       var rim = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
       rim.addColorStop(0, '#2ba7ff');
-      rim.addColorStop(.5, '#ca45ff');
+      rim.addColorStop(.5, '#2fd9cf');
       rim.addColorStop(1, '#fe881b');
       ctx.strokeStyle = rim;
       ctx.lineWidth = 2 + lv * 1.6;
@@ -997,12 +1489,12 @@
         var a = 0.06 + depth * 0.5;
 
         if (p.hi) {
-          ctx.fillStyle = 'rgba(172,36,255,' + (a * 1.4).toFixed(3) + ')';
+          ctx.fillStyle = 'rgba(47,217,207,' + (a * 1.4).toFixed(3) + ')';
           ctx.beginPath();
           ctx.arc(sx, sy, 2.2 + depth * 1.4, 0, Math.PI * 2);
           ctx.fill();
         } else {
-          ctx.fillStyle = 'rgba(110,90,190,' + a.toFixed(3) + ')';
+          ctx.fillStyle = 'rgba(96,150,165,' + a.toFixed(3) + ')';
           ctx.beginPath();
           ctx.arc(sx, sy, 0.9 + depth * 0.9, 0, Math.PI * 2);
           ctx.fill();
@@ -1048,13 +1540,13 @@
 
       var g = ctx.createConicGradient ? ctx.createConicGradient(0, 0, 0) : null;
       if (g) {
-        g.addColorStop(0, 'rgba(172,36,255,.42)');
-        g.addColorStop(.16, 'rgba(120,60,255,.06)');
-        g.addColorStop(.2, 'rgba(172,36,255,0)');
-        g.addColorStop(1, 'rgba(172,36,255,0)');
+        g.addColorStop(0, 'rgba(18,184,176,.42)');
+        g.addColorStop(.16, 'rgba(40,140,180,.06)');
+        g.addColorStop(.2, 'rgba(18,184,176,0)');
+        g.addColorStop(1, 'rgba(18,184,176,0)');
         ctx.fillStyle = g;
       } else {
-        ctx.fillStyle = 'rgba(172,36,255,.18)';
+        ctx.fillStyle = 'rgba(18,184,176,.18)';
       }
       ctx.beginPath();
       ctx.moveTo(0, 0);
@@ -1103,54 +1595,64 @@
   }
 
   /* ══════════════════════════════════════════════════════════════════
-     15. Thread wave — stacked sine paths that draw in on scroll.
-         This is the reference's flowing-lines block.
+     15. Bot dock — the launcher introduces itself once per session, then
+         gets out of the way. Cycles a few openers so it reads like the
+         assistant is nudging you, not like a static badge.
      ══════════════════════════════════════════════════════════════════ */
-  function threadWave() {
-    var host = document.getElementById('waveHost');
-    if (!host) return;
+  function botDock() {
+    var dock = document.getElementById('botDock');
+    var hint = document.getElementById('botHint');
+    if (!dock || !hint) return;
 
-    var W = 1200, H = 260, LINES = 46;
-    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true">';
-    svg += '<defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="0">' +
-           '<stop offset="0%" stop-color="#1c4eff"/>' +
-           '<stop offset="46%" stop-color="#ac24ff"/>' +
-           '<stop offset="100%" stop-color="#fe881b"/>' +
-           '</linearGradient></defs>';
+    var SEEN = 'a2-bot-hint';
+    var title = hint.querySelector('b');
+    var sub = hint.querySelector('em');
+    var closer = document.getElementById('botHintX');
+    var fab = dock.querySelector('.botfab');
 
-    for (var i = 0; i < LINES; i++) {
-      var k = i / (LINES - 1);
-      var amp = 26 + k * 30;
-      var base = 40 + k * 150;
-      var d = 'M0 ' + base;
-      for (var x = 0; x <= W; x += 24) {
-        var y = base
-              + Math.sin((x / W) * Math.PI * 2.4 + k * 1.5) * amp
-              + Math.sin((x / W) * Math.PI * 5.1 + k * 2.6) * amp * 0.3;
-        d += ' L' + x + ' ' + y.toFixed(1);
-      }
-      svg += '<path d="' + d + '" fill="none" stroke="url(#wg)" stroke-width="1" ' +
-             'opacity="' + (0.26 + k * 0.5).toFixed(2) + '"/>';
+    var LINES = [
+      ['Ask me anything', 'Pricing, timelines, or book a call'],
+      ['Still reading?', 'Ask what a build like yours costs'],
+      ['Say "book a call"', 'I will hand you the calendar']
+    ];
+
+    var idx = 0, rotate = null, hide = null;
+
+    function stop() {
+      clearTimeout(hide);
+      clearInterval(rotate);
+      dock.classList.remove('is-hinting');
     }
-    svg += '</svg>';
-    host.innerHTML = svg;
 
-    if (!hasGSAP || REDUCED) return;
+    function dismiss() {
+      stop();
+      try { sessionStorage.setItem(SEEN, '1'); } catch (e) { /* private mode */ }
+    }
 
-    var paths = host.querySelectorAll('path');
-    paths.forEach(function (p) {
-      var len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = len;
+    function show() {
+      dock.classList.add('is-hinting');
+      hide = setTimeout(dismiss, 11000);
+      if (REDUCED) return;
+      rotate = setInterval(function () {
+        idx = (idx + 1) % LINES.length;
+        title.textContent = LINES[idx][0];
+        sub.textContent = LINES[idx][1];
+      }, 3800);
+    }
+
+    if (closer) closer.addEventListener('click', dismiss);
+    if (fab) fab.addEventListener('click', dismiss);
+    hint.addEventListener('click', function (e) {
+      if (closer && closer.contains(e.target)) return;
+      dismiss();
+      if (fab) fab.click();
     });
 
-    gsap.to(paths, {
-      strokeDashoffset: 0,
-      duration: 1.5,
-      ease: 'power2.out',
-      stagger: 0.014,
-      scrollTrigger: { trigger: host, start: 'top 85%', once: true }
-    });
+    try {
+      if (sessionStorage.getItem(SEEN)) return;
+    } catch (e) { /* private mode — just show it */ }
+
+    setTimeout(show, 5200);
   }
 
   /* ══════════════════════════════════════════════════════════════════
@@ -1177,15 +1679,18 @@
     safely('rails', rails);
     safely('parallax', parallax);
     safely('cardGlow', cardGlow);
+    safely('shotFallback', shotFallback);
     safely('accordion', accordion);
-    safely('threadWave', threadWave);
 
     safely('heroViz', heroViz);
     safely('proofViz', proofViz);
     safely('globeViz', globeViz);
     safely('naViz', naViz);
+    safely('whyTabs', whyTabs);
     safely('agentWave', agentWave);
     safely('agentLine', agentLine);
+    safely('chatBot', chatBot);
+    safely('botDock', botDock);
     safely('radarViz', radarViz);
 
     // The loader is last but must run no matter what came before it,

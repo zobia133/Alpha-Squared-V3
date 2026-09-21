@@ -26,10 +26,10 @@ All libraries load from CDN. No API keys, no accounts.
 
 Sampled directly off the live reference:
 
-- Dark base `#13101c`; deep footer `#0c0913`; light-sheet headings `#1a0b54`
-- Button gradient `#1c4eff → #ac24ff → #fe881b`
-- Dark-section text gradient `#2ba7ff → #ca45ff → #fe881b`
-- Light-sheet text gradient `#a31bff → #1b4dfe → #6d6cff` (purple→blue, per the reference)
+- Dark base `#101418`; deep footer `#090c0f`; light-sheet headings `#0d2b38`
+- Button gradient `#1c4eff → #12b8b0 → #fe881b`
+- Dark-section text gradient `#2ba7ff → #2fd9cf → #fe881b`
+- Light-sheet text gradient `#0f9e97 → #1b4dfe → #6d6cff` (teal→blue)
 - Headings weight **500**, letter-spacing `-0.03em`, line-height `1.1`
 - Buttons: 10px radius, 1px gradient ring around a solid gradient core, fill slides
   toward orange on hover
@@ -51,7 +51,6 @@ built from scratch in canvas/SVG, themed to trucking rather than data centres:
 | `proofViz` | dispatch-board abstraction — job bars flowing across lanes |
 | `globeViz` | fibonacci-sphere wireframe globe with a gradient rim |
 | `radarViz` | radar sweep with blips that brighten as the sweep passes |
-| `waveHost` | 46 stacked sine paths, stroke-dash drawn in on scroll |
 
 The hero arc is CSS: a conic gradient masked to a thin rim band, on a circle whose
 geometry was measured off the reference (centre `(50%, 767px)`, rim radius `917px` at
@@ -154,10 +153,10 @@ leaders (measured off their live sites, 2026-07-28):
 
 | | Truckbase | Motive | **Direction A** | **Direction B** |
 |---|---|---|---|---|
-| Background | White | White | Dark plum `#13101c` | White / steel |
-| Ink | Navy `#001A46` | Near-black | White on plum | Near-black navy `#0b1220` |
+| Background | White | White | Dark slate `#101418` | White / steel |
+| Ink | Navy `#001A46` | Near-black | White on slate | Near-black navy `#0b1220` |
 | Heading weight | 700 | 500 | 500 | **700** |
-| Accent | Blue + coral | Almost none | Blue→purple→orange gradient | Trust blue + high-vis amber |
+| Accent | Blue + coral | Almost none | Blue→teal→orange gradient | Trust blue + high-vis amber |
 | Radii | 4–10px | tight | 10–44px | 5–8px |
 | Media | 257 images | 34 images + 11 video | generated canvas | product UI mock |
 
