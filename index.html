@@ -48,7 +48,7 @@
 <main>
 
 <!-- ═══════════════════════ HERO ═══════════════════════ -->
-<!-- Hero and logo wall are ONE section on one background — the arc and bloom
+<!-- Hero and logo wall are ONE section on one background: the arc and bloom
      span the whole thing. Splitting them made the hero read lighter than the
      row below it, because the bloom got compressed into the short text block. -->
 <section class="hero">
@@ -82,7 +82,7 @@
        as a wordmark behind it: if the file is missing the <img> removes itself
        and the name shows instead, so the row never renders as broken icons.
        Real brand colour on the page background, not the old flattened-to-white
-       treatment — several of these files were originally white-only cutouts and
+       treatment: several of these files were originally white-only cutouts and
        had to be swapped for genuinely coloured source art: levi-strauss.png,
        alliance-driveaway.png, att.svg, cocacola.svg and adnoc.png.
        Arcus Power is withheld: naming rights unresolved since 3 July, see the
@@ -100,7 +100,7 @@
       <span class="logo"><img src="assets/logos/cocacola.svg" alt="Coca-Cola" loading="lazy" onerror="this.remove()" /><i>Coca-Cola</i></span>
       <span class="logo"><img src="assets/logos/att.svg" alt="AT&amp;T" loading="lazy" onerror="this.remove()" /><i>AT&amp;T</i></span>
       <span class="logo logo--tall"><img src="assets/logos/adnoc.png" alt="ADNOC" loading="lazy" onerror="this.remove()" /><i>ADNOC</i></span>
-      <!-- second copy — the track translates -50%, so the loop needs an exact duplicate -->
+      <!-- second copy: the track translates -50%, so the loop needs an exact duplicate -->
       <span class="logo logo--knockout" aria-hidden="true"><img src="assets/logos/salesforce.svg" alt="" loading="lazy" onerror="this.remove()" /><i>Salesforce</i></span>
       <span class="logo" aria-hidden="true"><img src="assets/logos/levi-strauss.png" alt="" loading="lazy" onerror="this.remove()" /><i>Levi Strauss &amp; Co.</i></span>
       <span class="logo" aria-hidden="true"><img src="assets/logos/honeywell.svg" alt="" loading="lazy" onerror="this.remove()" /><i>Honeywell</i></span>
@@ -164,7 +164,7 @@
       </div>
 
       <div class="whyus__viz" data-anim="fade">
-        <!-- North America, city-level — Edmonton is the hq marker -->
+        <!-- North America, city-level: Edmonton is the hq marker -->
         <div class="whyview is-on" id="whyViewMap" role="tabpanel" aria-labelledby="whyTabMap" data-view="map">
           <canvas id="naViz"></canvas>
         </div>
@@ -391,6 +391,9 @@
   </section>
 
   <!-- ── CASE STUDIES ── -->
+  <!-- Six cards, two rows of three. Deliberately short: one line of positioning,
+       two sentences of context, three outcomes. The long-form version lives on
+       case-studies.html. This row exists to make someone click through. -->
   <section class="section section--tight" id="work">
     <div class="wrap">
       <div class="head head--center">
@@ -404,79 +407,106 @@
             <img src="assets/work/alliance.jpg" alt="Alliance Driveaway dispatch dashboard and driver app shown side by side" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
-            <span class="cs__tag">Trucking &amp; Transport · Alliance Driveaway Solutions</span>
+            <span class="cs__tag">Trucking &amp; Transport · Alliance Driveaway</span>
             <p class="cs__metric">Dispatch software for when the truck is the freight.</p>
-            <h4>Problem</h4>
-            <p>A distributed network of contractor drivers, one-way jobs spread across a continent, and no software on the market built for an operation where the vehicle being moved is the freight itself. Dispatch ran on phone calls, spreadsheets and email threads that drifted out of sync the moment a job changed hands.</p>
-            <h4>Solution</h4>
-            <ul class="cs__list">
-              <li>A live dispatch dashboard &mdash; job creation to delivery in one view</li>
-              <li>Native iOS and Android driver apps, offline-tolerant</li>
-              <li>Photo, GPS and signature chain-of-custody on every handoff</li>
-              <li>Deep QuickBooks sync &mdash; load to invoice with no retyping</li>
-            </ul>
-            <h4>Result</h4>
+            <p>A dispatch board, native driver apps and QuickBooks sync for a North American
+              Class 6/7/8 relocation network that was running on phone calls and spreadsheets.</p>
             <ul class="cs__list cs__list--res">
               <li>350+ screened CDL drivers dispatched</li>
               <li>48 US states and Canada</li>
-              <li>Class 6, 7 and 8 equipment</li>
-              <li>Live truck tracking currently in build</li>
+              <li>Load to invoice with no retyping</li>
             </ul>
             <a class="cs__more" href="case-studies.html#alliance">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(58,110,255,.42)" data-anim="up" data-delay="0.08">
-          <div class="cs__shot">
-            <img src="assets/work/ai-front-desk.jpg" alt="Alpha Squared AI Front Desk voice agent concept cover image" loading="lazy" decoding="async" />
-          </div>
-          <div class="cs__body">
-            <span class="cs__tag">AI in Production · AI Front Desk</span>
-            <p class="cs__metric">A receptionist that never sleeps, never forgets, never takes a message wrong.</p>
-            <h4>Problem</h4>
-            <p>Staffing a front desk for round-the-clock coverage is expensive and inconsistent, and every missed call is a booking that went to a competitor instead. The client needed calls answered instantly, at any hour, without hiring for it.</p>
-            <h4>Solution</h4>
-            <ul class="cs__list">
-              <li>A voice agent that understands caller intent in real time</li>
-              <li>Live availability checks before offering a time slot</li>
-              <li>Appointment booking with zero human handoff</li>
-              <li>Every call logged straight into HubSpot CRM</li>
-            </ul>
-            <h4>Result</h4>
-            <ul class="cs__list cs__list--res">
-              <li>Answering real inbound calls, 24 hours a day</li>
-              <li>No manual data entry after a booked call</li>
-              <li>No human required in the loop</li>
-              <li>One of several AI systems we run in production today</li>
-            </ul>
-            <a class="cs__more" href="case-studies.html#futurespark">Read the case study <i class="ar">→</i></a>
-          </div>
-        </article>
-
-        <article class="cs" style="--csGlow:rgba(20,195,186,.42)" data-anim="up" data-delay="0.16">
+        <article class="cs" style="--csGlow:rgba(20,195,186,.42)" data-anim="up" data-delay="0.08">
           <div class="cs__shot">
             <img src="assets/work/fluidsdata.jpg" alt="FluidsData analytics dashboard showing drilling fluids charts and data tables" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
             <span class="cs__tag">Energy &amp; Industrial · FluidsData</span>
             <p class="cs__metric">Drilling fluids data that answers back.</p>
-            <h4>Problem</h4>
-            <p>Field and lab data for fluids engineering arrives messy, siloed and slow to interpret &mdash; the kind of raw technical data that usually means someone spends hours in spreadsheets before a decision gets made, on wells where that delay has a real cost.</p>
-            <h4>Solution</h4>
-            <ul class="cs__list">
-              <li>Structured dashboards over raw drilling-fluids data</li>
-              <li>Exploratory analysis tooling for fluids engineers</li>
-              <li>A Fluids Intelligence layer combining domain models with AI</li>
-              <li>An agentic assistant for predictive guidance, not just charts</li>
-            </ul>
-            <h4>Result</h4>
+            <p>Structured dashboards and exploratory analysis over raw drilling-fluids data,
+              with an agentic assistant layered on top for predictive guidance.</p>
             <ul class="cs__list cs__list--res">
               <li>In active use by teams at Chevron</li>
-              <li>In active use by teams at ExxonMobil</li>
-              <li>In active use by teams at ADNOC</li>
-              <li>Built and maintained for a high bar on data trust</li>
+              <li>ExxonMobil and ADNOC running on it too</li>
+              <li>Built for a high bar on data trust</li>
             </ul>
             <a class="cs__more" href="case-studies.html#fluidsdata">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(58,110,255,.42)" data-anim="up" data-delay="0.16">
+          <div class="cs__shot">
+            <img src="assets/work/ai-front-desk.jpg" alt="Alpha Squared AI Front Desk voice agent concept cover image" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">AI in Production · AI Front Desk</span>
+            <p class="cs__metric">A receptionist that never sleeps.</p>
+            <p>An autonomous voice agent that reads caller intent, checks live availability,
+              books the appointment and writes the record into HubSpot.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Answering real inbound calls, 24 hours a day</li>
+              <li>No manual data entry after a booked call</li>
+              <li>No human required in the loop</li>
+            </ul>
+            <a class="cs__more" href="case-studies.html#futurespark">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(255,138,36,.42)" data-anim="up">
+          <div class="cs__shot">
+            <img src="assets/work/whoifollow.jpg" alt="Who I Follow sports platform showing tournament brackets and team schedules" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Sports Tech · Who I Follow</span>
+            <p class="cs__metric">Run a 200-team tournament without a binder.</p>
+            <p>League and event management for softball associations: pool play, brackets,
+              umpire assignment and live scoring straight from the field.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Tournaments with hundreds of teams</li>
+              <li>Rain delays reschedule in the system</li>
+              <li>Web platform plus native iOS and Android</li>
+            </ul>
+            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(58,110,255,.42)" data-anim="up" data-delay="0.08">
+          <div class="cs__shot">
+            <img src="assets/CaseStudies/25-coca-cola-internal-messaging.jpg" alt="Coca-Cola internal messaging and org hierarchy application interface" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Enterprise · Coca-Cola</span>
+            <p class="cs__metric">Feedback that reaches the right level of the org chart.</p>
+            <p>An internal messaging and feedback platform where the hard part was not chat,
+              it was routing a message correctly through a structure spanning thousands of people.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Messaging built on the real reporting hierarchy</li>
+              <li>Feedback lands with someone who can act on it</li>
+              <li>Access control applied per level</li>
+            </ul>
+            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(20,195,186,.42)" data-anim="up" data-delay="0.16">
+          <div class="cs__shot">
+            <img src="assets/CaseStudies/50-safe-city-lahore-projects.jpg" alt="Safe City Lahore public safety systems including data exchange and digital forensics interfaces" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">GovTech · Safe City Program</span>
+            <p class="cs__metric">Three systems where downtime is a public safety event.</p>
+            <p>Data Exchange, Digital Forensic Centre and Media Monitoring Control, built to
+              government requirements on availability, access control and chain of custody.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Inter-agency data sharing through one interface</li>
+              <li>Chain of custody enforced in software</li>
+              <li>Role-based access across all three systems</li>
+            </ul>
+            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
       </div>
@@ -652,7 +682,7 @@
 
   <!-- ── FINAL CTA ── -->
   <!-- Two ways in: write to us, or take a slot directly. The form posts to
-       Netlify Forms (the site already deploys there), so it needs no backend —
+       Netlify Forms (the site already deploys there), so it needs no backend,
        submissions land under the site's Forms tab. -->
   <section class="final" id="contact">
     <div class="wrap">
@@ -785,7 +815,7 @@
 
 <!-- ═══════════════════════ AI CHAT ═══════════════════════ -->
 <!-- Opened from the "Voice agent" pill in the AI block. Same assistant, two
-     ways in: type, or hold a conversation out loud — speech recognition in,
+     ways in: type, or hold a conversation out loud: speech recognition in,
      speech synthesis out, both degrading to plain text where unsupported. -->
 <div class="chat" id="a2chat" hidden>
   <div class="chat__scrim" data-chat-close></div>
@@ -813,7 +843,7 @@
 
     <div class="chat__chips" id="chatChips"></div>
 
-    <!-- voice console — replaces the text composer while in voice mode -->
+    <!-- voice console: replaces the text composer while in voice mode -->
     <div class="chat__voice" id="chatVoice" hidden>
       <button type="button" class="chat__orb" id="chatOrb" aria-label="Start talking">
         <span class="chat__orb-ring" aria-hidden="true"></span>
@@ -835,7 +865,7 @@
   </section>
 </div>
 
-<!-- Floating launcher — same assistant as the "Voice agent" pill. The bubble
+<!-- Floating launcher: same assistant as the "Voice agent" pill. The bubble
      pops itself once per session so the bot introduces itself instead of
      waiting to be found. -->
 <div class="botdock" id="botDock">
@@ -860,13 +890,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-<!-- Cal.com embed — the booking calendar in the Let's talk section. Same
+<!-- Cal.com embed: the booking calendar in the Let's talk section. Same
      account and loader as builds/abdullah-personal-site. -->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
   Cal("init", { origin: "https://cal.com" });
   Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
-  // hideEventTypeDetails drops Cal's own avatar/title/duration column — the card
+  // hideEventTypeDetails drops Cal's own avatar/title/duration column. The card
   // above already says all of it, and keeping both wasted ~240px of height.
   Cal("ui", { styles: { branding: { brandColor: "#12b8b0" } }, hideEventTypeDetails: true, layout: "month_view" });
 </script>

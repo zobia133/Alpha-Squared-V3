@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Automation &amp; AI Services for Operations Teams | Alpha Squared</title>
+<meta name="description" content="We automate the manual steps your team repeats every day: voice agents that answer calls, OCR that reads documents, and dispatch platforms that stop the retyping. Running in production since 2012." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<!-- ═══════════════════════ LOADER ═══════════════════════ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html" class="is-active">Services</a>
+      <a href="case-studies-2.html">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__pills" data-anim="fade">
+      <span class="hero__pill">Automation</span>
+      <span class="hero__pill">AI agents</span>
+      <span class="hero__pill">Integrations</span>
+    </div>
+
+    <h1 class="d1" data-split="lines">Routine work,<br /><span class="grad">handled by software.</span></h1>
+
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">
+      Voice agents, document OCR, workflow automation and the integrations that wire
+      them into the systems you already run, so the work happens without anyone chasing it.
+    </p>
+
+    <div class="cta-row" data-anim="fade" data-delay="0.65">
+      <a href="#contact" class="btn"><span>Book a 20-minute call <i class="ar">→</i></span></a>
+      <a href="#work" class="btn btn--ghost"><span>What we automate <i class="ar">→</i></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROOF ═══════════════════════ -->
+<!-- .ix and .met are the dark-tuned components from cases.css, so this band and
+     the process strip below stay above the white sheet, not inside it. -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix ix--proof" data-anim="up">
+      <p class="ix__label">Live in production</p>
+      <h2 class="ix__title">What it is doing right now.</h2>
+      <div class="ix-metrics" data-metrics>
+        <div class="met">
+          <div class="met__n" data-n="265" data-suffix="+">0+</div>
+          <p class="met__l">projects shipped since 2012</p>
+          <div class="met__bar"><i data-p="1.0"></i></div>
+        </div>
+        <div class="met">
+          <div class="met__n" data-n="350" data-suffix="+">0+</div>
+          <p class="met__l">drivers dispatched without a phone call</p>
+          <div class="met__bar"><i data-p="0.9"></i></div>
+        </div>
+        <div class="met">
+          <div class="met__n" data-n="24" data-suffix="/7">0/7</div>
+          <p class="met__l">inbound calls answered, no human in the loop</p>
+          <div class="met__bar"><i data-p="1.0"></i></div>
+        </div>
+        <div class="met">
+          <div class="met__n" data-n="0" data-suffix="">0</div>
+          <p class="met__l">spreadsheets left in the dispatch path</p>
+          <div class="met__bar"><i data-p="0.12"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ AI IN ACTION ═══════════════════════ -->
+<!-- Real transcript shape from the AI Front Desk build, so the automation
+     pitch is shown running rather than described. -->
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Scroll to play</p>
+      <h2 class="ix__title">An AI agent, mid-shift.</h2>
+
+      <div class="ai-demo">
+        <div class="ix-tr" data-transcript>
+          <div class="turn turn--system">Inbound call at 11:42pm. Answered on the first ring.</div>
+          <div class="turn turn--agent"><span class="turn__who">AI agent</span>Thanks for calling. How can I help you today?</div>
+          <div class="turn turn--caller"><span class="turn__who">Caller</span>Hi, I wanted to see if you have anything open on Thursday.</div>
+          <div class="turn turn--system">Intent detected: booking. Checking live availability.</div>
+          <div class="turn turn--agent"><span class="turn__who">AI agent</span>I have Thursday at 2:15 or 4:30. Which works better?</div>
+          <div class="turn turn--caller"><span class="turn__who">Caller</span>Let's do 2:15.</div>
+          <div class="turn turn--agent"><span class="turn__who">AI agent</span>Booked for Thursday at 2:15. You'll get a confirmation by text shortly.</div>
+          <div class="turn turn--system">Written to HubSpot. Call logged. No human handoff.</div>
+        </div>
+
+        <aside class="ai-demo__side">
+          <h4>What just happened</h4>
+          <ul class="ticks">
+            <li>Intent read from natural speech, no phone menu</li>
+            <li>Live calendar checked before a slot was offered</li>
+            <li>Booking confirmed and written to the CRM</li>
+            <li>Nobody on staff was awake for any of it</li>
+          </ul>
+          <div class="chips" style="margin-top:20px">
+            <span>VAPI</span><span>Twilio</span><span>ElevenLabs</span><span>HubSpot</span>
+          </div>
+          <a class="tlink" href="case-ai-front-desk.html" style="margin-top:22px;display:inline-block">Read the AI Front Desk build <i class="ar">→</i></a>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHITE SHEET ═══════════════════════ -->
+<div class="page-light">
+
+  <!-- ── SERVICES ── -->
+  <!-- Anchor ids stay #platforms #mobile #ai #design #teams #cloud: index2.html
+       and every generated case page deep-link straight into these cards. -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">What we build</span>
+        <h2 class="d2" data-split="lines">Everything we build,<br /><span class="grad">and where it runs.</span></h2>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:56px">
+        <a class="svc" id="ai" href="case-ai-front-desk.html" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
+          <h3>AI &amp; Automation</h3>
+          <p>Voice agents that answer, book and write to your CRM. OCR that reads a
+            crumpled receipt. Workflows that run themselves.</p>
+          <span class="tlink">A receptionist that never sleeps <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" id="platforms" href="case-alliance-driveaway.html" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
+          <h3>Operations Platforms</h3>
+          <p>Dispatch boards, portals and the APIs behind them, built around your
+            exceptions rather than a generic CRUD app with your logo on it.</p>
+          <span class="tlink">350+ drivers on one board <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" id="mobile" href="case-who-i-follow.html" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
+          <h3>Mobile Apps</h3>
+          <p>Native iOS and Android for people working offline, in a yard or on a field.
+            Data syncs when the signal comes back.</p>
+          <span class="tlink">Live scoring from the field <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" id="design" href="case-fluidsdata.html" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
+          <h3>Product &amp; UX Design</h3>
+          <p>Dense, technical software made legible. Our principal leads UX at Levi Strauss
+            and was Prebuild Design Lead on Salesforce's AT&amp;T OneCare build.</p>
+          <span class="tlink">Drilling data made readable <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" id="teams" href="case-foodies-express.html" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
+          <h3>Dedicated Teams</h3>
+          <p>A senior pod embedded with yours, assembled around your stack. Capacity
+            without a twelve-week hiring cycle.</p>
+          <span class="tlink">No discontinuities on their side <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" id="cloud" href="trust.html" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
+          <h3>Cloud, DevOps &amp; Support</h3>
+          <p>AWS, CI/CD and monitoring, with uptime and response times agreed in writing
+            before launch instead of after an incident.</p>
+          <span class="tlink">How we structure SLAs <i class="ar">→</i></span>
+        </a>
+      </div>
+
+      <div class="cta-row" style="justify-content:center;margin-top:48px">
+        <a href="case-studies-2.html" class="btn btn--ghost" data-anim="fade"><span>See all 48 case studies <i class="ar">→</i></span></a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-light -->
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<!-- Sits between the two light sheets so the dark .ix panel keeps its contrast. -->
+<section class="section">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Click a stage</p>
+      <h2 class="ix__title">From first call to live.</h2>
+
+      <div class="proc" data-tabs>
+        <div class="ix__tabs" role="tablist">
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st0"><span class="k">01</span>Audit</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st1"><span class="k">02</span>Design</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st2"><span class="k">03</span>Ship</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st3"><span class="k">04</span>Operate</button>
+        </div>
+
+        <div class="proc__body">
+          <div class="ix__panel" id="st0" role="tabpanel">
+            <span class="proc__n">01</span>
+            <h4>Audit</h4>
+            <p>Two weeks. We map the workflow as it actually runs and cost out the manual
+              hours. You get the integration plan as a document, yours to keep whether or
+              not you build with us.</p>
+            <ul class="proc__meta"><li>2 weeks</li><li>Paid</li><li>You keep the plan</li></ul>
+          </div>
+          <div class="ix__panel" id="st1" role="tabpanel">
+            <span class="proc__n">02</span>
+            <h4>Design</h4>
+            <p>A clickable prototype before a line of production code, so you approve the
+              shape of it while changing it is still cheap.</p>
+            <ul class="proc__meta"><li>Clickable prototype</li><li>Before any code</li></ul>
+          </div>
+          <div class="ix__panel" id="st2" role="tabpanel">
+            <span class="proc__n">03</span>
+            <h4>Ship</h4>
+            <p>Working software in front of you every week, running against your real data
+              and your real edge cases rather than a clean demo set.</p>
+            <ul class="proc__meta"><li>Weekly demo</li><li>Your real data</li></ul>
+          </div>
+          <div class="ix__panel" id="st3" role="tabpanel">
+            <span class="proc__n">04</span>
+            <h4>Operate</h4>
+            <p>Uptime and response times agreed in writing before go-live. Systems we built
+              years ago are still running, and we are still the ones answering for them.</p>
+            <ul class="proc__meta"><li>SLA in writing</li><li>Same team answering</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-light">
+
+  <!-- ── FINAL CTA ── -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines">Name one thing<br /><span class="grad">your team does twice.</span></h2>
+      <p class="lead" data-anim="fade">We'll tell you what automating it takes, and what it is costing you
+        to leave it alone. One conversation, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">→</i></span></a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-light -->
+
+</main>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform ↗</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

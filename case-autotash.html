@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Autotash, Marketplace (Automotive) Case Study | Alpha Squared</title>
+<meta name="description" content="Spare-parts marketplace for the KSA automotive industry: one structured request goes out to every matching supplier and quotes come back for comparison." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html" class="is-active">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <a class="cs-back" href="case-studies-2.html" data-anim="fade">&larr; All case studies</a>
+    <span class="badge" data-anim="fade">Marketplace (Automotive)</span>
+    <h1 class="d1" data-split="words">Autotash</h1>
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">One part request, every supplier in the kingdom bidding.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="cs-what" data-anim="fade">What it is</h2>
+    <p class="lead cs-lede" data-anim="fade">A spare-parts marketplace for the Saudi automotive industry. A buyer describes the part once and suppliers come back with quotes, which inverts a process that traditionally means calling twelve shops in sequence.</p>
+    <div class="chips cs-chips" data-anim="fade"><span>PHP / Laravel</span><span>Vue.js</span><span>Swift</span><span>Kotlin</span></div>
+    <figure class="shot cs-hero__shot" data-label="Autotash automotive spare parts marketplace showing quote requests from suppliers"><img src="assets/CaseStudies/29-autotash.jpg" alt="Autotash automotive spare parts marketplace showing quote requests from suppliers" loading="lazy" onerror="this.remove()" /></figure>
+    <div class="cs-cols" data-anim="up">
+      <div>
+        <h3>The problem</h3>
+        <p>Sourcing a specific automotive part meant phoning suppliers one at a time, describing the same vehicle and part repeatedly, and having no way to compare prices except memory. Suppliers, meanwhile, only heard about demand they happened to be phoned about.</p>
+      </div>
+      <div>
+        <h3>What we shipped</h3>
+        <ul class="ticks">
+          <li>Structured part requests by vehicle, year and component</li>
+          <li>Broadcast of a single request to matching suppliers</li>
+          <li>Quote comparison side by side for the buyer</li>
+          <li>Supplier dashboard for inbound requests and quote management</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where it stands today</h3>
+        <ul class="ticks">
+          <li>One request reaches every relevant supplier at once</li>
+          <li>Buyers compare quotes instead of remembering them</li>
+          <li>Suppliers see demand they would never have been called about</li>
+          <li>Built for the KSA automotive market</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Click a stage</p>
+      <h2 class="ix__title">Twelve phone calls, collapsed into one request.</h2>
+    <div data-tabs>
+      <div class="ix__tabs" role="tablist">
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp0"><span class="k">01</span>Describe</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp1"><span class="k">02</span>Broadcast</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp2"><span class="k">03</span>Quote</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp3"><span class="k">04</span>Compare</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp4"><span class="k">05</span>Order</button>
+      </div>
+      <div class="ix__panel" id="fp0" role="tabpanel">
+        <h4>Describe</h4>
+        <p>Vehicle, year and component are captured as structured fields, so suppliers are all quoting the same thing.</p>
+      </div>
+      <div class="ix__panel" id="fp1" role="tabpanel">
+        <h4>Broadcast</h4>
+        <p>The request goes out to every supplier who stocks that category, not just the ones the buyer knows to call.</p>
+      </div>
+      <div class="ix__panel" id="fp2" role="tabpanel">
+        <h4>Quote</h4>
+        <p>Suppliers respond with price and availability from their dashboard. Competing quotes arrive in parallel.</p>
+      </div>
+      <div class="ix__panel" id="fp3" role="tabpanel">
+        <h4>Compare</h4>
+        <p>The buyer sees quotes side by side, with supplier history attached. Price is not the only visible variable.</p>
+      </div>
+      <div class="ix__panel" id="fp4" role="tabpanel">
+        <h4>Order</h4>
+        <p>The buyer accepts a quote and the supplier gets a confirmed order rather than a maybe.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <nav class="cs-pager" aria-label="More case studies">
+      <a class="to-prev" href="case-app-blocker.html"><small>Previous</small><strong>App Blocker</strong></a>
+      <a class="to-all" href="case-studies-2.html"><strong>All 48 case studies</strong></a>
+      <a class="to-next" href="case-our-footprints.html"><small>Next</small><strong>Our Footprints</strong></a>
+    </nav>
+  </div>
+</section>
+
+<div class="page-light">
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

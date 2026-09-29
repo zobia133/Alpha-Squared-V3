@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Front Desk, AI in Production Case Study | Alpha Squared</title>
+<meta name="description" content="A voice agent answering real calls 24/7: intent, live availability, booking and CRM write-back with nobody on the other end." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html" class="is-active">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <a class="cs-back" href="case-studies-2.html" data-anim="fade">&larr; All case studies</a>
+    <span class="badge" data-anim="fade">AI in Production</span>
+    <h1 class="d1" data-split="words">AI Front Desk</h1>
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">A receptionist that never sleeps, never forgets, never takes a message wrong.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="cs-what" data-anim="fade">What it is</h2>
+    <p class="lead cs-lede" data-anim="fade">An autonomous voice agent that answers real inbound calls around the clock. It understands intent, checks live availability, books the appointment and writes the record into HubSpot. No human in the loop.</p>
+    <div class="chips cs-chips" data-anim="fade"><span>VAPI</span><span>Twilio</span><span>ElevenLabs</span><span>HubSpot CRM</span></div>
+    <figure class="shot cs-hero__shot" data-label="Alpha Squared AI Front Desk voice agent concept cover image"><img src="assets/work/ai-front-desk.jpg" alt="Alpha Squared AI Front Desk voice agent concept cover image" loading="lazy" onerror="this.remove()" /></figure>
+    <div class="cs-cols" data-anim="up">
+      <div>
+        <h3>The problem</h3>
+        <p>Staffing a front desk for round-the-clock coverage is expensive and inconsistent, and every missed call is a booking that went to a competitor instead. The client needed calls answered instantly, at any hour, without hiring for it.</p>
+      </div>
+      <div>
+        <h3>What we shipped</h3>
+        <ul class="ticks">
+          <li>A voice agent that understands caller intent in real time</li>
+          <li>Live availability checks before offering a time slot</li>
+          <li>Appointment booking with zero human handoff</li>
+          <li>Every call logged straight into HubSpot CRM</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where it stands today</h3>
+        <ul class="ticks">
+          <li>Answering real inbound calls, 24 hours a day</li>
+          <li>No manual data entry after a booked call</li>
+          <li>No human required in the loop</li>
+          <li>One of several AI systems we run in production today</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Play a call</p>
+      <h2 class="ix__title">A booking, start to finish, with nobody on the line.</h2>
+    <div class="ix-tr" data-transcript>
+      <div class="turn turn--system">Inbound call received. Agent answers on the first ring.</div>
+      <div class="turn turn--agent"><span class="turn__who">AI agent</span>Thanks for calling. How can I help you today?</div>
+      <div class="turn turn--caller"><span class="turn__who">Caller</span>Hi, I wanted to see if you have anything open on Thursday.</div>
+      <div class="turn turn--system">Intent detected: booking. Checking live availability.</div>
+      <div class="turn turn--agent"><span class="turn__who">AI agent</span>I have Thursday at 2:15 or 4:30. Which works better?</div>
+      <div class="turn turn--caller"><span class="turn__who">Caller</span>Let&#x27;s do 2:15.</div>
+      <div class="turn turn--agent"><span class="turn__who">AI agent</span>Booked for Thursday at 2:15. You&#x27;ll get a confirmation by text shortly.</div>
+      <div class="turn turn--system">Appointment written to HubSpot. Call logged. No human handoff.</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <nav class="cs-pager" aria-label="More case studies">
+      <a class="to-prev" href="case-fluidsdata.html"><small>Previous</small><strong>FluidsData</strong></a>
+      <a class="to-all" href="case-studies-2.html"><strong>All 48 case studies</strong></a>
+      <a class="to-next" href="case-oravia.html"><small>Next</small><strong>Oravia</strong></a>
+    </nav>
+  </div>
+</section>
+
+<div class="page-light">
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

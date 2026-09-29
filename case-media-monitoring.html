@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Media Monitoring, Enterprise / Media Tech Case Study | Alpha Squared</title>
+<meta name="description" content="Media monitoring dashboard tracking mentions across outlets, with normalization, relevance matching and alerting on new coverage." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html" class="is-active">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <a class="cs-back" href="case-studies-2.html" data-anim="fade">&larr; All case studies</a>
+    <span class="badge" data-anim="fade">Enterprise / Media Tech</span>
+    <h1 class="d1" data-split="words">Media Monitoring</h1>
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">Know you were mentioned before someone forwards you the clip.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="cs-what" data-anim="fade">What it is</h2>
+    <p class="lead cs-lede" data-anim="fade">A media monitoring dashboard that tracks mentions across outlets and surfaces them in one place. Built alongside our public safety work, where knowing what is being reported is an operational requirement rather than a PR nicety.</p>
+    <div class="chips cs-chips" data-anim="fade"><span>PHP</span><span>Data pipelines</span><span>MySQL</span><span>Dashboards</span></div>
+    <figure class="shot cs-hero__shot" data-label="Media monitoring dashboard tracking mentions across news outlets"><img src="assets/CaseStudies/45-media-monitoring.jpg" alt="Media monitoring dashboard tracking mentions across news outlets" loading="lazy" onerror="this.remove()" /></figure>
+    <div class="cs-cols" data-anim="up">
+      <div>
+        <h3>The problem</h3>
+        <p>Mentions are scattered across print, broadcast and online outlets, and the organizations that most need to know about them find out last, usually from someone forwarding a link hours after publication.</p>
+      </div>
+      <div>
+        <h3>What we shipped</h3>
+        <ul class="ticks">
+          <li>Mention tracking across multiple outlet types</li>
+          <li>A single dashboard aggregating all monitored sources</li>
+          <li>Filtering and search across captured coverage</li>
+          <li>Alerting on new coverage as it appears</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where it stands today</h3>
+        <ul class="ticks">
+          <li>Coverage arrives in one dashboard instead of several inboxes</li>
+          <li>Search works across the historical archive, not just today</li>
+          <li>Built as part of the Safe City systems family</li>
+          <li>Deployed in a government and enterprise context</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Hover a layer</p>
+      <h2 class="ix__title">From scattered outlets to one dashboard.</h2>
+    <div class="ix-stack">
+      <div class="lay" tabindex="0">
+        <h4>Collect</h4>
+        <p>Print, broadcast and online sources are ingested continuously rather than checked periodically.</p>
+        <div class="lay__tags"><span>Feeds</span><span>Scrapers</span></div>
+      </div>
+      <div class="lay" tabindex="0">
+        <h4>Normalize</h4>
+        <p>Different outlet formats become one comparable record, which is what makes search across them possible.</p>
+        <div class="lay__tags"><span>Parsing</span><span>MySQL</span></div>
+      </div>
+      <div class="lay" tabindex="0">
+        <h4>Detect</h4>
+        <p>Mentions are matched against monitored terms and entities, then scored for relevance.</p>
+        <div class="lay__tags"><span>Matching</span><span>Relevance</span></div>
+      </div>
+      <div class="lay" tabindex="0">
+        <h4>Alert</h4>
+        <p>New coverage pushes out immediately. The point of the system is the gap between publication and awareness.</p>
+        <div class="lay__tags"><span>Alerts</span><span>Dashboard</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <nav class="cs-pager" aria-label="More case studies">
+      <a class="to-prev" href="case-fyda.html"><small>Previous</small><strong>Fyda</strong></a>
+      <a class="to-all" href="case-studies-2.html"><strong>All 48 case studies</strong></a>
+      <a class="to-next" href="case-club-teams.html"><small>Next</small><strong>Club Teams</strong></a>
+    </nav>
+  </div>
+</section>
+
+<div class="page-light">
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* ==========================================================================
+   Alpha Squared — "New A2 Design System" theme
+   Loaded AFTER style.css. Overrides tokens only; layout/structure untouched,
+   so index.html keeps the original blue/teal/orange system and index2.html
+   gets the navy + blue + gold one.
+
+   Rules carried over from the design system:
+     - navy-black canvas, never pure #000
+     - blue is the system colour; gold is reserved for exactly two uses
+       (.gold-text gradient text, .gold-mark solid mark) plus the .hl underline
+     - display headings are serif at <=600 weight
+   ========================================================================== */
+
+:root {
+  /* --- blue family (the system colour) --- */
+  --blue:        #1c4eff;
+  --blue-lt:     #2ba7ff;
+  --blue-sky:    #22b2fb;
+  --blue-deep:   #15328f;
+
+  /* --- gold family (accent only) --- */
+  --gold:        #f5a524;
+  --gold-lt:     #ffc65a;
+  --gold-deep:   #c9820f;
+  --gold-text:   linear-gradient(90deg, #ffc65a, #f5a524 55%, #fe881b);
+
+  /* style.css reaches for --teal / --orange in a lot of places; remap them
+     onto the new palette rather than chase every call site */
+  --teal:        #22b2fb;
+  --teal-lt:     #6ecdff;
+  --orange:      #f5a524;
+
+  --grad-btn:    linear-gradient(90deg, #15328f 0%, #1c4eff 48%, #22b2fb 100%);
+  --grad-text:   linear-gradient(90deg, #2ba7ff 0%, #22b2fb 42%, #ffc65a 100%);
+  --grad-ink:    linear-gradient(90deg, #15328f 0%, #1c4eff 68%, #22b2fb 100%);
+
+  /* --- dark surfaces: navy-black, never pure black --- */
+  --bg:          #0b1220;
+  --bg-deep:     #070a0f;
+  --panel:       #0f1728;
+  --panel-2:     #14203a;
+  --panel-glass: rgba(255, 255, 255, .04);
+  --hair:        rgba(255, 255, 255, .09);
+  --hair-strong: rgba(255, 255, 255, .18);
+  --hair-soft:   rgba(255, 255, 255, .055);
+
+  --glow: radial-gradient(ellipse 58% 72% at 16% 28%,
+            rgba(28, 78, 255, .62), rgba(17, 41, 90, .55) 42%, transparent 72%);
+
+  /* --- light surfaces --- */
+  --sheet:       #ffffff;
+  --sheet-soft:  #f5f7fb;
+  --sheet-hair:  rgba(11, 18, 32, .10);
+
+  /* --- text --- */
+  --ink:         #0b1220;
+  --ink-2:       #3d4a5f;
+  /* smallest text on white — held darker than --text-faint, which failed AA */
+  --ink-3:       #5b6a80;
+  --on-dark:     #ffffff;
+  --on-dark-2:   #a9b6cb;
+  --on-dark-3:   #6d7c93;
+
+  --font-serif:  'Fraunces', 'Iowan Old Style', Palatino, 'Times New Roman', serif;
+}
+
+::selection { background: rgba(34, 178, 251, .32); color: #fff; }
+
+/* --------------------------------------------------------------------------
+   The light — one glow per dark surface, never a flat fill
+   -------------------------------------------------------------------------- */
+body {
+  background:
+    var(--glow),
+    linear-gradient(160deg, #0e1a33, var(--bg) 55%, var(--bg-deep));
+  background-attachment: fixed;
+}
+
+/* the light sheet keeps a whisper of the same glow instead of pure white.
+   Sections inside are already position:relative, so they paint over this. */
+.page-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse 55% 45% at 8% 4%, rgba(28, 78, 255, .07), transparent 60%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Display type — serif, <=600 weight, on both dark and light
+   -------------------------------------------------------------------------- */
+.d1, .d2, .d3, .loader__name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Sanctioned gold uses
+   -------------------------------------------------------------------------- */
+.gold-text {
+  background: var(--gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gold-mark { background: var(--gold); }
+
+/* highlighter underline — sits behind the bottom third of the text */
+.hl {
+  background: linear-gradient(to bottom, transparent 62%, rgba(245, 165, 36, .32) 0);
+  padding: 0 .06em;
+}
+
+/* --------------------------------------------------------------------------
+   Targeted repaints — spots where style.css hard-codes the old hexes
+   -------------------------------------------------------------------------- */
+.loader__ring {
+  background: conic-gradient(from 0deg, #15328f, #1c4eff, #22b2fb, #ffc65a, #15328f);
+}
+.brand__mark {
+  background: conic-gradient(from 210deg, #15328f, #1c4eff, #22b2fb, #ffc65a, #15328f);
+}
+
+.hero__arc {
+  background: conic-gradient(from 0deg at 50% 50%,
+      #ffc65a   0deg,
+      #f5a524  30deg,
+      #22b2fb  62deg,
+      #2ba7ff 112deg,
+      #1c4eff 180deg,
+      #2ba7ff 248deg,
+      #22b2fb 298deg,
+      #f5a524 330deg,
+      #ffc65a 360deg);
+}
+
+.hero__bloom {
+  background:
+    radial-gradient(ellipse 34% 34% at 50% 78%, rgba(34, 178, 251, .26), transparent 70%),
+    radial-gradient(ellipse 70% 44% at 50% 100%, rgba(28, 78, 255, .38), transparent 72%);
+}
+
+.riser::before {
+  background:
+    radial-gradient(ellipse 22% 46% at 50% 72%, rgba(245, 165, 36, .40), transparent 64%),
+    radial-gradient(ellipse 40% 58% at 50% 82%, rgba(34, 178, 251, .44), transparent 68%),
+    radial-gradient(ellipse 72% 56% at 50% 94%, rgba(28, 78, 255, .34), transparent 72%);
+}
+
+.card {
+  background: linear-gradient(170deg, rgba(22, 36, 66, .82), rgba(12, 20, 38, .88));
+}
+.card::after {
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%),
+              rgba(34, 178, 251, .16), transparent 62%);
+}
+
+.cs {
+  background: linear-gradient(168deg, #14203a 0%, #0b1220 60%, #0d1729 100%);
+}
+
+.agent__copy .d2 .grad {
+  background: linear-gradient(92deg, #15328f 0%, #1c4eff 56%, #22b2fb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

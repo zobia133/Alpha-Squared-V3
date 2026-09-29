@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Repair Beat, SaaS / POS Case Study | Alpha Squared</title>
+<meta name="description" content="Cloud SaaS POS and operations platform for mobile and electronics repair shops. Multi-tenant ticketing, technician assignment, inventory and multi-location stock transfers." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html" class="is-active">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <a class="cs-back" href="case-studies-2.html" data-anim="fade">&larr; All case studies</a>
+    <span class="badge" data-anim="fade">SaaS / POS</span>
+    <h1 class="d1" data-split="words">Repair Beat</h1>
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">A repair shop&#x27;s entire day, from intake ticket to paid invoice.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="cs-what" data-anim="fade">What it is</h2>
+    <p class="lead cs-lede" data-anim="fade">A cloud-based POS and operations platform for mobile and electronics repair businesses. Multi-tenant from the first commit, because the product had to serve single-location shops and multi-location chains on the same codebase.</p>
+    <div class="chips cs-chips" data-anim="fade"><span>PHP / Laravel</span><span>Vue.js</span><span>MySQL</span><span>Stripe</span><span>PayPal</span></div>
+    <figure class="shot cs-hero__shot" data-label="Repair Beat point of sale and repair ticketing dashboard for electronics repair shops"><img src="assets/CaseStudies/06-repair-beat.jpg" alt="Repair Beat point of sale and repair ticketing dashboard for electronics repair shops" loading="lazy" onerror="this.remove()" /></figure>
+    <div class="cs-cols" data-anim="up">
+      <div>
+        <h3>The problem</h3>
+        <p>Repair shops were running intake on paper, inventory in a spreadsheet and payments through a card terminal that knew nothing about either. Parts went missing between locations and no owner could tell which technician or which repair type was actually profitable.</p>
+      </div>
+      <div>
+        <h3>What we shipped</h3>
+        <ul class="ticks">
+          <li>Repair ticketing from intake through technician assignment to pickup</li>
+          <li>Inventory tracking with multi-location stock transfers</li>
+          <li>Role-based access so a technician sees jobs and an owner sees margin</li>
+          <li>PayPal and Stripe payments, an embeddable lead-capture widget, and a built-in CMS</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where it stands today</h3>
+        <ul class="ticks">
+          <li>Multi-tenant architecture with a subscription admin panel</li>
+          <li>Comparable in scope to RepairDesk, built for a fraction of the incumbent&#x27;s price</li>
+          <li>Stock transfers between locations are tracked instead of assumed</li>
+          <li>Shops onboard themselves through the subscription flow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Click a stage</p>
+      <h2 class="ix__title">One ticket, start to finish.</h2>
+    <div data-tabs>
+      <div class="ix__tabs" role="tablist">
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp0"><span class="k">01</span>Intake</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp1"><span class="k">02</span>Assign</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp2"><span class="k">03</span>Parts</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp3"><span class="k">04</span>Repair</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="fp4"><span class="k">05</span>Pay</button>
+      </div>
+      <div class="ix__panel" id="fp0" role="tabpanel">
+        <h4>Intake</h4>
+        <p>Device, fault, customer and quoted price captured at the counter. The customer gets the ticket reference before they leave.</p>
+      </div>
+      <div class="ix__panel" id="fp1" role="tabpanel">
+        <h4>Assign</h4>
+        <p>The job routes to a technician by skill and current load, so the queue is visible instead of living in someone&#x27;s head.</p>
+      </div>
+      <div class="ix__panel" id="fp2" role="tabpanel">
+        <h4>Parts</h4>
+        <p>Parts consumed pull from local stock. If the branch is out, the transfer request goes to the location that has it.</p>
+      </div>
+      <div class="ix__panel" id="fp3" role="tabpanel">
+        <h4>Repair</h4>
+        <p>Status updates as the technician works. The counter can answer &#x27;is it ready&#x27; without walking to the bench.</p>
+      </div>
+      <div class="ix__panel" id="fp4" role="tabpanel">
+        <h4>Pay</h4>
+        <p>Invoice generated from the ticket, paid through Stripe or PayPal, margin recorded against the technician and the repair type.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="grid grid--2" data-anim="up">
+      <figure class="shot" data-label="Repair Beat inventory and sales analytics screens"><img src="assets/CaseStudies/41-repairbeat-erp.jpg" alt="Repair Beat inventory and sales analytics screens" loading="lazy" onerror="this.remove()" /></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <nav class="cs-pager" aria-label="More case studies">
+      <a class="to-prev" href="case-compo-plus-plus.html"><small>Previous</small><strong>Compo++</strong></a>
+      <a class="to-all" href="case-studies-2.html"><strong>All 48 case studies</strong></a>
+      <a class="to-next" href="case-foodstretcher-plus-ocr.html"><small>Next</small><strong>FoodStretcher Plus &amp; OCR</strong></a>
+    </nav>
+  </div>
+</section>
+
+<div class="page-light">
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

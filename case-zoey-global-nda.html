@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Zoey (Global NDA), Legal Tech Case Study | Alpha Squared</title>
+<meta name="description" content="eSignature and contract management platform: templates, signing, a structured document vault, and contract risk and stage tracking." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+<link rel="stylesheet" href="css/cases.css?v=20260928a" />
+</head>
+
+<body class="is-loading">
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html" class="is-active">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero hero--page">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <a class="cs-back" href="case-studies-2.html" data-anim="fade">&larr; All case studies</a>
+    <span class="badge" data-anim="fade">Legal Tech</span>
+    <h1 class="d1" data-split="words">Zoey (Global NDA)</h1>
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">Contracts you can sign, store and actually find again.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="cs-what" data-anim="fade">What it is</h2>
+    <p class="lead cs-lede" data-anim="fade">An eSignature and contract management platform. Signing is the easy part. The product is really about what happens to the document afterwards: where it lives, what stage it is at, and how much risk is sitting inside it.</p>
+    <div class="chips cs-chips" data-anim="fade"><span>PHP / Laravel</span><span>Vue.js</span><span>MySQL</span><span>AWS S3</span></div>
+    <figure class="shot cs-hero__shot" data-label="Zoey eSignature platform dashboard showing contract templates and status"><img src="assets/CaseStudies/12-zoey-global-nda-a.jpg" alt="Zoey eSignature platform dashboard showing contract templates and status" loading="lazy" onerror="this.remove()" /></figure>
+    <div class="cs-cols" data-anim="up">
+      <div>
+        <h3>The problem</h3>
+        <p>Signed contracts were ending up as PDF attachments in individual inboxes. Nobody could answer which agreements were expiring, which contained non-standard clauses, or which had been signed by someone without authority.</p>
+      </div>
+      <div>
+        <h3>What we shipped</h3>
+        <ul class="ticks">
+          <li>Template library so standard agreements stop being retyped</li>
+          <li>eSignature flow with a verifiable audit trail</li>
+          <li>A document vault with structured metadata instead of filenames</li>
+          <li>Contract risk and stage tracking across the portfolio</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Where it stands today</h3>
+        <ul class="ticks">
+          <li>Contract stage is a field, not a guess</li>
+          <li>Risk flags surface non-standard clauses before signature, not after</li>
+          <li>The vault is searchable across the whole portfolio</li>
+          <li>Dashboard gives legal a portfolio view rather than a folder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Switch views</p>
+      <h2 class="ix__title">Sign it, then keep track of it.</h2>
+    <div data-tabs>
+      <div class="ix__tabs" role="tablist">
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="sp0">Dashboard</button>
+        <button class="ix__tab" role="tab" aria-selected="false" aria-controls="sp1">Vault</button>
+      </div>
+      <div class="ix__panel" id="sp0" role="tabpanel">
+        <figure class="shot" data-label="Zoey contract management dashboard listing agreements by stage and owner"><img src="assets/CaseStudies/12-zoey-global-nda-a.jpg" alt="Zoey contract management dashboard listing agreements by stage and owner" loading="lazy" onerror="this.remove()" /></figure>
+        <figcaption>Every agreement with a stage, an owner and a date. The view legal asks for first.</figcaption>
+      </div>
+      <div class="ix__panel" id="sp1" role="tabpanel">
+        <figure class="shot" data-label="Zoey document vault showing stored contracts with risk indicators"><img src="assets/CaseStudies/13-zoey-global-nda-b.jpg" alt="Zoey document vault showing stored contracts with risk indicators" loading="lazy" onerror="this.remove()" /></figure>
+        <figcaption>Structured storage with risk indicators, so a non-standard clause is visible before renewal.</figcaption>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <nav class="cs-pager" aria-label="More case studies">
+      <a class="to-prev" href="case-osteo-on-the-go.html"><small>Previous</small><strong>Osteo On The Go</strong></a>
+      <a class="to-all" href="case-studies-2.html"><strong>All 48 case studies</strong></a>
+      <a class="to-next" href="case-beautyhooked.html"><small>Next</small><strong>BeautyHooked.com</strong></a>
+    </nav>
+  </div>
+</section>
+
+<div class="page-light">
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let's talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
+        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script src="js/main.js?v=20260918a"></script>
+<script src="js/cases.js?v=20260928a"></script>
+</body>
+</html>

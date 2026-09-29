@@ -34,11 +34,29 @@ PROJECTS = [
       lead="A complete digital ecosystem for a North American Class 6/7/8 vehicle "
            "relocation company: dispatch dashboard, native iOS and Android driver "
            "apps, and QuickBooks-integrated accounting underneath all of it.",
-      problem="",
-      shipped=[], today=[], chips=[],
+      problem="A distributed network of contractor drivers, one-way jobs spread across a "
+              "continent, and no software on the market built for an operation where the "
+              "vehicle being moved is the freight itself. Dispatch ran on phone calls, "
+              "spreadsheets and email threads that drifted out of sync the moment a job "
+              "changed hands.",
+      shipped=["A live dispatch dashboard: job creation to delivery in one view",
+               "Native iOS and Android driver apps, offline-tolerant",
+               "Photo, GPS and signature chain-of-custody on every handoff",
+               "Deep QuickBooks sync, load to invoice with no retyping"],
+      today=["350+ screened CDL drivers dispatched",
+             "48 US states and Canada",
+             "Class 6, 7 and 8 equipment",
+             "Live truck tracking currently in build"],
+      chips=["PHP / Laravel", "Vue.js", "Swift", "Kotlin", "QuickBooks", "Real-time tracking"],
       images=[("09-alliance-driveaway-solutions.jpg",
                "Alliance Driveaway dispatch dashboard and driver app shown side by side")],
-      ix=None,
+      ix={"type": "metrics", "label": "Operating scale",
+          "title": "What the dispatch board is carrying.",
+          "items": [
+              {"n": 350, "suffix": "+", "l": "screened CDL drivers dispatched", "p": 1.0},
+              {"n": 48, "suffix": " states", "l": "plus Canada, one-way relocations", "p": 0.95},
+              {"n": 3, "suffix": "", "l": "equipment classes: 6, 7 and 8", "p": 0.7},
+              {"n": 0, "suffix": "", "l": "spreadsheets left in the dispatch path", "p": 0.1}]},
       card="350+ screened CDL drivers, 48 states and Canada, one dispatch board. "
            "Web dashboard, native driver apps and QuickBooks sync, all running in production.",
       hand=True),
@@ -48,11 +66,28 @@ PROJECTS = [
       lead="An AI-powered analytics platform for oil and gas. It turns raw, messy "
            "drilling-fluids data into structured dashboards, then layers an agentic "
            "assistant on top for predictive guidance.",
-      problem="",
-      shipped=[], today=[], chips=[],
+      problem="Field and lab data for fluids engineering arrives messy, siloed and slow to "
+              "interpret. It is the kind of raw technical data that usually means someone "
+              "spends hours in spreadsheets before a decision gets made, on wells where "
+              "that delay has a real cost per day.",
+      shipped=["Structured dashboards over raw drilling-fluids data",
+               "Exploratory analysis tooling for fluids engineers",
+               "A Fluids Intelligence layer combining domain models with AI",
+               "An agentic assistant for predictive guidance, not just charts"],
+      today=["In active use by teams at Chevron",
+             "In active use by teams at ExxonMobil",
+             "In active use by teams at ADNOC",
+             "Built and maintained for a high bar on data trust"],
+      chips=["Golang", "Python", "Vue.js", "MySQL", "Agentic AI"],
       images=[("05-fluidsdata.jpg",
                "FluidsData analytics dashboard showing drilling fluids charts and data tables")],
-      ix=None,
+      ix={"type": "stack", "label": "Hover a layer",
+          "title": "From raw field data to a decision.",
+          "layers": [
+              {"t": "Ingest", "d": "Field and lab sources land in one pipe and come out as typed, comparable records.", "tags": ["Golang", "Pipelines"]},
+              {"t": "Structure", "d": "Messy inputs become dashboards a fluids engineer can read without rebuilding a spreadsheet.", "tags": ["Vue.js", "MySQL"]},
+              {"t": "Intelligence", "d": "A Fluids Intelligence layer pairs domain models with machine learning over the cleaned history.", "tags": ["Python", "Domain models"]},
+              {"t": "Assist", "d": "An agentic assistant answers in domain terms and shows the data behind every answer.", "tags": ["Agentic AI", "Predictive"]}]},
       card="In active use by teams at Chevron, ExxonMobil and ADNOC. Raw fluids data in, "
            "structured dashboards and an agentic assistant out.",
       hand=True),
@@ -62,11 +97,32 @@ PROJECTS = [
       lead="An autonomous voice agent that answers real inbound calls around the clock. "
            "It understands intent, checks live availability, books the appointment and "
            "writes the record into HubSpot. No human in the loop.",
-      problem="",
-      shipped=[], today=[], chips=[],
+      problem="Staffing a front desk for round-the-clock coverage is expensive and "
+              "inconsistent, and every missed call is a booking that went to a competitor "
+              "instead. The client needed calls answered instantly, at any hour, without "
+              "hiring for it.",
+      shipped=["A voice agent that understands caller intent in real time",
+               "Live availability checks before offering a time slot",
+               "Appointment booking with zero human handoff",
+               "Every call logged straight into HubSpot CRM"],
+      today=["Answering real inbound calls, 24 hours a day",
+             "No manual data entry after a booked call",
+             "No human required in the loop",
+             "One of several AI systems we run in production today"],
+      chips=["VAPI", "Twilio", "ElevenLabs", "HubSpot CRM"],
       images=[("company-01-cover.jpg",
                "Alpha Squared AI Front Desk voice agent concept cover image")],
-      ix=None,
+      ix={"type": "transcript", "label": "Play a call",
+          "title": "A booking, start to finish, with nobody on the line.",
+          "turns": [
+              {"who": "system", "text": "Inbound call received. Agent answers on the first ring."},
+              {"who": "agent", "text": "Thanks for calling. How can I help you today?"},
+              {"who": "caller", "text": "Hi, I wanted to see if you have anything open on Thursday."},
+              {"who": "system", "text": "Intent detected: booking. Checking live availability."},
+              {"who": "agent", "text": "I have Thursday at 2:15 or 4:30. Which works better?"},
+              {"who": "caller", "text": "Let's do 2:15."},
+              {"who": "agent", "text": "Booked for Thursday at 2:15. You'll get a confirmation by text shortly."},
+              {"who": "system", "text": "Appointment written to HubSpot. Call logged. No human handoff."}]},
       card="A voice agent answering real calls 24/7: intent, live availability, booking "
            "and CRM write-back with nobody on the other end.",
       hand=True),

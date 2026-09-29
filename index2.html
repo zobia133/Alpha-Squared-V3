@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alpha Squared | Software for Trucking, Transport &amp; Operations That Can't Stop</title>
+<meta name="description" content="Alpha Squared builds dispatch platforms, driver apps and AI operations tools for trucking and transport teams. Canadian-led, engineering since 2012, 265+ projects delivered." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20260918d" />
+<!-- New A2 design system: navy canvas, blue system colour, gold as accent only.
+     Loaded after style.css so it only has to restate tokens. -->
+<link rel="stylesheet" href="css/theme-a2.css?v=20260924a" />
+</head>
+
+<body class="is-loading">
+
+<!-- ═══════════════════════ LOADER ═══════════════════════ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <div class="loader__ring"></div>
+    <div class="loader__name">Alpha<sup>2</sup></div>
+    <span class="loader__pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+      <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
+    </a>
+
+    <nav class="nav__links">
+      <a href="trucking.html">Trucking &amp; Transport</a>
+      <a href="services-2.html">Services</a>
+      <a href="case-studies-2.html">Case Studies</a>
+      <a href="about.html">About Us</a>
+    </nav>
+
+    <a href="#contact" class="btn nav__cta"><span>Contact</span></a>
+
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<!-- Hero and logo wall are ONE section on one background: the arc and bloom
+     span the whole thing. Splitting them made the hero read lighter than the
+     row below it, because the bloom got compressed into the short text block. -->
+<section class="hero">
+  <div class="hero__arc" data-parallax="0.12"></div>
+  <div class="hero__bloom" data-parallax="0.2"></div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__pills" data-anim="fade">
+      <span class="hero__pill">Software</span>
+      <span class="hero__pill">Automation</span>
+      <span class="hero__pill">AI</span>
+    </div>
+
+    <h1 class="d1" data-split="lines">Software systems<br /><span class="grad">your business runs on.</span></h1>
+
+    <p class="hero__sub" data-anim="fade" data-delay="0.5">
+      Dispatch boards, field apps, client portals, AI agents and the integrations
+      that hold them together, built for the way your operation actually works.
+    </p>
+
+    <div class="cta-row" data-anim="fade" data-delay="0.65">
+      <a href="#contact" class="btn"><span>Book a 20-minute call <i class="ar">→</i></span></a>
+      <a href="case-studies-2.html" class="btn btn--ghost"><span>What we have built <i class="ar">→</i></span></a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="marquee__label" data-anim="fade">Companies we&#39;ve worked with</p>
+  </div>
+  <!-- Logo wall. Each mark is an <img> in assets/logos/ with the company name
+       as a wordmark behind it: if the file is missing the <img> removes itself
+       and the name shows instead, so the row never renders as broken icons.
+       Real brand colour on the page background, not the old flattened-to-white
+       treatment: several of these files were originally white-only cutouts and
+       had to be swapped for genuinely coloured source art: levi-strauss.png,
+       alliance-driveaway.png, att.svg, cocacola.svg and adnoc.png.
+       Arcus Power is withheld: naming rights unresolved since 3 July, see the
+       logo-wall-by-icp note / README §Confirm before launch. -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span class="logo logo--knockout"><img src="assets/logos/salesforce.svg" alt="Salesforce" loading="lazy" onerror="this.remove()" /><i>Salesforce</i></span>
+      <span class="logo"><img src="assets/logos/levi-strauss.png" alt="Levi Strauss &amp; Co." loading="lazy" onerror="this.remove()" /><i>Levi Strauss &amp; Co.</i></span>
+      <span class="logo"><img src="assets/logos/honeywell.svg" alt="Honeywell" loading="lazy" onerror="this.remove()" /><i>Honeywell</i></span>
+      <span class="logo"><img src="assets/logos/matrikon.png" alt="Matrikon" loading="lazy" onerror="this.remove()" /><i>Matrikon</i></span>
+      <span class="logo"><img src="assets/logos/alliance-driveaway.png" alt="Alliance Driveaway Solutions" loading="lazy" onerror="this.remove()" /><i>Alliance Driveaway</i></span>
+      <span class="logo"><img src="assets/logos/century-business-solutions.png" alt="Century Business Solutions" loading="lazy" onerror="this.remove()" /><i>Century Business Solutions</i></span>
+      <span class="logo"><img src="assets/logos/fluidsdata.svg" alt="FluidsData" loading="lazy" onerror="this.remove()" /><i>FluidsData</i></span>
+      <span class="logo logo--wordmark"><img src="assets/logos/whoifollow.svg" alt="WhoIFollow" loading="lazy" onerror="this.remove()" /><i>WhoIFollow</i></span>
+      <span class="logo"><img src="assets/logos/cocacola.svg" alt="Coca-Cola" loading="lazy" onerror="this.remove()" /><i>Coca-Cola</i></span>
+      <span class="logo"><img src="assets/logos/att.svg" alt="AT&amp;T" loading="lazy" onerror="this.remove()" /><i>AT&amp;T</i></span>
+      <span class="logo logo--tall"><img src="assets/logos/adnoc.png" alt="ADNOC" loading="lazy" onerror="this.remove()" /><i>ADNOC</i></span>
+      <!-- second copy: the track translates -50%, so the loop needs an exact duplicate -->
+      <span class="logo logo--knockout" aria-hidden="true"><img src="assets/logos/salesforce.svg" alt="" loading="lazy" onerror="this.remove()" /><i>Salesforce</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/levi-strauss.png" alt="" loading="lazy" onerror="this.remove()" /><i>Levi Strauss &amp; Co.</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/honeywell.svg" alt="" loading="lazy" onerror="this.remove()" /><i>Honeywell</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/matrikon.png" alt="" loading="lazy" onerror="this.remove()" /><i>Matrikon</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/alliance-driveaway.png" alt="" loading="lazy" onerror="this.remove()" /><i>Alliance Driveaway</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/century-business-solutions.png" alt="" loading="lazy" onerror="this.remove()" /><i>Century Business Solutions</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/fluidsdata.svg" alt="" loading="lazy" onerror="this.remove()" /><i>FluidsData</i></span>
+      <span class="logo logo--wordmark" aria-hidden="true"><img src="assets/logos/whoifollow.svg" alt="" loading="lazy" onerror="this.remove()" /><i>WhoIFollow</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/cocacola.svg" alt="" loading="lazy" onerror="this.remove()" /><i>Coca-Cola</i></span>
+      <span class="logo" aria-hidden="true"><img src="assets/logos/att.svg" alt="" loading="lazy" onerror="this.remove()" /><i>AT&amp;T</i></span>
+      <span class="logo logo--tall" aria-hidden="true"><img src="assets/logos/adnoc.png" alt="" loading="lazy" onerror="this.remove()" /><i>ADNOC</i></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHY ALPHA SQUARED ═══════════════════════ -->
+<!-- Second block on the page, straight under the logo wall. Three tabs drive
+     one panel: the home-market map, a replayable AI agent trace, and the
+     engineering bench. The trace is typed in JS rather than shipped as a GIF
+     so it stays crisp, weighs nothing and respects reduced-motion. -->
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="whyus">
+      <div>
+        <span class="badge" data-anim="fade">Why Alpha Squared</span>
+        <h2 class="d2" data-split="lines">We&#39;ve shipped this before.<br /><span class="grad">265 times, in 17 countries.</span></h2>
+
+        <div class="whyus__tabs" role="tablist" aria-label="Why Alpha Squared" data-anim="fade">
+          <button type="button" class="whyus__tab is-on" role="tab" id="whyTabMap"
+                  aria-selected="true" aria-controls="whyViewMap" data-view="map">Delivery</button>
+          <button type="button" class="whyus__tab" role="tab" id="whyTabAi"
+                  aria-selected="false" aria-controls="whyViewAi" data-view="ai">AI in production</button>
+          <button type="button" class="whyus__tab" role="tab" id="whyTabBench"
+                  aria-selected="false" aria-controls="whyViewBench" data-view="bench">The bench</button>
+        </div>
+
+        <div class="whyus__copy" data-anim="fade" aria-live="polite">
+          <p class="lead whycopy is-on" data-view="map">
+            Operating since 2012 out of Edmonton, Alberta. 265+ projects delivered,
+            clients in 17 countries, 52 of them repeat. A Canadian principal in your
+            timezone, a senior engineering bench behind him, and a portfolio we can
+            point at instead of a pitch deck.
+          </p>
+          <p class="lead whycopy" data-view="ai">
+            Not a pilot and not a slide. Voice agents answering real inbound calls,
+            OCR services reading scanned paperwork, assistants wired into live CRMs.
+            In production for paying clients today, with a trace you can audit and a
+            cost per call you can forecast.
+          </p>
+          <p class="lead whycopy" data-view="bench">
+            Senior Laravel, Vue, Node, Python and automation engineers who have
+            shipped together for years. Assembled per engagement, never
+            junior-loaded, and accountable to one principal who scopes the work and
+            stays on it from kickoff to handover.
+          </p>
+        </div>
+
+        <div class="cta-row" data-anim="fade" style="margin-top:30px">
+          <a href="about.html" class="btn"><span>More about us <i class="ar">→</i></span></a>
+        </div>
+      </div>
+
+      <div class="whyus__viz" data-anim="fade">
+        <!-- North America, city-level: Edmonton is the hq marker -->
+        <div class="whyview is-on" id="whyViewMap" role="tabpanel" aria-labelledby="whyTabMap" data-view="map">
+          <canvas id="naViz"></canvas>
+        </div>
+
+        <div class="whyview" id="whyViewAi" role="tabpanel" aria-labelledby="whyTabAi" data-view="ai">
+          <div class="aicon">
+            <div class="aicon__bar">
+              <i></i><i></i><i></i>
+              <span class="aicon__title">dispatch agent</span>
+              <span class="aicon__live"><s></s>live</span>
+            </div>
+            <div class="aicon__feed" id="aiFeed"></div>
+            <button type="button" class="aicon__replay" id="aiReplay">Replay <i class="ar">↻</i></button>
+          </div>
+        </div>
+
+        <div class="whyview" id="whyViewBench" role="tabpanel" aria-labelledby="whyTabBench" data-view="bench">
+          <ul class="bench">
+            <li><b>Backend</b><span>Laravel · Node · Postgres</span><em>9 yrs avg</em></li>
+            <li><b>Frontend</b><span>Vue · React · TypeScript</span><em>8 yrs avg</em></li>
+            <li><b>AI</b><span>Python · LLM tooling · RAG · OCR</span><em>6 yrs avg</em></li>
+            <li><b>Automation</b><span>Workflow APIs · n8n · integrations</span><em>6 yrs avg</em></li>
+            <li><b>QA &amp; DevOps</b><span>CI/CD · AWS · monitoring</span><em>7 yrs avg</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="statband statband--inline">
+  <div class="statband__grid">
+        <div data-anim="up">
+          <div class="statband__n" data-count="14" data-suffix="+">0</div>
+          <div class="statband__l">Years shipping software</div>
+        </div>
+        <div data-anim="up" data-delay="0.07">
+          <div class="statband__n" data-count="265" data-suffix="+">0</div>
+          <div class="statband__l">Projects delivered</div>
+        </div>
+        <div data-anim="up" data-delay="0.14">
+          <div class="statband__n" data-count="17" data-suffix="">0</div>
+          <div class="statband__l">Countries worked in</div>
+        </div>
+        <div data-anim="up" data-delay="0.21">
+          <div class="statband__n" data-count="52" data-suffix="">0</div>
+          <div class="statband__l">Repeat clients</div>
+        </div>
+        <div data-anim="up" data-delay="0.28">
+          <div class="statband__n" data-count="8" data-suffix="">0</div>
+          <div class="statband__l">Startups taken to launch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHITE SHEET ═══════════════════════ -->
+<div class="page-light">
+
+
+  <!-- ── SERVICES ── -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">What we build</span>
+        <h2 class="d2" data-split="lines">Everything the product needs,<br /><span class="grad">under one roof.</span></h2>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:56px">
+        <a class="svc" href="services-2.html#platforms" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
+          <h3>Operations Platforms</h3>
+          <p>Dispatch boards, admin dashboards, portals and the APIs behind them, architected to scale, built to last.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#mobile" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
+          <h3>Mobile Apps</h3>
+          <p>Native iOS and Android for drivers and field crews. Offline-tolerant, GPS-aware, built by senior mobile engineers.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#ai" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
+          <h3>AI &amp; Automation</h3>
+          <p>Voice agents, document OCR, LLM assistants and workflow automation, live in production for real clients today.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#design" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
+          <h3>Product &amp; UX Design</h3>
+          <p>Research, product strategy and interfaces refined for clarity. Design that ships, not decks that don't.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#teams" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
+          <h3>Dedicated Teams</h3>
+          <p>A vetted senior pod embedded with your team. Capacity without the twelve-week local hiring cycle.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#cloud" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
+          <h3>Cloud, DevOps &amp; Support</h3>
+          <p>Infrastructure, CI/CD, observability and long-term product support with SLAs you can hold us to.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI AGENT ── -->
+  <!-- The wireframe globe is back as the centrepiece, driven as a voice agent:
+       rings leave it on a speech envelope and the waveform under the transcript
+       runs off the same signal, so the block reads as one agent mid-sentence. -->
+  <section class="section section--tight" id="ai">
+    <div class="wrap">
+      <div class="agent">
+        <div class="agent__copy">
+          <span class="badge" data-anim="fade">AI in production</span>
+          <h2 class="d2" data-split="lines">AI that answers the phone.<br /><span class="grad">Not a line on a slide.</span></h2>
+          <p class="lead" data-anim="fade" style="margin-top:22px">
+            Voice agents taking real inbound calls, OCR microservices reading real
+            documents, agentic assistants wired into live CRMs. We treat AI as
+            engineering with a measurable job to do.
+          </p>
+          <ul class="ticks" style="margin-top:26px">
+            <li>Understands intent, checks live availability, books the job</li>
+            <li>Writes straight into the CRM, no human in the loop</li>
+            <li>Running 24/7 for a real client today</li>
+          </ul>
+          <div class="cta-row" data-anim="fade" style="margin-top:28px">
+            <a href="case-ai-front-desk.html" class="btn btn--ghost"><span>Read the AI Front Desk case study <i class="ar">→</i></span></a>
+          </div>
+        </div>
+
+        <div class="agent__viz" data-anim="fade">
+          <div class="agent__card">
+            <div class="agent__bar">
+              <a class="agent__live" href="#contact"><i></i>Live call <b class="ar">→</b></a>
+              <button class="agent__meta" type="button" data-chat-open="voice">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-7 0v5A3.5 3.5 0 0 0 12 14Zm6-3.5a6 6 0 0 1-5 5.92V20h-2v-3.58a6 6 0 0 1-5-5.92h2a4 4 0 0 0 8 0h2Z"/></svg>
+                Voice agent
+              </button>
+            </div>
+            <button class="agent__globe" type="button" data-chat-open="voice" aria-label="Talk to the voice agent">
+              <canvas id="globeViz"></canvas>
+            </button>
+            <div class="agent__caption" aria-live="polite">
+              <span class="agent__dot"></span>
+              <span class="agent__line" id="agentLine">Good afternoon, Alpha Squared here. How can I help?</span>
+            </div>
+            <div class="agent__wave" id="agentWave" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INDUSTRIES ── -->
+  <section class="section section--tight" id="industries">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Industries we build for</span>
+        <h2 class="d2" data-split="lines">Pick your industry.<br /><span class="grad">We have already shipped in it.</span></h2>
+        <p class="lead" data-anim="fade">Every sector runs on its own exceptions. These are the ones we have
+          already automated, on someone else's budget.</p>
+      </div>
+
+      <div class="inds">
+        <div class="ind" style="--ic:#f5a524" data-anim="up">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 7.5A2.5 2.5 0 0 1 4.5 5h11A2.5 2.5 0 0 1 18 7.5V10h4.6a2.5 2.5 0 0 1 2.1 1.1l3.9 5.8a2.5 2.5 0 0 1 .4 1.4v4.2a2 2 0 0 1-2 2h-1.3a3.8 3.8 0 0 0-7.4 0h-4.5a3.8 3.8 0 0 0-7.4 0H4a2 2 0 0 1-2-2V7.5ZM18 13v4h7.6L22.9 13H18Z"/><circle cx="9.6" cy="24.4" r="2.6"/><circle cx="21.8" cy="24.4" r="2.6"/></svg></span>
+          <h3>Trucking &amp; Transport</h3>
+        </div>
+
+        <div class="ind" style="--ic:#22b2fb" data-anim="up" data-delay="0.05">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18.4 2 6.5 18.4a1 1 0 0 0 .8 1.6h6L11 29.3a.6.6 0 0 0 1.1.5l12-16.6a1 1 0 0 0-.8-1.6h-6.1l2.3-9.1A.6.6 0 0 0 18.4 2Z"/></svg></span>
+          <h3>Energy &amp; Industrial</h3>
+        </div>
+
+        <div class="ind" style="--ic:#1c4eff" data-anim="up" data-delay="0.1">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28.6 4.6 17.5A7.3 7.3 0 0 1 16 8.5a7.3 7.3 0 0 1 11.4 9L16 28.6Z"/></svg></span>
+          <h3>Healthcare &amp; Clinics</h3>
+        </div>
+
+        <div class="ind" style="--ic:#2ba7ff" data-anim="up" data-delay="0.15">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M16 2.4 4.8 6.6v8.2c0 6.5 4.3 12.4 11.2 14.8 6.9-2.4 11.2-8.3 11.2-14.8V6.6L16 2.4Zm5.7 9.4-7.4 8.3-4.1-4.2 2-2 2 2 5.5-6.1 2 2Z"/></svg></span>
+          <h3>Public Safety</h3>
+        </div>
+
+        <div class="ind" style="--ic:#15328f" data-anim="up" data-delay="0.2">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M21.6 3a8.4 8.4 0 0 0-8 11.1L4.3 23.4a3 3 0 0 0 0 4.3l.1.1a3 3 0 0 0 4.3 0l9.2-9.3a8.4 8.4 0 0 0 11.6-10l-4.8 4.8-3.5-3.5L26 4.9A8.4 8.4 0 0 0 21.6 3Z"/></svg></span>
+          <h3>Field Services</h3>
+        </div>
+
+        <div class="ind" style="--ic:#1c4eff" data-anim="up" data-delay="0.05">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 3h4.3a1.6 1.6 0 0 1 1.6 1.3l.4 2.1h19.3a1.4 1.4 0 0 1 1.4 1.7l-2.1 9.2a2.6 2.6 0 0 1-2.5 2H12a2.6 2.6 0 0 1-2.5-2.1L6.2 6H2V3Z"/><circle cx="12.4" cy="26" r="2.5"/><circle cx="23.2" cy="26" r="2.5"/></svg></span>
+          <h3>Retail &amp; POS</h3>
+        </div>
+
+        <div class="ind" style="--ic:#2ba7ff" data-anim="up" data-delay="0.1">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M4.6 6h22.8A2.6 2.6 0 0 1 30 8.6V11H2V8.6A2.6 2.6 0 0 1 4.6 6ZM2 14.4h28v9A2.6 2.6 0 0 1 27.4 26H4.6A2.6 2.6 0 0 1 2 23.4v-9Zm3.6 5.2h6.2v2.8H5.6v-2.8Z"/></svg></span>
+          <h3>Fintech &amp; Payments</h3>
+        </div>
+
+        <div class="ind" style="--ic:#22b2fb" data-anim="up" data-delay="0.15">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M12.6 3h6.8A3.6 3.6 0 0 1 23 6.6V8h4.4A2.6 2.6 0 0 1 30 10.6v14.8A2.6 2.6 0 0 1 27.4 28H4.6A2.6 2.6 0 0 1 2 25.4V10.6A2.6 2.6 0 0 1 4.6 8H9V6.6A3.6 3.6 0 0 1 12.6 3Zm.4 5h6V6.8a.8.8 0 0 0-.8-.8h-4.4a.8.8 0 0 0-.8.8V8Z"/></svg></span>
+          <h3>Marketplaces</h3>
+        </div>
+
+        <div class="ind" style="--ic:#f5a524" data-anim="up" data-delay="0.2">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 1.6 10.4 16 17.8l11.6-6v7h2.8v-8.4L16 3ZM6.8 15.2v6.2c0 2.9 4.1 5.2 9.2 5.2s9.2-2.3 9.2-5.2v-6.2L16 20l-9.2-4.8Z"/></svg></span>
+          <h3>Education &amp; Training</h3>
+        </div>
+
+        <div class="ind" style="--ic:#1c4eff" data-anim="up" data-delay="0.25">
+          <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M6 4h20a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Zm7.4 6.9v10.2a.9.9 0 0 0 1.4.8l8-5.1a.9.9 0 0 0 0-1.6l-8-5.1a.9.9 0 0 0-1.4.8Z"/></svg></span>
+          <h3>Media &amp; Sport</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CASE STUDIES ── -->
+  <!-- Six cards, two rows of three. Deliberately short: one line of positioning,
+       two sentences of context, three outcomes. The long-form version lives on
+       case-studies-2.html. This row exists to make someone click through. -->
+  <section class="section section--tight" id="work">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Selected work</span>
+        <h2 class="d2" data-split="lines">Systems running in production<br /><span class="gold-text">right now.</span></h2>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:56px">
+        <article class="cs" style="--csGlow:rgba(245,165,36,.42)" data-anim="up">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>Alliance</b><em>Trucking &amp; Transport</em></div>
+            <img src="assets/work/alliance.jpg" alt="Alliance Driveaway dispatch dashboard and driver app shown side by side" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Trucking &amp; Transport · Alliance Driveaway</span>
+            <p class="cs__metric">Dispatch software for when the truck is the freight.</p>
+            <p>A dispatch board, native driver apps and QuickBooks sync for a North American
+              Class 6/7/8 relocation network that was running on phone calls and spreadsheets.</p>
+            <ul class="cs__list cs__list--res">
+              <li>350+ screened CDL drivers dispatched</li>
+              <li>48 US states and Canada</li>
+              <li>Load to invoice with no retyping</li>
+            </ul>
+            <a class="cs__more" href="case-alliance-driveaway.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(34,178,251,.42)" data-anim="up" data-delay="0.08">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>FluidsData</b><em>Energy &amp; Industrial</em></div>
+            <img src="assets/work/fluidsdata.jpg" alt="FluidsData analytics dashboard showing drilling fluids charts and data tables" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Energy &amp; Industrial · FluidsData</span>
+            <p class="cs__metric">Drilling fluids data that answers back.</p>
+            <p>Raw, siloed field and lab data in. Structured dashboards and an agentic
+              assistant out, so a decision does not wait on someone's spreadsheet.</p>
+            <ul class="cs__list cs__list--res">
+              <li>In active use at Chevron and ExxonMobil</li>
+              <li>In active use at ADNOC</li>
+              <li>Predictive guidance, not just charts</li>
+            </ul>
+            <a class="cs__more" href="case-fluidsdata.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(28,78,255,.42)" data-anim="up" data-delay="0.16">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>AI Front Desk</b><em>AI in Production</em></div>
+            <img src="assets/work/ai-front-desk.jpg" alt="Alpha Squared AI Front Desk voice agent concept cover image" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">AI in Production · AI Front Desk</span>
+            <p class="cs__metric">A receptionist that never sleeps.</p>
+            <p>An autonomous voice agent that reads caller intent, checks live availability,
+              books the slot and writes the record into HubSpot.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Real inbound calls answered 24/7</li>
+              <li>No human in the loop</li>
+              <li>No manual data entry after a booking</li>
+            </ul>
+            <a class="cs__more" href="case-ai-front-desk.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(43,167,255,.42)" data-anim="up">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>Who I Follow</b><em>Sports Tech</em></div>
+            <img src="assets/work/whoifollow.jpg" alt="Who I Follow sports platform showing tournament brackets and team schedules" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Sports Tech · Who I Follow</span>
+            <p class="cs__metric">Run a 200-team tournament without a binder.</p>
+            <p>League and event management for softball associations: pool play, brackets,
+              umpire assignment and live scoring straight from the field.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Tournaments with hundreds of teams</li>
+              <li>Rain delays reschedule in the system</li>
+              <li>Web platform plus native iOS and Android</li>
+            </ul>
+            <a class="cs__more" href="case-who-i-follow.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(21,50,143,.55)" data-anim="up" data-delay="0.08">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>Coca-Cola</b><em>Enterprise internal tools</em></div>
+            <img src="assets/CaseStudies/25-coca-cola-internal-messaging.jpg" alt="Coca-Cola internal messaging and org hierarchy application interface" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">Enterprise · Coca-Cola</span>
+            <p class="cs__metric">Feedback that reaches the right level of the org chart.</p>
+            <p>An internal messaging and feedback platform where the hard part was not chat,
+              it was routing a message correctly through a structure spanning thousands of people.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Messaging built on the real reporting hierarchy</li>
+              <li>Feedback lands with someone who can act on it</li>
+              <li>Access control applied per level</li>
+            </ul>
+            <a class="cs__more" href="case-coca-cola-internal-messaging.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+
+        <article class="cs" style="--csGlow:rgba(34,178,251,.42)" data-anim="up" data-delay="0.16">
+          <div class="cs__shot">
+            <div class="cs__plate"><b>Safe City</b><em>GovTech &amp; public safety</em></div>
+            <img src="assets/CaseStudies/50-safe-city-lahore-projects.jpg" alt="Safe City Lahore public safety systems including data exchange and digital forensics interfaces" loading="lazy" decoding="async" />
+          </div>
+          <div class="cs__body">
+            <span class="cs__tag">GovTech · Safe City Program</span>
+            <p class="cs__metric">Three systems where downtime is a public safety event.</p>
+            <p>Data Exchange, Digital Forensic Centre and Media Monitoring Control, built to
+              government requirements on availability, access control and chain of custody.</p>
+            <ul class="cs__list cs__list--res">
+              <li>Inter-agency data sharing through one interface</li>
+              <li>Chain of custody enforced in software</li>
+              <li>Role-based access across all three systems</li>
+            </ul>
+            <a class="cs__more" href="case-safe-city-lahore.html">Read the case study <i class="ar">→</i></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="cta-row" style="justify-content:center;margin-top:44px">
+        <a href="case-studies-2.html" class="btn btn--ghost" data-anim="fade"><span>What we have built <i class="ar">→</i></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AUTOMATION &amp; LEGACY ── -->
+  <section class="section section--tight" id="automation">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Automation &amp; modernisation</span>
+        <h2 class="d2" data-split="lines">The work nobody should<br /><span class="grad">still be doing by hand.</span></h2>
+        <p class="lead" data-anim="fade">Re-keying between systems, chasing paperwork, and a decade-old
+          platform everyone quietly works around. We automate the first two and modernise
+          the third in stages, without stopping the business.</p>
+      </div>
+
+      <!-- one trigger in, an AI layer in the middle, three systems written to.
+           Pure SVG so it scales with the card and needs no JS. -->
+      <div class="autoflow" data-anim="fade">
+        <svg viewBox="0 0 1000 400" role="img"
+             aria-label="An inbound call, a scanned document or a job status change goes into the AI automation layer, which writes to the dispatch board, the CRM and invoicing and payroll.">
+          <defs>
+            <linearGradient id="afWire" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="52%" stop-color="#12b8b0" />
+              <stop offset="100%" stop-color="#fe881b" />
+            </linearGradient>
+            <linearGradient id="afCore" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="100%" stop-color="#12b8b0" />
+            </linearGradient>
+          </defs>
+
+          <text class="autoflow__lab" x="10" y="22">WHAT COMES IN</text>
+          <text class="autoflow__lab autoflow__lab--end" x="990" y="22">WHERE IT LANDS</text>
+
+          <g class="autoflow__wires">
+            <path class="autoflow__wire" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__wire" d="M254 200 H 376" />
+            <path class="autoflow__wire" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__wire" d="M624 200 H 746" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 320 746 320" />
+
+            <path class="autoflow__pulse" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__pulse" d="M254 200 H 376" />
+            <path class="autoflow__pulse" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__pulse" d="M624 200 H 746" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 320 746 320" />
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="80" r="5" />
+            <text class="autoflow__t" x="60" y="87">Inbound call</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="200" r="5" />
+            <text class="autoflow__t" x="60" y="207">Scanned document</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="320" r="5" />
+            <text class="autoflow__t" x="60" y="327">Job status change</text>
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="80" r="5" />
+            <text class="autoflow__t" x="796" y="87">Dispatch board</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="200" r="5" />
+            <text class="autoflow__t" x="796" y="207">CRM record</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="320" r="5" />
+            <text class="autoflow__t" x="796" y="327">Invoice and payroll</text>
+          </g>
+
+          <rect class="autoflow__halo" x="366" y="128" width="268" height="144" rx="38" />
+          <rect class="autoflow__core" x="376" y="138" width="248" height="124" rx="30" />
+          <text class="autoflow__ct" x="500" y="192">AI automation</text>
+          <text class="autoflow__cs" x="500" y="220">extract · decide · route</text>
+          <text class="autoflow__cs autoflow__cs--dim" x="500" y="242">no human in the loop</text>
+        </svg>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:34px">
+        <a class="svc" href="services-2.html#ai" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm20 0a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5 12.5h2v3h18v-3h2v5H17v3h-2v-3H5v-5ZM16 21a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg></span>
+          <h3>Workflow Automation</h3>
+          <p>The steps between your systems, run by software instead of staff. n8n, Make.com and custom workflow APIs wiring dispatch, CRM and accounting so nothing gets typed twice.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="case-fluidsdata.html" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M7 1h12l6 6v22a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm11 2.4V9h5.6L18 3.4ZM9 13h14v2H9v-2Zm0 5h14v2H9v-2Zm0 5h9v2H9v-2Z"/></svg></span>
+          <h3>Document &amp; Data Capture</h3>
+          <p>OCR microservices that read real receipts, lab PDFs and vendor exports and hand back typed, validated records. Review queues become exceptions, not the default.</p>
+          <span class="tlink">See it in production <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services-2.html#platforms" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M4 5h24a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm2.4 2.6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM4 16h11v3H5v6h10v3H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm19 0 7 6-7 6v-4h-5v-4h5v-4Z"/></svg></span>
+          <h3>Legacy Modernisation</h3>
+          <p>We take over systems we didn't write. A short audit first: what's worth keeping, what's quietly costing you. Then we replace it piece by piece, integrations and reports included. No frozen quarter, no parallel team.</p>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <!-- The accordion out of the old Why panel. Its first claim became the copy
+       in the Why Alpha Squared section up top. -->
+  <section class="section section--tight" id="faq">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Straight answers</span>
+        <h2 class="d2" data-split="lines">The questions<br /><span class="grad">people actually ask.</span></h2>
+      </div>
+
+      <div class="faq">
+        <div class="acc" id="acc">
+          <div class="acc__item">
+            <button class="acc__q">Deep expertise in transport operations <i></i></button>
+            <div class="acc__a"><p>We&#39;ve built the dispatch dashboard, the driver apps and the
+              tracking layer for a vehicle-relocation network running across 48 states and
+              Canada. We understand load assignment, driver state and offline sync because
+              we&#39;ve shipped them.</p></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__q">AI already running in production <i></i></button>
+            <div class="acc__a"><p>Voice agents answering real customer calls, OCR microservices,
+              agentic assistants wired into live CRMs. We treat AI as engineering with a
+              measurable job to do, not as a line on a slide.</p></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__q">Can you re-engineer our legacy system? <i></i></button>
+            <div class="acc__a"><p>Yes, and we do it without a big bang rewrite. We map what the
+              old system actually does, wrap it in an API, then move module by module onto a
+              modern Laravel or Node stack while the business keeps running. Your data,
+              integrations and reports come with it. No frozen quarter, no parallel team
+              retyping orders.</p></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__q">What can we actually automate? <i></i></button>
+            <div class="acc__a"><p>The work that eats your team&#39;s day: dispatch assignment, rate
+              and invoice entry, document OCR, status updates to customers, driver check ins,
+              reconciliation between systems that don&#39;t talk. We start with the one workflow
+              costing you the most hours, prove the hours saved, then widen it.</p></div>
+          </div>
+          <div class="acc__item">
+            <button class="acc__q">Canadian front door, senior global bench <i></i></button>
+            <div class="acc__a"><p>Abdullah is your principal in Alberta. Same timezone, same
+              contracts, accountable by name. Behind him is a senior engineering team that
+              keeps budgets realistic without dropping the standard.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ── -->
+  <!-- Two ways in: write to us, or take a slot directly. The form posts to
+       Netlify Forms (the site already deploys there), so it needs no backend,
+       submissions land under the site's Forms tab. -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <span class="badge" data-anim="fade">Let&#39;s talk</span>
+      <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
+      <p class="lead" data-anim="fade">Tell us what you&#39;re building. You&#39;ll get an honest read on scope,
+        timeline and the right engagement model, usually within two business days.</p>
+
+      <div class="contact">
+        <div class="contact__card contact__card--form" data-anim="up">
+          <span class="contact__kicker"><b>01</b> Write to us</span>
+          <h3>Send us the details</h3>
+          <p>The more you tell us about the operation, the more useful the first call is.</p>
+          <ul class="contact__chips">
+            <li>Answered in 2 business days</li>
+            <li>NDA on request</li>
+          </ul>
+
+          <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website">
+            <input type="hidden" name="form-name" value="enquiry" />
+            <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+            <div class="contact__row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Jane Cooper" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Cooper Logistics" />
+            </label>
+
+            <label class="field">
+              <span>What are you building?</span>
+              <textarea name="message" placeholder="We run 40 trucks and dispatch on a whiteboard and three spreadsheets…" required></textarea>
+            </label>
+
+            <button type="submit" class="btn"><span>Send it over <i class="ar">→</i></span></button>
+            <p class="contact__note">Or email <a href="mailto:info@alphasquared.co">info@alphasquared.co</a> directly.</p>
+          </form>
+        </div>
+
+        <div class="contact__card contact__cal" data-anim="up" data-delay="0.08">
+          <span class="contact__kicker contact__kicker--alt"><b>02</b> Skip the queue</span>
+          <h3>Or book the call now</h3>
+
+          <!-- Cal.com's own event header is hidden below, so the host block lives here
+               instead: bigger photo, and it doubles as the link to Abdullah's site. -->
+          <a class="calhost" href="https://abdullahahmed.com/free-ai-audit/" target="_blank" rel="noopener">
+            <img class="calhost__av" src="assets/team/abdullah.jpg" alt="Abdullah Farooq Ahmed"
+                 width="104" height="104" loading="lazy" decoding="async" />
+            <span class="calhost__txt">
+              <b>Abdullah Farooq Ahmed</b>
+              <em>Principal &middot; Edmonton, Alberta &middot; your single point of contact</em>
+              <span class="calhost__link">Free AI audit &amp; full profile <i class="ar">↗</i></span>
+            </span>
+          </a>
+
+          <ul class="contact__chips">
+            <li>20 minutes</li>
+            <li>Google Meet</li>
+            <li>No sales pitch</li>
+          </ul>
+          <!-- Cal.com inline month view, same account as Abdullah's own site -->
+          <div class="cal-embed" id="a2Cal"></div>
+          <p class="contact__note">Calendar not loading?
+            <a href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">Open it in a new tab ↗</a>
+            · <a href="about.html">Meet the team ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-light -->
+
+</main>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+          <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
+        </a>
+        <p>Canadian software studio building for operators and enterprises since 2012.
+          Trucking and transport specialists. Ideas implemented.</p>
+      </div>
+      <div>
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="trucking.html">Trucking &amp; Transport</a></li>
+          <li><a href="index-trucking-b.html">Driveaway Dispatch Platform ↗</a></li>
+          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
+          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
+          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="case-studies-2.html">Case Studies</a></li>
+          <li><a href="services-2.html">Services</a></li>
+          <li><a href="trust.html">Trust &amp; Security</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@alphasquared.co">info@alphasquared.co</a></li>
+          <li><a href="https://alphasquared.ca">alphasquared.ca</a></li>
+          <li>Edmonton, Alberta, Canada</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 Alpha Squared. Ideas Implemented.</span>
+      <span>Software for operations that can't stop.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════ AI CHAT ═══════════════════════ -->
+<!-- Opened from the "Voice agent" pill in the AI block. Same assistant, two
+     ways in: type, or hold a conversation out loud: speech recognition in,
+     speech synthesis out, both degrading to plain text where unsupported. -->
+<div class="chat" id="a2chat" hidden>
+  <div class="chat__scrim" data-chat-close></div>
+
+  <section class="chat__panel" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+    <header class="chat__head">
+      <span class="chat__avatar" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg>
+      </span>
+      <span class="chat__id">
+        <strong id="chatTitle">Alpha Squared AI</strong>
+        <span class="chat__status"><i></i> Online · answers in seconds</span>
+      </span>
+      <button class="chat__x" type="button" data-chat-close aria-label="Close chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4Z"/></svg>
+      </button>
+    </header>
+
+    <div class="chat__modes" role="tablist" aria-label="Chat mode">
+      <button type="button" class="chat__mode is-on" role="tab" aria-selected="true" data-mode="text">Text</button>
+      <button type="button" class="chat__mode" role="tab" aria-selected="false" data-mode="voice">Voice</button>
+    </div>
+
+    <div class="chat__log" id="chatLog" role="log" aria-live="polite"></div>
+
+    <div class="chat__chips" id="chatChips"></div>
+
+    <!-- voice console: replaces the text composer while in voice mode -->
+    <div class="chat__voice" id="chatVoice" hidden>
+      <button type="button" class="chat__orb" id="chatOrb" aria-label="Start talking">
+        <span class="chat__orb-ring" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-7 0v5A3.5 3.5 0 0 0 12 14Zm6-3.5a6 6 0 0 1-5 5.92V20h-2v-3.58a6 6 0 0 1-5-5.92h2a4 4 0 0 0 8 0h2Z"/></svg>
+      </button>
+      <p class="chat__vstate" id="chatVState">Tap to talk</p>
+      <div class="chat__vwave" id="chatVWave" aria-hidden="true"></div>
+    </div>
+
+    <form class="chat__form" id="chatForm" autocomplete="off">
+      <input class="chat__input" id="chatInput" type="text" name="message"
+             placeholder="Ask about trucking, AI, timelines…" aria-label="Message" maxlength="400" />
+      <button class="chat__send" type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10.2 15.5 12 3.4 13.8v6.6Z"/></svg>
+      </button>
+    </form>
+
+    <p class="chat__foot">Demo assistant · <button type="button" class="chat__link" data-chat-goto="#contact">talk to a human</button></p>
+  </section>
+</div>
+
+<!-- Floating launcher: same assistant as the "Voice agent" pill. The bubble
+     pops itself once per session so the bot introduces itself instead of
+     waiting to be found. -->
+<div class="botdock" id="botDock">
+  <div class="botdock__hint" id="botHint">
+    <span class="botdock__msg">
+      <b>Ask me anything</b>
+      <em>Pricing, timelines, or book a call</em>
+    </span>
+    <button class="botdock__x" type="button" id="botHintX" aria-label="Dismiss">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4Z"/></svg>
+    </button>
+  </div>
+
+  <button class="botfab" type="button" data-chat-open="text" aria-label="Chat with Alpha Squared AI">
+    <span class="botfab__ping" aria-hidden="true"></span>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="3.6" r="2.2"/><path d="M15 5.4h2V9h-2z"/><path fill-rule="evenodd" d="M9.5 9h13a5.5 5.5 0 0 1 5.5 5.5v6a5.5 5.5 0 0 1-5.5 5.5h-13A5.5 5.5 0 0 1 4 20.5v-6A5.5 5.5 0 0 1 9.5 9Zm2.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+  </button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<!-- Cal.com embed: the booking calendar in the Let's talk section. Same
+     account and loader as builds/abdullah-personal-site. -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
+  // hideEventTypeDetails drops Cal's own avatar/title/duration column. The card
+  // above already says all of it, and keeping both wasted ~240px of height.
+  Cal("ui", { styles: { branding: { brandColor: "#12b8b0" } }, hideEventTypeDetails: true, layout: "month_view" });
+</script>
+<script src="js/main.js?v=20260918d"></script>
+</body>
+</html>
+
