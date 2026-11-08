@@ -46,7 +46,12 @@
     var pct = document.getElementById('loaderPct');
     if (!el) { done(); return; }
 
-    if (REDUCED || !hasGSAP) {
+    // The 0→100% splash is a first-impression piece: show it once per visit,
+    // not on every page change (it cost ~1.8s on each navigation).
+    var seen = false;
+    try { seen = sessionStorage.getItem('a2-loader-seen') === '1'; sessionStorage.setItem('a2-loader-seen', '1'); } catch (e) {}
+
+    if (REDUCED || !hasGSAP || seen) {
       el.remove();
       document.body.classList.remove('is-loading');
       done();
@@ -66,16 +71,16 @@
     var n = { v: 0 };
     gsap.timeline({ onComplete: finish })
       .to(n, {
-        v: 100, duration: 1.15, ease: 'power2.inOut',
+        v: 100, duration: 0.8, ease: 'power2.inOut',
         onUpdate: function () { pct.textContent = Math.round(n.v) + '%'; }
       })
-      .to(el, { opacity: 0, duration: .55, ease: 'power2.inOut' }, '+=0.1');
+      .to(el, { opacity: 0, duration: .4, ease: 'power2.inOut' }, '+=0.05');
 
     // Wall-clock safety net. GSAP's ticker runs on rAF, which browsers
     // throttle hard in background tabs — so a page opened in a background
     // tab can sit on the splash indefinitely and still be on it when the
     // user finally switches over. setTimeout keeps running regardless.
-    setTimeout(finish, 2600);
+    setTimeout(finish, 2000);
   }
 
   /* ══════════════════════════════════════════════════════════════════

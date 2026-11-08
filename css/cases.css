@@ -8,7 +8,7 @@
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ── shared media frame ───────────────────────────────────────────────── */
-/* Art lives in assets/CaseStudies/ and is not all present yet. The <img>
+/* Art lives in assets/casestudies/ and is not all present yet. The <img>
    removes itself on error, which uncovers the gradient frame and the label
    underneath, so a missing file degrades to a placeholder, not a broken icon. */
 .shot {

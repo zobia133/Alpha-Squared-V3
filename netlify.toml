@@ -3,10 +3,19 @@
   publish = "."
   command = ""
 
+# Instant website check (GET /api/site-check?url=…); no external APIs or keys.
+[functions]
+  directory = "netlify/functions"
+
 # Pretty URLs: /trucking instead of /trucking.html
 [[redirects]]
   from = "/trucking"
   to = "/trucking.html"
+  status = 200
+
+[[redirects]]
+  from = "/website-check"
+  to = "/website-check.html"
   status = 200
 
 [[redirects]]

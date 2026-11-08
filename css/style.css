@@ -2709,6 +2709,28 @@ h1, h2, h3, h4 {
   overflow: auto;
   background: #fff;
 }
+/* shown until Cal.com's script inserts its own element (and spinner) */
+.cal-embed:empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cal-embed:empty::before {
+  content: "Loading calendar\2026";
+  font-size: .85rem;
+  color: var(--ink-3);
+}
+.cal-fallback {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+  color: var(--ink-3);
+}
 
 @media (max-width: 1080px) {
   .whyus, .agent, .contact { grid-template-columns: 1fr; }

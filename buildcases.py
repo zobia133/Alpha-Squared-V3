@@ -22,9 +22,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 INDEX = "case-studies-2.html"
 SERVICES = "services-2.html"
-CSS = "css/style.css?v=20260918d"
-CSS_A2 = "css/theme-a2.css?v=20260924a"
-CSS_CASES = "css/cases.css?v=20260928a"
+CSS = "css/style.css?v=20261028c"
+CSS_A2 = "css/theme-a2.css?v=20261028c"
+CSS_CASES = "css/cases.css?v=20261028c"
 
 
 def e(text):
@@ -179,8 +179,8 @@ FOOT = """
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-<script src="js/main.js?v=20260918a"></script>
-<script src="js/cases.js?v=20260928a"></script>
+<script src="js/main.js?v=20261028c"></script>
+<script src="js/cases.js?v=20261028c"></script>
 </body>
 </html>
 """.replace("__INDEX__", INDEX)
