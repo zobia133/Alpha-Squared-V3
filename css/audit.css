@@ -1,4 +1,4 @@
-/* Website check: instant scan + free-audit form (website-check.html, index2.html#site-check). */
+/* Website check: instant scan + free-audit form (website-check.html, index.html#site-check). */
 
 .audit-sr {
   position: absolute;
@@ -88,7 +88,7 @@
 .audit-alt a { color: var(--on-dark-2); text-decoration: underline; text-underline-offset: 3px; }
 .audit-alt a:hover { color: #fff; }
 
-/* Light-sheet variant (index2.html) */
+/* Light-sheet variant (index.html) */
 .page-light .audit-form { border-color: var(--sheet-hair); background: #fff; backdrop-filter: none; box-shadow: 0 10px 40px rgba(12, 42, 54, .06); }
 .page-light .audit-form .field span { color: var(--ink-3); }
 .page-light .audit-form .field input { border-color: var(--sheet-hair); background: var(--sheet-soft); color: var(--ink); }

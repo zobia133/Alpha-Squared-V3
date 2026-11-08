@@ -2,11 +2,11 @@
 
 Reads every record from casedata.py and writes:
 
-    case-studies-2.html          index of all projects, linked from index2.html
+    case-studies.html            index of all projects, linked from index.html
     case-<slug>.html             one full detail page per project
 
 Both use the A2 theme (style.css -> theme-a2.css -> cases.css), matching
-index2.html rather than the original case-studies.html, which is left alone.
+index.html.
 
 Self-contained, stdlib only, and idempotent: every run rewrites the files
 from casedata.py, so edits belong in the data module and never in the output.
@@ -20,8 +20,8 @@ from casedata import PROJECTS, BY_SLUG, FLAGSHIP, IMG
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-INDEX = "case-studies-2.html"
-SERVICES = "services-2.html"
+INDEX = "case-studies.html"
+SERVICES = "services.html"
 CSS = "css/style.css?v=20261028c"
 CSS_A2 = "css/theme-a2.css?v=20261028c"
 CSS_CASES = "css/cases.css?v=20261028c"
@@ -91,7 +91,7 @@ def head(title, description, active):
 
 <header class="nav" id="nav">
   <div class="nav__inner">
-    <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+    <a href="index.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
       <img src="assets/logo-full.png" alt="Alpha Squared" class="brand__logo" />
     </a>
 
@@ -132,7 +132,7 @@ FOOT = """
   <div class="wrap">
     <div class="footer__grid">
       <div class="footer__brand">
-        <a href="index2.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
+        <a href="index.html" class="brand" aria-label="Alpha Squared, Ideas Implemented">
           <img src="assets/logo-full-white.png" alt="Alpha Squared" class="brand__logo" />
         </a>
         <p>Canadian software studio building for operators and enterprises since 2012.
@@ -143,9 +143,9 @@ FOOT = """
         <ul>
           <li><a href="trucking.html">Trucking &amp; Transport</a></li>
           <li><a href="index-trucking-b.html">Driveaway Dispatch Platform &#8599;</a></li>
-          <li><a href="services-2.html#platforms">Operations Platforms</a></li>
-          <li><a href="services-2.html#mobile">Mobile Apps</a></li>
-          <li><a href="services-2.html#ai">AI &amp; Automation</a></li>
+          <li><a href="services.html#platforms">Operations Platforms</a></li>
+          <li><a href="services.html#mobile">Mobile Apps</a></li>
+          <li><a href="services.html#ai">AI &amp; Automation</a></li>
         </ul>
       </div>
       <div>
@@ -153,7 +153,7 @@ FOOT = """
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="__INDEX__">Case Studies</a></li>
-          <li><a href="services-2.html">Services</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="trust.html">Trust &amp; Security</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

@@ -22,7 +22,7 @@
   var results = document.getElementById('checkResults');
   var summary = document.getElementById('checkSummary');
   var grid = document.getElementById('checkGrid');
-  var svcPage = checkForm.getAttribute('data-services') || 'services-2.html';
+  var svcPage = checkForm.getAttribute('data-services') || 'services.html';
 
   var next = document.getElementById('auditNext');
   var auditUrl = auditForm.elements.url;

@@ -18,7 +18,7 @@ SPECIFIC = [
     ("Transport Software \u2014 Dispatch, Driver", "Transport Software | Dispatch, Driver"),
     ("Trust &amp; Security \u2014 NDA", "Trust &amp; Security | NDA"),
 
-    # brand aria-label, matching the comma form index2.html already uses
+    # brand aria-label, matching the comma form index.html already uses
     ("Alpha Squared \u2014 Ideas Implemented", "Alpha Squared, Ideas Implemented"),
 
     # numeric ranges read as words

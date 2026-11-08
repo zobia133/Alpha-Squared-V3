@@ -18,6 +18,22 @@
   to = "/website-check.html"
   status = 200
 
+# Old v2 URLs from before index2/services-2/case-studies-2 became the only version.
+[[redirects]]
+  from = "/index2.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services-2.html"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies-2.html"
+  to = "/case-studies.html"
+  status = 301
+
 [[redirects]]
   from = "/driveaway"
   to = "/index-trucking-b.html"

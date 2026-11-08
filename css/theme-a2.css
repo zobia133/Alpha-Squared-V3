@@ -1,8 +1,8 @@
 /* ==========================================================================
    Alpha Squared — "New A2 Design System" theme
    Loaded AFTER style.css. Overrides tokens only; layout/structure untouched,
-   so index.html keeps the original blue/teal/orange system and index2.html
-   gets the navy + blue + gold one.
+   so pages without it (about, trust, trucking) keep the original
+   blue/teal/orange system and pages with it get the navy + blue + gold one.
 
    Rules carried over from the design system:
      - navy-black canvas, never pure #000

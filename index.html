@@ -23,9 +23,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css?v=20261028c" />
 <link rel="stylesheet" href="css/growth.css?v=20261028c" />
+<!-- New A2 design system: navy canvas, blue system colour, gold as accent only.
+     Loaded after style.css so it only has to restate tokens. -->
+<link rel="stylesheet" href="css/theme-a2.css?v=20261028c" />
+<link rel="stylesheet" href="css/audit.css?v=20261106b" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 <script type="application/ld+json">
 {
@@ -272,9 +276,75 @@
 <!-- ═══════════════════════ WHITE SHEET ═══════════════════════ -->
 <div class="page-light">
 
+  <!-- ── FREE WEBSITE CHECK ── -->
+  <!-- Instant scan via netlify/functions/site-check.mjs, then the "free-audit" Netlify form. -->
+  <section class="section" id="site-check">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Free website check</span>
+        <h2 class="d2" data-split="lines">How does your site<br /><span class="grad">hold up?</span></h2>
+        <p class="lead" data-anim="fade">Paste a link. We scan it in seconds and score it against the six
+          services we build, with a concrete fix for every low score.</p>
+      </div>
+
+      <form class="audit-check" id="checkForm" novalidate data-services="services.html" data-anim="fade">
+        <label for="checkUrl" class="audit-sr">Website address</label>
+        <input id="checkUrl" name="url" type="text" inputmode="url" autocomplete="url"
+               spellcheck="false" placeholder="yourcompany.com" required />
+        <button type="submit" class="btn"><span>Test my site <i class="ar">→</i></span></button>
+      </form>
+      <p class="audit-error" id="checkError" role="alert" hidden></p>
+      <p class="audit-note">Results in about 10 seconds. Free, and nothing is stored.</p>
+
+      <div class="audit-report" id="report" hidden>
+        <div class="audit-progress" id="checkProgress" aria-live="polite">
+          <div class="audit-progress__bar"><span id="checkBar"></span></div>
+          <p class="audit-progress__msg" id="checkMsg">Starting…</p>
+        </div>
+
+        <div id="checkResults" hidden>
+          <div class="audit-summary" id="checkSummary"></div>
+          <div class="audit-grid" id="checkGrid"></div>
+          <p class="audit-foot">
+            An automated first look from a single page load. It reads the page code and server
+            headers, so tools that load later or sit behind a login may be missed.
+          </p>
+        </div>
+      </div>
+
+      <div class="audit-next" id="auditNext">
+        <h3>Want the full audit?</h3>
+        <p>A senior engineer reviews your site by hand and emails you a prioritised fix list.</p>
+
+        <form class="audit-form" id="auditForm" name="free-audit" method="POST" data-netlify="true" netlify-honeypot="company-website">
+          <input type="hidden" name="form-name" value="free-audit" />
+          <input type="hidden" name="score" />
+          <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+          <label class="field audit-form__url">
+            <span>Website URL</span>
+            <input name="url" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" required />
+          </label>
+          <label class="field">
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" placeholder="Jane Cooper" />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
+          </label>
+
+          <button type="submit" class="btn"><span>Get my free audit <i class="ar">→</i></span></button>
+        </form>
+        <p class="audit-thanks" id="auditThanks" role="status" hidden>Thanks! We’ll email your audit within 24 hours.</p>
+        <p class="audit-error" id="auditError" role="alert" hidden></p>
+        <p class="audit-alt"><a id="auditSelf" href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Or test it yourself now <i class="ar">↗</i></a></p>
+      </div>
+    </div>
+  </section>
 
   <!-- ── SERVICES ── -->
-  <section class="section" id="services">
+  <section class="section section--tight" id="services">
     <div class="wrap">
       <div class="head head--center">
         <span class="badge" data-anim="fade">What we build</span>
@@ -348,7 +418,7 @@
             <li>Running 24/7 for a real client today</li>
           </ul>
           <div class="cta-row" data-anim="fade" style="margin-top:28px">
-            <a href="case-studies.html#futurespark" class="btn btn--ghost"><span>Read the AI Front Desk case study <i class="ar">→</i></span></a>
+            <a href="case-ai-front-desk.html" class="btn btn--ghost"><span>Read the AI Front Desk case study <i class="ar">→</i></span></a>
           </div>
         </div>
 
@@ -640,12 +710,12 @@
       </div>
 
       <div class="inds">
-        <div class="ind" style="--ic:#fe881b" data-anim="up">
+        <div class="ind" style="--ic:#f5a524" data-anim="up">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 7.5A2.5 2.5 0 0 1 4.5 5h11A2.5 2.5 0 0 1 18 7.5V10h4.6a2.5 2.5 0 0 1 2.1 1.1l3.9 5.8a2.5 2.5 0 0 1 .4 1.4v4.2a2 2 0 0 1-2 2h-1.3a3.8 3.8 0 0 0-7.4 0h-4.5a3.8 3.8 0 0 0-7.4 0H4a2 2 0 0 1-2-2V7.5ZM18 13v4h7.6L22.9 13H18Z"/><circle cx="9.6" cy="24.4" r="2.6"/><circle cx="21.8" cy="24.4" r="2.6"/></svg></span>
           <h3>Trucking &amp; Transport</h3>
         </div>
 
-        <div class="ind" style="--ic:#12b8b0" data-anim="up" data-delay="0.05">
+        <div class="ind" style="--ic:#22b2fb" data-anim="up" data-delay="0.05">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18.4 2 6.5 18.4a1 1 0 0 0 .8 1.6h6L11 29.3a.6.6 0 0 0 1.1.5l12-16.6a1 1 0 0 0-.8-1.6h-6.1l2.3-9.1A.6.6 0 0 0 18.4 2Z"/></svg></span>
           <h3>Energy &amp; Industrial</h3>
         </div>
@@ -655,12 +725,12 @@
           <h3>Healthcare &amp; Clinics</h3>
         </div>
 
-        <div class="ind" style="--ic:#0f9bc4" data-anim="up" data-delay="0.15">
+        <div class="ind" style="--ic:#2ba7ff" data-anim="up" data-delay="0.15">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M16 2.4 4.8 6.6v8.2c0 6.5 4.3 12.4 11.2 14.8 6.9-2.4 11.2-8.3 11.2-14.8V6.6L16 2.4Zm5.7 9.4-7.4 8.3-4.1-4.2 2-2 2 2 5.5-6.1 2 2Z"/></svg></span>
           <h3>Public Safety</h3>
         </div>
 
-        <div class="ind" style="--ic:#12b8b0" data-anim="up" data-delay="0.2">
+        <div class="ind" style="--ic:#15328f" data-anim="up" data-delay="0.2">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M21.6 3a8.4 8.4 0 0 0-8 11.1L4.3 23.4a3 3 0 0 0 0 4.3l.1.1a3 3 0 0 0 4.3 0l9.2-9.3a8.4 8.4 0 0 0 11.6-10l-4.8 4.8-3.5-3.5L26 4.9A8.4 8.4 0 0 0 21.6 3Z"/></svg></span>
           <h3>Field Services</h3>
         </div>
@@ -670,17 +740,17 @@
           <h3>Retail &amp; POS</h3>
         </div>
 
-        <div class="ind" style="--ic:#0f9bc4" data-anim="up" data-delay="0.1">
+        <div class="ind" style="--ic:#2ba7ff" data-anim="up" data-delay="0.1">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M4.6 6h22.8A2.6 2.6 0 0 1 30 8.6V11H2V8.6A2.6 2.6 0 0 1 4.6 6ZM2 14.4h28v9A2.6 2.6 0 0 1 27.4 26H4.6A2.6 2.6 0 0 1 2 23.4v-9Zm3.6 5.2h6.2v2.8H5.6v-2.8Z"/></svg></span>
           <h3>Fintech &amp; Payments</h3>
         </div>
 
-        <div class="ind" style="--ic:#12b8b0" data-anim="up" data-delay="0.15">
+        <div class="ind" style="--ic:#22b2fb" data-anim="up" data-delay="0.15">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M12.6 3h6.8A3.6 3.6 0 0 1 23 6.6V8h4.4A2.6 2.6 0 0 1 30 10.6v14.8A2.6 2.6 0 0 1 27.4 28H4.6A2.6 2.6 0 0 1 2 25.4V10.6A2.6 2.6 0 0 1 4.6 8H9V6.6A3.6 3.6 0 0 1 12.6 3Zm.4 5h6V6.8a.8.8 0 0 0-.8-.8h-4.4a.8.8 0 0 0-.8.8V8Z"/></svg></span>
           <h3>Marketplaces</h3>
         </div>
 
-        <div class="ind" style="--ic:#fe881b" data-anim="up" data-delay="0.2">
+        <div class="ind" style="--ic:#f5a524" data-anim="up" data-delay="0.2">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 1.6 10.4 16 17.8l11.6-6v7h2.8v-8.4L16 3ZM6.8 15.2v6.2c0 2.9 4.1 5.2 9.2 5.2s9.2-2.3 9.2-5.2v-6.2L16 20l-9.2-4.8Z"/></svg></span>
           <h3>Education &amp; Training</h3>
         </div>
@@ -701,12 +771,13 @@
     <div class="wrap">
       <div class="head head--center">
         <span class="badge" data-anim="fade">Selected work</span>
-        <h2 class="d2" data-split="lines">Systems running in production<br /><span class="grad">right now.</span></h2>
+        <h2 class="d2" data-split="lines">Systems running in production<br /><span class="gold-text">right now.</span></h2>
       </div>
 
       <div class="grid grid--3" style="margin-top:56px">
-        <article class="cs" style="--csGlow:rgba(255,138,36,.42)" data-anim="up">
+        <article class="cs" style="--csGlow:rgba(245,165,36,.42)" data-anim="up">
           <div class="cs__shot">
+            <div class="cs__plate"><b>Alliance</b><em>Trucking &amp; Transport</em></div>
             <img src="assets/work/alliance.jpg" alt="Alliance Driveaway dispatch dashboard and driver app shown side by side" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
@@ -719,48 +790,51 @@
               <li>48 US states and Canada</li>
               <li>Load to invoice with no retyping</li>
             </ul>
-            <a class="cs__more" href="case-studies.html#alliance">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-alliance-driveaway.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(20,195,186,.42)" data-anim="up" data-delay="0.08">
+        <article class="cs" style="--csGlow:rgba(34,178,251,.42)" data-anim="up" data-delay="0.08">
           <div class="cs__shot">
+            <div class="cs__plate"><b>FluidsData</b><em>Energy &amp; Industrial</em></div>
             <img src="assets/work/fluidsdata.jpg" alt="FluidsData analytics dashboard showing drilling fluids charts and data tables" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
             <span class="cs__tag">Energy &amp; Industrial · FluidsData</span>
             <p class="cs__metric">Drilling fluids data that answers back.</p>
-            <p>Structured dashboards and exploratory analysis over raw drilling-fluids data,
-              with an agentic assistant layered on top for predictive guidance.</p>
+            <p>Raw, siloed field and lab data in. Structured dashboards and an agentic
+              assistant out, so a decision does not wait on someone's spreadsheet.</p>
             <ul class="cs__list cs__list--res">
-              <li>In active use by teams at Chevron</li>
-              <li>ExxonMobil and ADNOC running on it too</li>
-              <li>Built for a high bar on data trust</li>
+              <li>In active use at Chevron and ExxonMobil</li>
+              <li>In active use at ADNOC</li>
+              <li>Predictive guidance, not just charts</li>
             </ul>
-            <a class="cs__more" href="case-studies.html#fluidsdata">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-fluidsdata.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(58,110,255,.42)" data-anim="up" data-delay="0.16">
+        <article class="cs" style="--csGlow:rgba(28,78,255,.42)" data-anim="up" data-delay="0.16">
           <div class="cs__shot">
+            <div class="cs__plate"><b>AI Front Desk</b><em>AI in Production</em></div>
             <img src="assets/work/ai-front-desk.jpg" alt="Alpha Squared AI Front Desk voice agent concept cover image" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
             <span class="cs__tag">AI in Production · AI Front Desk</span>
             <p class="cs__metric">A receptionist that never sleeps.</p>
             <p>An autonomous voice agent that reads caller intent, checks live availability,
-              books the appointment and writes the record into HubSpot.</p>
+              books the slot and writes the record into HubSpot.</p>
             <ul class="cs__list cs__list--res">
-              <li>Answering real inbound calls, 24 hours a day</li>
-              <li>No manual data entry after a booked call</li>
-              <li>No human required in the loop</li>
+              <li>Real inbound calls answered 24/7</li>
+              <li>No human in the loop</li>
+              <li>No manual data entry after a booking</li>
             </ul>
-            <a class="cs__more" href="case-studies.html#futurespark">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-ai-front-desk.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(255,138,36,.42)" data-anim="up">
+        <article class="cs" style="--csGlow:rgba(43,167,255,.42)" data-anim="up">
           <div class="cs__shot">
+            <div class="cs__plate"><b>Who I Follow</b><em>Sports Tech</em></div>
             <img src="assets/work/whoifollow.jpg" alt="Who I Follow sports platform showing tournament brackets and team schedules" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
@@ -773,12 +847,13 @@
               <li>Rain delays reschedule in the system</li>
               <li>Web platform plus native iOS and Android</li>
             </ul>
-            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-who-i-follow.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(58,110,255,.42)" data-anim="up" data-delay="0.08">
+        <article class="cs" style="--csGlow:rgba(21,50,143,.55)" data-anim="up" data-delay="0.08">
           <div class="cs__shot">
+            <div class="cs__plate"><b>Coca-Cola</b><em>Enterprise internal tools</em></div>
             <img src="assets/casestudies/25-coca-cola-internal-messaging.jpg" alt="Coca-Cola internal messaging and org hierarchy application interface" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
@@ -791,12 +866,13 @@
               <li>Feedback lands with someone who can act on it</li>
               <li>Access control applied per level</li>
             </ul>
-            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-coca-cola-internal-messaging.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
 
-        <article class="cs" style="--csGlow:rgba(20,195,186,.42)" data-anim="up" data-delay="0.16">
+        <article class="cs" style="--csGlow:rgba(34,178,251,.42)" data-anim="up" data-delay="0.16">
           <div class="cs__shot">
+            <div class="cs__plate"><b>Safe City</b><em>GovTech &amp; public safety</em></div>
             <img src="assets/casestudies/50-safe-city-lahore-projects.jpg" alt="Safe City Lahore public safety systems including data exchange and digital forensics interfaces" loading="lazy" decoding="async" />
           </div>
           <div class="cs__body">
@@ -809,7 +885,7 @@
               <li>Chain of custody enforced in software</li>
               <li>Role-based access across all three systems</li>
             </ul>
-            <a class="cs__more" href="case-studies.html">Read the case study <i class="ar">→</i></a>
+            <a class="cs__more" href="case-safe-city-lahore.html">Read the case study <i class="ar">→</i></a>
           </div>
         </article>
       </div>
@@ -915,7 +991,7 @@
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="case-studies.html#fluidsdata" data-anim="up" data-delay="0.07">
+        <a class="svc" href="case-fluidsdata.html" data-anim="up" data-delay="0.07">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M7 1h12l6 6v22a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm11 2.4V9h5.6L18 3.4ZM9 13h14v2H9v-2Zm0 5h14v2H9v-2Zm0 5h9v2H9v-2Z"/></svg></span>
           <h3>Document &amp; Data Capture</h3>
           <p>OCR microservices that read real receipts, lab PDFs and vendor exports and hand back typed, validated records. Review queues become exceptions, not the default.</p>
@@ -1096,6 +1172,7 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="case-studies.html">Case Studies</a></li>
           <li><a href="services.html">Services</a></li>
+          <li><a href="#site-check">Free Website Check</a></li>
           <li><a href="trust.html">Trust &amp; Security</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -1234,6 +1311,7 @@
 </script>
 <script src="js/main.js?v=20261028c"></script>
 <script src="js/growth.js?v=20261028c"></script>
+<script src="js/audit.js?v=20261106b"></script>
 </body>
 </html>
 

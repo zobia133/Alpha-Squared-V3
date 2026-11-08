@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   cases.js — behaviour for case-studies-2.html and the generated detail
+   cases.js — behaviour for case-studies.html and the generated detail
    pages. Vanilla and dependency-free: main.js owns the GSAP scroll work,
    and this file must keep running on pages where that fails to load.
    ═══════════════════════════════════════════════════════════════════════ */

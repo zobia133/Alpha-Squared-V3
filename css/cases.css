@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   cases.css — case study index (case-studies-2.html) and the generated
+   cases.css — case study index (case-studies.html) and the generated
    per-project detail pages. Loaded after style.css and theme-a2.css, so it
    only consumes tokens and never redefines them.
 
@@ -258,7 +258,7 @@
 /* — metrics — */
 .ix-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
 
-/* Proof band on services-2: the figures are the argument, so they get more
+/* Proof band on services.html: the figures are the argument, so they get more
    room, more weight and a rule above each one to read as a scoreboard. */
 .ix--proof { padding-block: 56px; }
 .ix--proof .ix__title { font-size: clamp(1.7rem, 3.2vw, 2.5rem); margin-bottom: 0; }
