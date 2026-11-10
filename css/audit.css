@@ -83,6 +83,7 @@
 }
 .audit-thanks { margin-top: 36px; padding: 22px 16px; background: rgba(12, 206, 107, .14); color: #9ff0c4; font-size: 1.05rem; }
 .audit-error { background: rgba(255, 78, 66, .14); color: #ffb3ad; }
+.audit-error a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 .audit-alt { margin: 18px 0 0; text-align: center; font-size: .92rem; }
 .audit-alt a { color: var(--on-dark-2); text-decoration: underline; text-underline-offset: 3px; }
