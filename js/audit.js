@@ -230,7 +230,7 @@
         report.hidden = true;
         show(checkErr, err.name === 'AbortError'
           ? 'The check timed out. Request the full audit below and we\u2019ll review the site by hand.'
-          : (err.message || 'The instant check isn\u2019t available right now. Request the full audit below instead.'));
+          : (err.name !== 'TypeError' && err.message) || 'The instant check isn\u2019t available right now. Request the full audit below instead.');
         revealNext(url, null);
       })
       .then(function () {
@@ -281,7 +281,17 @@
       thanks.hidden = false;
       if (window.a2track) window.a2track('audit_request', { host: new URL(u).hostname });
     }).catch(function () {
-      show(auditErr, 'Sorry, that didn\u2019t send. Please try again or email ' + MAIL + '.');
+      // Form backend unavailable (e.g. Netlify form detection off): hand off to email with the details prefilled.
+      var f = auditForm.elements;
+      var body = 'Website: ' + u + '\nName: ' + f.name.value + '\nEmail: ' + f.email.value +
+        (f.score.value ? '\nInstant check score: ' + f.score.value : '');
+      var mail = el('a', null, 'email us your request');
+      mail.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('Full website audit: ' + new URL(u).hostname) +
+        '&body=' + encodeURIComponent(body);
+      auditErr.textContent = 'Sorry, that didn\u2019t send. Please ';
+      auditErr.appendChild(mail);
+      auditErr.appendChild(document.createTextNode(' instead (' + MAIL + ').'));
+      auditErr.hidden = false;
     }).then(function () {
       auditBtn.disabled = false;
     });
