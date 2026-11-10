@@ -24,12 +24,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028c" />
+<link rel="stylesheet" href="css/style.css?v=20261110" />
 <link rel="stylesheet" href="css/growth.css?v=20261028c" />
 <!-- New A2 design system: navy canvas, blue system colour, gold as accent only.
      Loaded after style.css so it only has to restate tokens. -->
 <link rel="stylesheet" href="css/theme-a2.css?v=20261028c" />
-<link rel="stylesheet" href="css/audit.css?v=20261110" />
+<link rel="stylesheet" href="css/audit.css?v=20261110b" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 <script type="application/ld+json">
 {
@@ -115,8 +115,7 @@
     <h1 class="d1" data-split="lines">Software systems<br /><span class="grad">your business runs on.</span></h1>
 
     <p class="hero__sub" data-anim="fade" data-delay="0.5">
-      Dispatch boards, field apps, client portals, AI agents and the integrations
-      that hold them together, built for the way your operation actually works.
+      Dispatch boards, field apps, portals and AI agents, built around how you actually work.
     </p>
 
     <div class="cta-row" data-anim="fade" data-delay="0.65">
@@ -192,22 +191,16 @@
 
         <div class="whyus__copy" data-anim="fade" aria-live="polite">
           <p class="lead whycopy is-on" data-view="map">
-            Operating since 2012 out of Edmonton, Alberta. 265+ projects delivered,
-            clients in 17 countries, 52 of them repeat. A Canadian principal in your
-            timezone, a senior engineering bench behind him, and a portfolio we can
-            point at instead of a pitch deck.
+            Edmonton-led since 2012. A Canadian principal in your timezone and a
+            portfolio instead of a pitch deck.
           </p>
           <p class="lead whycopy" data-view="ai">
-            Not a pilot and not a slide. Voice agents answering real inbound calls,
-            OCR services reading scanned paperwork, assistants wired into live CRMs.
-            In production for paying clients today, with a trace you can audit and a
-            cost per call you can forecast.
+            Voice agents, OCR and CRM assistants live for paying clients today.
+            Not a pilot, not a slide.
           </p>
           <p class="lead whycopy" data-view="bench">
-            Senior Laravel, Vue, Node, Python and automation engineers who have
-            shipped together for years. Assembled per engagement, never
-            junior-loaded, and accountable to one principal who scopes the work and
-            stays on it from kickoff to handover.
+            Senior engineers who have shipped together for years, led by one
+            principal from kickoff to handover.
           </p>
         </div>
 
@@ -276,186 +269,14 @@
 <!-- ═══════════════════════ WHITE SHEET ═══════════════════════ -->
 <div class="page-light">
 
-  <!-- ── FREE WEBSITE CHECK ── -->
-  <!-- Instant scan via netlify/functions/site-check.mjs, then the "free-audit" Netlify form. -->
-  <section class="section" id="site-check">
-    <div class="wrap">
-      <div class="head head--center">
-        <span class="badge" data-anim="fade">Free website check</span>
-        <h2 class="d2" data-split="lines">How does your site<br /><span class="grad">hold up?</span></h2>
-        <p class="lead" data-anim="fade">Paste a link. We scan it in seconds and score it against the six
-          services we build, with a concrete fix for every low score.</p>
-      </div>
-
-      <form class="audit-check" id="checkForm" novalidate data-services="services.html" data-anim="fade">
-        <label for="checkUrl" class="audit-sr">Website address</label>
-        <input id="checkUrl" name="url" type="text" inputmode="url" autocomplete="url"
-               spellcheck="false" placeholder="yourcompany.com" required />
-        <button type="submit" class="btn"><span>Test my site <i class="ar">→</i></span></button>
-      </form>
-      <p class="audit-error" id="checkError" role="alert" hidden></p>
-      <p class="audit-note">Results in about 10 seconds. Free, and nothing is stored.</p>
-
-      <div class="audit-report" id="report" hidden>
-        <div class="audit-progress" id="checkProgress" aria-live="polite">
-          <div class="audit-progress__bar"><span id="checkBar"></span></div>
-          <p class="audit-progress__msg" id="checkMsg">Starting…</p>
-        </div>
-
-        <div id="checkResults" hidden>
-          <div class="audit-summary" id="checkSummary"></div>
-          <div class="audit-grid" id="checkGrid"></div>
-          <p class="audit-foot">
-            An automated first look from a single page load. It reads the page code and server
-            headers, so tools that load later or sit behind a login may be missed.
-          </p>
-        </div>
-      </div>
-
-      <div class="audit-next" id="auditNext">
-        <h3>Want the full audit?</h3>
-        <p>A senior engineer reviews your site by hand and emails you a prioritised fix list.</p>
-
-        <form class="audit-form" id="auditForm" name="free-audit" method="POST" data-netlify="true" netlify-honeypot="company-website">
-          <input type="hidden" name="form-name" value="free-audit" />
-          <input type="hidden" name="score" />
-          <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
-
-          <label class="field audit-form__url">
-            <span>Website URL</span>
-            <input name="url" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" required />
-          </label>
-          <label class="field">
-            <span>Name</span>
-            <input name="name" type="text" autocomplete="name" placeholder="Jane Cooper" />
-          </label>
-          <label class="field">
-            <span>Email</span>
-            <input name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
-          </label>
-
-          <button type="submit" class="btn"><span>Get my free audit <i class="ar">→</i></span></button>
-        </form>
-        <p class="audit-thanks" id="auditThanks" role="status" hidden>Thanks! We’ll email your audit within 24 hours.</p>
-        <p class="audit-error" id="auditError" role="alert" hidden></p>
-        <p class="audit-alt"><a id="auditSelf" href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Or test it yourself now <i class="ar">↗</i></a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SERVICES ── -->
-  <section class="section section--tight" id="services">
-    <div class="wrap">
-      <div class="head head--center">
-        <span class="badge" data-anim="fade">What we build</span>
-        <h2 class="d2" data-split="lines">Everything the product needs,<br /><span class="grad">under one roof.</span></h2>
-      </div>
-
-      <div class="grid grid--3" style="margin-top:56px">
-        <a class="svc" href="services.html#platforms" data-anim="up">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
-          <h3>Operations Platforms</h3>
-          <p>Dispatch boards, admin dashboards, portals and the APIs behind them, architected to scale, built to last.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#mobile" data-anim="up" data-delay="0.07">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
-          <h3>Mobile Apps</h3>
-          <p>Native iOS and Android for drivers and field crews. Offline-tolerant, GPS-aware, built by senior mobile engineers.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#ai" data-anim="up" data-delay="0.14">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
-          <h3>AI &amp; Automation</h3>
-          <p>Voice agents, document OCR, LLM assistants and workflow automation, live in production for real clients today.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#design" data-anim="up">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
-          <h3>Product &amp; UX Design</h3>
-          <p>Research, product strategy and interfaces refined for clarity. Design that ships, not decks that don't.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#teams" data-anim="up" data-delay="0.07">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
-          <h3>Dedicated Teams</h3>
-          <p>A vetted senior pod embedded with your team. Capacity without the twelve-week local hiring cycle.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#cloud" data-anim="up" data-delay="0.14">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
-          <h3>Cloud, DevOps &amp; Support</h3>
-          <p>Infrastructure, CI/CD, observability and long-term product support with SLAs you can hold us to.</p>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── AI AGENT ── -->
-  <!-- The wireframe globe is back as the centrepiece, driven as a voice agent:
-       rings leave it on a speech envelope and the waveform under the transcript
-       runs off the same signal, so the block reads as one agent mid-sentence. -->
-  <section class="section section--tight" id="ai">
-    <div class="wrap">
-      <div class="agent">
-        <div class="agent__copy">
-          <span class="badge" data-anim="fade">AI in production</span>
-          <h2 class="d2" data-split="lines">AI that answers the phone.<br /><span class="grad">Not a line on a slide.</span></h2>
-          <p class="lead" data-anim="fade" style="margin-top:22px">
-            Voice agents taking real inbound calls, OCR microservices reading real
-            documents, agentic assistants wired into live CRMs. We treat AI as
-            engineering with a measurable job to do.
-          </p>
-          <ul class="ticks" style="margin-top:26px">
-            <li>Understands intent, checks live availability, books the job</li>
-            <li>Writes straight into the CRM, no human in the loop</li>
-            <li>Running 24/7 for a real client today</li>
-          </ul>
-          <div class="cta-row" data-anim="fade" style="margin-top:28px">
-            <a href="case-ai-front-desk.html" class="btn btn--ghost"><span>Read the AI Front Desk case study <i class="ar">→</i></span></a>
-          </div>
-        </div>
-
-        <div class="agent__viz" data-anim="fade">
-          <div class="agent__card">
-            <div class="agent__bar">
-              <a class="agent__live" href="#contact" data-chat-open="voice"><i></i>Live call <b class="ar">→</b></a>
-              <button class="agent__meta" type="button" data-chat-open="voice">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-7 0v5A3.5 3.5 0 0 0 12 14Zm6-3.5a6 6 0 0 1-5 5.92V20h-2v-3.58a6 6 0 0 1-5-5.92h2a4 4 0 0 0 8 0h2Z"/></svg>
-                Voice agent
-              </button>
-            </div>
-            <button class="agent__globe" type="button" data-chat-open="voice" aria-label="Talk to the voice agent">
-              <canvas id="globeViz"></canvas>
-            </button>
-            <div class="agent__caption" aria-live="polite">
-              <span class="agent__dot"></span>
-              <span class="agent__line" id="agentLine">Good afternoon, Alpha Squared here. How can I help?</span>
-            </div>
-            <div class="agent__wave" id="agentWave" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
   <!-- ── AI GROWTH SYSTEM ── seven services, one interactive showcase.
        Styles: css/growth.css · behaviour: js/growth.js -->
-  <section class="section section--tight" id="growth">
+  <section class="section" id="growth">
     <div class="wrap">
       <div class="head head--center">
         <span class="badge" data-anim="fade">AI growth system</span>
         <h2 class="d2" data-split="lines">Seven AI systems.<br /><span class="grad">One pipeline that never sleeps.</span></h2>
-        <p class="lead" data-anim="fade">We build the website, answer every call, follow up every lead, win back
-          old customers, collect reviews, coach your sales team and run your ads.
-          Pick one to start, or let us run all seven.</p>
+        <p class="lead" data-anim="fade">Pick one to start, or let us run all seven.</p>
       </div>
 
       <div class="gs" id="gs" data-anim="fade">
@@ -503,7 +324,6 @@
             <div>
               <p class="gs__kick">01 · Attract</p>
               <h3>A fast website that turns visitors into leads</h3>
-              <p class="gs__desc">Most visitors leave a slow page before it loads. We build lightweight, mobile-first sites with one clear action on every screen: call, book or ask.</p>
               <ul class="gs__list">
                 <li>Built to load in under 2 seconds on a phone</li>
                 <li>Click-to-call, booking and AI chat built in</li>
@@ -538,7 +358,6 @@
             <div>
               <p class="gs__kick">02 · Capture</p>
               <h3>An AI receptionist that answers every call</h3>
-              <p class="gs__desc">A natural-sounding voice agent picks up day and night, answers questions about your business, checks your calendar and books the appointment. It's the same technology behind our live AI Front Desk project.</p>
               <ul class="gs__list">
                 <li>Answers 24/7, including nights and weekends</li>
                 <li>Books straight into your calendar and CRM</li>
@@ -563,7 +382,6 @@
             <div>
               <p class="gs__kick">03 · Capture</p>
               <h3>Website lead nurturing in under a minute</h3>
-              <p class="gs__desc">When someone fills in your form, the AI texts them back within seconds, answers their questions and keeps following up by SMS and email until they book.</p>
               <ul class="gs__list">
                 <li>Instant first reply, not "we'll get back to you"</li>
                 <li>Follow-ups over days, written in your voice</li>
@@ -587,7 +405,6 @@
             <div>
               <p class="gs__kick">04 · Convert</p>
               <h3>AI lead reactivation: revenue already in your database</h3>
-              <p class="gs__desc">You've already paid for leads who never booked. Our AI starts friendly, personal text conversations with them and hands you the ones ready to talk.</p>
               <ul class="gs__list">
                 <li>Send us a spreadsheet of old leads, we do the rest</li>
                 <li>Two-way conversations, not one-off blasts</li>
@@ -612,7 +429,6 @@
             <div>
               <p class="gs__kick">05 · Convert</p>
               <h3>An AI sales coach on every call</h3>
-              <p class="gs__desc">Sales calls are recorded, transcribed and scored against your own process. Each rep gets specific feedback the same day: what worked, what lost the deal and what to say next time.</p>
               <ul class="gs__list">
                 <li>Scorecards built around your sales process</li>
                 <li>Spots missed objections and broken promises</li>
@@ -634,7 +450,6 @@
             <div>
               <p class="gs__kick">06 · Grow</p>
               <h3>Reviews &amp; referrals on autopilot</h3>
-              <p class="gs__desc">After every job, customers get a short message asking how it went. Happy customers are guided to a Google review and a referral link. Unhappy ones reach you privately first, so you can fix it.</p>
               <ul class="gs__list">
                 <li>More Google reviews, a higher spot on Maps</li>
                 <li>AI drafts a polite reply to every review</li>
@@ -664,7 +479,6 @@
             <div>
               <p class="gs__kick">07 · Attract</p>
               <h3>Facebook &amp; Instagram ads that feed the whole system</h3>
-              <p class="gs__desc">We write, design and manage your Meta ads. Every lead flows straight into nurturing, so nobody who clicks is forgotten, and you see exactly what each booking cost.</p>
               <ul class="gs__list">
                 <li>Local targeting around your service area</li>
                 <li>Creative tested and refreshed every month</li>
@@ -699,14 +513,176 @@
     </div>
   </section>
 
+  <!-- ── FREE WEBSITE CHECK ── -->
+  <!-- Instant scan via netlify/functions/site-check.mjs, then the "free-audit" Netlify form. -->
+  <section class="section section--tight" id="site-check">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Free website check</span>
+        <h2 class="d2" data-split="lines">How does your site<br /><span class="grad">hold up?</span></h2>
+        <p class="lead" data-anim="fade">Paste a link. Six scores, and a fix for every low one.</p>
+      </div>
+
+      <form class="audit-check" id="checkForm" novalidate data-services="services.html" data-anim="fade">
+        <label for="checkUrl" class="audit-sr">Website address</label>
+        <input id="checkUrl" name="url" type="text" inputmode="url" autocomplete="url"
+               spellcheck="false" placeholder="yourcompany.com" required />
+        <button type="submit" class="btn"><span>Test my site <i class="ar">→</i></span></button>
+      </form>
+      <p class="audit-error" id="checkError" role="alert" hidden></p>
+      <p class="audit-note">Results in about 10 seconds. Free, and nothing is stored.</p>
+
+      <div class="audit-report" id="report" hidden>
+        <div class="audit-progress" id="checkProgress" aria-live="polite">
+          <div class="audit-progress__bar"><span id="checkBar"></span></div>
+          <p class="audit-progress__msg" id="checkMsg">Starting…</p>
+        </div>
+
+        <div id="checkResults" hidden>
+          <div class="audit-summary" id="checkSummary"></div>
+          <div class="audit-grid" id="checkGrid"></div>
+          <p class="audit-foot">
+            An automated first look from a single page load. It reads the page code and server
+            headers, so tools that load later or sit behind a login may be missed.
+          </p>
+        </div>
+      </div>
+
+      <div class="audit-next" id="auditNext">
+        <span class="badge">Hand-reviewed audit</span>
+        <h3>Want the <span class="grad">full audit?</span></h3>
+        <p>A senior engineer reviews your site by hand and emails you a prioritised fix list.</p>
+
+        <form class="audit-form" id="auditForm" name="free-audit" method="POST" data-netlify="true" netlify-honeypot="company-website">
+          <input type="hidden" name="form-name" value="free-audit" />
+          <input type="hidden" name="score" />
+          <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+          <label class="field audit-form__url">
+            <span>Website URL</span>
+            <input name="url" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="yourcompany.com" required />
+          </label>
+          <label class="field">
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" placeholder="Jane Cooper" />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
+          </label>
+
+          <button type="submit" class="btn"><span>Get my free audit <i class="ar">→</i></span></button>
+        </form>
+        <p class="audit-thanks" id="auditThanks" role="status" hidden>Thanks! We’ll email your audit within 24 hours.</p>
+        <p class="audit-error" id="auditError" role="alert" hidden></p>
+        <p class="audit-alt"><a id="auditSelf" href="https://pagespeed.web.dev/" target="_blank" rel="noopener">Or test it yourself now <i class="ar">↗</i></a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="section section--tight" id="services">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">What we build</span>
+        <h2 class="d2" data-split="lines">Everything the product needs,<br /><span class="grad">under one roof.</span></h2>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:56px">
+        <a class="svc" href="services.html#platforms" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
+          <h3>Operations Platforms</h3>
+          <ul class="svc__chips"><li>Dispatch boards</li><li>Dashboards</li><li>Portals</li><li>APIs</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#mobile" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
+          <h3>Mobile Apps</h3>
+          <ul class="svc__chips"><li>iOS</li><li>Android</li><li>Offline-ready</li><li>GPS</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#ai" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
+          <h3>AI &amp; Automation</h3>
+          <ul class="svc__chips"><li>Voice agents</li><li>OCR</li><li>LLM assistants</li><li>Workflows</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#design" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
+          <h3>Product &amp; UX Design</h3>
+          <ul class="svc__chips"><li>Research</li><li>Strategy</li><li>UX / UI</li><li>Prototypes</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#teams" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
+          <h3>Dedicated Teams</h3>
+          <ul class="svc__chips"><li>Senior pods</li><li>Embedded</li><li>Start in weeks</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#cloud" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
+          <h3>Cloud, DevOps &amp; Support</h3>
+          <ul class="svc__chips"><li>AWS</li><li>CI/CD</li><li>Monitoring</li><li>SLAs</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI AGENT ── -->
+  <!-- The wireframe globe is back as the centrepiece, driven as a voice agent:
+       rings leave it on a speech envelope and the waveform under the transcript
+       runs off the same signal, so the block reads as one agent mid-sentence. -->
+  <section class="section section--tight" id="ai">
+    <div class="wrap">
+      <div class="agent">
+        <div class="agent__copy">
+          <span class="badge" data-anim="fade">AI in production</span>
+          <h2 class="d2" data-split="lines">AI that answers the phone.<br /><span class="grad">Not a line on a slide.</span></h2>
+          <ul class="ticks" style="margin-top:26px">
+            <li>Understands intent, checks live availability, books the job</li>
+            <li>Writes straight into the CRM, no human in the loop</li>
+            <li>Running 24/7 for a real client today</li>
+          </ul>
+          <div class="cta-row" data-anim="fade" style="margin-top:28px">
+            <a href="case-ai-front-desk.html" class="btn btn--ghost"><span>Read the AI Front Desk case study <i class="ar">→</i></span></a>
+          </div>
+        </div>
+
+        <div class="agent__viz" data-anim="fade">
+          <div class="agent__card">
+            <div class="agent__bar">
+              <a class="agent__live" href="#contact" data-chat-open="voice"><i></i>Live call <b class="ar">→</b></a>
+              <button class="agent__meta" type="button" data-chat-open="voice">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-7 0v5A3.5 3.5 0 0 0 12 14Zm6-3.5a6 6 0 0 1-5 5.92V20h-2v-3.58a6 6 0 0 1-5-5.92h2a4 4 0 0 0 8 0h2Z"/></svg>
+                Voice agent
+              </button>
+            </div>
+            <button class="agent__globe" type="button" data-chat-open="voice" aria-label="Talk to the voice agent">
+              <canvas id="globeViz"></canvas>
+            </button>
+            <div class="agent__caption" aria-live="polite">
+              <span class="agent__dot"></span>
+              <span class="agent__line" id="agentLine">Good afternoon, Alpha Squared here. How can I help?</span>
+            </div>
+            <div class="agent__wave" id="agentWave" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── INDUSTRIES ── -->
   <section class="section section--tight" id="industries">
     <div class="wrap">
       <div class="head head--center">
         <span class="badge" data-anim="fade">Industries we build for</span>
         <h2 class="d2" data-split="lines">Pick your industry.<br /><span class="grad">We have already shipped in it.</span></h2>
-        <p class="lead" data-anim="fade">Every sector runs on its own exceptions. These are the ones we have
-          already automated, on someone else's budget.</p>
       </div>
 
       <div class="inds">
@@ -783,8 +759,6 @@
           <div class="cs__body">
             <span class="cs__tag">Trucking &amp; Transport · Alliance Driveaway</span>
             <p class="cs__metric">Dispatch software for when the truck is the freight.</p>
-            <p>A dispatch board, native driver apps and QuickBooks sync for a North American
-              Class 6/7/8 relocation network that was running on phone calls and spreadsheets.</p>
             <ul class="cs__list cs__list--res">
               <li>350+ screened CDL drivers dispatched</li>
               <li>48 US states and Canada</li>
@@ -802,8 +776,6 @@
           <div class="cs__body">
             <span class="cs__tag">Energy &amp; Industrial · FluidsData</span>
             <p class="cs__metric">Drilling fluids data that answers back.</p>
-            <p>Raw, siloed field and lab data in. Structured dashboards and an agentic
-              assistant out, so a decision does not wait on someone's spreadsheet.</p>
             <ul class="cs__list cs__list--res">
               <li>In active use at Chevron and ExxonMobil</li>
               <li>In active use at ADNOC</li>
@@ -821,8 +793,6 @@
           <div class="cs__body">
             <span class="cs__tag">AI in Production · AI Front Desk</span>
             <p class="cs__metric">A receptionist that never sleeps.</p>
-            <p>An autonomous voice agent that reads caller intent, checks live availability,
-              books the slot and writes the record into HubSpot.</p>
             <ul class="cs__list cs__list--res">
               <li>Real inbound calls answered 24/7</li>
               <li>No human in the loop</li>
@@ -840,8 +810,6 @@
           <div class="cs__body">
             <span class="cs__tag">Sports Tech · Who I Follow</span>
             <p class="cs__metric">Run a 200-team tournament without a binder.</p>
-            <p>League and event management for softball associations: pool play, brackets,
-              umpire assignment and live scoring straight from the field.</p>
             <ul class="cs__list cs__list--res">
               <li>Tournaments with hundreds of teams</li>
               <li>Rain delays reschedule in the system</li>
@@ -859,8 +827,6 @@
           <div class="cs__body">
             <span class="cs__tag">Enterprise · Coca-Cola</span>
             <p class="cs__metric">Feedback that reaches the right level of the org chart.</p>
-            <p>An internal messaging and feedback platform where the hard part was not chat,
-              it was routing a message correctly through a structure spanning thousands of people.</p>
             <ul class="cs__list cs__list--res">
               <li>Messaging built on the real reporting hierarchy</li>
               <li>Feedback lands with someone who can act on it</li>
@@ -878,8 +844,6 @@
           <div class="cs__body">
             <span class="cs__tag">GovTech · Safe City Program</span>
             <p class="cs__metric">Three systems where downtime is a public safety event.</p>
-            <p>Data Exchange, Digital Forensic Centre and Media Monitoring Control, built to
-              government requirements on availability, access control and chain of custody.</p>
             <ul class="cs__list cs__list--res">
               <li>Inter-agency data sharing through one interface</li>
               <li>Chain of custody enforced in software</li>
@@ -902,9 +866,8 @@
       <div class="head head--center">
         <span class="badge" data-anim="fade">Automation &amp; modernisation</span>
         <h2 class="d2" data-split="lines">The work nobody should<br /><span class="grad">still be doing by hand.</span></h2>
-        <p class="lead" data-anim="fade">Re-keying between systems, chasing paperwork, and a decade-old
-          platform everyone quietly works around. We automate the first two and modernise
-          the third in stages, without stopping the business.</p>
+        <p class="lead" data-anim="fade">Automate the re-keying and paperwork. Modernise the old platform
+          in stages, without stopping the business.</p>
       </div>
 
       <!-- one trigger in, an AI layer in the middle, three systems written to.
@@ -987,21 +950,21 @@
         <a class="svc" href="services.html#ai" data-anim="up">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm20 0a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5 12.5h2v3h18v-3h2v5H17v3h-2v-3H5v-5ZM16 21a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg></span>
           <h3>Workflow Automation</h3>
-          <p>The steps between your systems, run by software instead of staff. n8n, Make.com and custom workflow APIs wiring dispatch, CRM and accounting so nothing gets typed twice.</p>
+          <ul class="svc__chips"><li>n8n</li><li>Make.com</li><li>Custom APIs</li><li>Zero retyping</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
         <a class="svc" href="case-fluidsdata.html" data-anim="up" data-delay="0.07">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M7 1h12l6 6v22a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm11 2.4V9h5.6L18 3.4ZM9 13h14v2H9v-2Zm0 5h14v2H9v-2Zm0 5h9v2H9v-2Z"/></svg></span>
           <h3>Document &amp; Data Capture</h3>
-          <p>OCR microservices that read real receipts, lab PDFs and vendor exports and hand back typed, validated records. Review queues become exceptions, not the default.</p>
+          <ul class="svc__chips"><li>Receipts</li><li>Lab PDFs</li><li>Vendor exports</li><li>Validated records</li></ul>
           <span class="tlink">See it in production <i class="ar">→</i></span>
         </a>
 
         <a class="svc" href="services.html#platforms" data-anim="up" data-delay="0.14">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M4 5h24a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm2.4 2.6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM4 16h11v3H5v6h10v3H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm19 0 7 6-7 6v-4h-5v-4h5v-4Z"/></svg></span>
           <h3>Legacy Modernisation</h3>
-          <p>We take over systems we didn't write. A short audit first: what's worth keeping, what's quietly costing you. Then we replace it piece by piece, integrations and reports included. No frozen quarter, no parallel team.</p>
+          <ul class="svc__chips"><li>Audit first</li><li>Wrap in an API</li><li>Replace in stages</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
       </div>
@@ -1067,14 +1030,13 @@
     <div class="wrap">
       <span class="badge" data-anim="fade">Let&#39;s talk</span>
       <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
-      <p class="lead" data-anim="fade">Tell us what you&#39;re building. You&#39;ll get an honest read on scope,
-        timeline and the right engagement model, usually within two business days.</p>
+      <p class="lead" data-anim="fade">Tell us what you&#39;re building. An honest read on scope and timeline
+        within two business days.</p>
 
       <div class="contact">
         <div class="contact__card contact__card--form" data-anim="up">
           <span class="contact__kicker"><b>01</b> Write to us</span>
           <h3>Send us the details</h3>
-          <p>The more you tell us about the operation, the more useful the first call is.</p>
           <ul class="contact__chips">
             <li>Answered in 2 business days</li>
             <li>NDA on request</li>

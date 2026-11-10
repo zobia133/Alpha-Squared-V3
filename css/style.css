@@ -1253,6 +1253,28 @@ h1, h2, h3, h4 {
 .svc p { margin: 0 0 20px; font-size: .92rem; line-height: 1.64; color: var(--ink-2); }
 .svc .tlink { margin-top: auto; }
 
+.svc__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin: 4px 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.svc__chips li {
+  padding: 6px 12px;
+  border: 1px solid rgba(28, 78, 255, .14);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(28, 78, 255, .06), rgba(34, 178, 251, .08));
+  font-size: .8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--blue-deep, #15328f);
+  transition: background .3s, border-color .3s;
+}
+.svc:hover .svc__chips li { border-color: rgba(28, 78, 255, .28); background: linear-gradient(135deg, rgba(28, 78, 255, .1), rgba(34, 178, 251, .14)); }
+
 .cs {
   position: relative;
   display: flex;
