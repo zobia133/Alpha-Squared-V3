@@ -739,6 +739,117 @@
     </div>
   </section>
 
+  <!-- ── AUTOMATION &amp; LEGACY ── -->
+  <section class="section section--tight" id="automation">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">Automation &amp; modernisation</span>
+        <h2 class="d2" data-split="lines">The work nobody should<br /><span class="grad">still be doing by hand.</span></h2>
+        <p class="lead" data-anim="fade">Automate the re-keying and paperwork. Modernise the old platform
+          in stages, without stopping the business.</p>
+      </div>
+
+      <!-- one trigger in, an AI layer in the middle, three systems written to.
+           Pure SVG so it scales with the card and needs no JS. -->
+      <div class="autoflow" data-anim="fade">
+        <svg viewBox="0 0 1000 400" role="img"
+             aria-label="An inbound call, a scanned document or a job status change goes into the AI automation layer, which writes to the dispatch board, the CRM and invoicing and payroll.">
+          <defs>
+            <linearGradient id="afWire" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="52%" stop-color="#12b8b0" />
+              <stop offset="100%" stop-color="#fe881b" />
+            </linearGradient>
+            <linearGradient id="afCore" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="100%" stop-color="#12b8b0" />
+            </linearGradient>
+          </defs>
+
+          <text class="autoflow__lab" x="10" y="22">WHAT COMES IN</text>
+          <text class="autoflow__lab autoflow__lab--end" x="990" y="22">WHERE IT LANDS</text>
+
+          <g class="autoflow__wires">
+            <path class="autoflow__wire" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__wire" d="M254 200 H 376" />
+            <path class="autoflow__wire" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__wire" d="M624 200 H 746" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 320 746 320" />
+
+            <path class="autoflow__pulse" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__pulse" d="M254 200 H 376" />
+            <path class="autoflow__pulse" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__pulse" d="M624 200 H 746" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 320 746 320" />
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="80" r="5" />
+            <text class="autoflow__t" x="60" y="87">Inbound call</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="200" r="5" />
+            <text class="autoflow__t" x="60" y="207">Scanned document</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="320" r="5" />
+            <text class="autoflow__t" x="60" y="327">Job status change</text>
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="80" r="5" />
+            <text class="autoflow__t" x="796" y="87">Dispatch board</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="200" r="5" />
+            <text class="autoflow__t" x="796" y="207">CRM record</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="320" r="5" />
+            <text class="autoflow__t" x="796" y="327">Invoice and payroll</text>
+          </g>
+
+          <rect class="autoflow__halo" x="366" y="128" width="268" height="144" rx="38" />
+          <rect class="autoflow__core" x="376" y="138" width="248" height="124" rx="30" />
+          <text class="autoflow__ct" x="500" y="192">AI automation</text>
+          <text class="autoflow__cs" x="500" y="220">extract · decide · route</text>
+          <text class="autoflow__cs autoflow__cs--dim" x="500" y="242">no human in the loop</text>
+        </svg>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:34px">
+        <a class="svc" href="services.html#ai" data-anim="up">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm20 0a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5 12.5h2v3h18v-3h2v5H17v3h-2v-3H5v-5ZM16 21a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg></span>
+          <h3>Workflow Automation</h3>
+          <ul class="svc__chips"><li>n8n</li><li>Make.com</li><li>Custom APIs</li><li>Zero retyping</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="case-fluidsdata.html" data-anim="up" data-delay="0.07">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M7 1h12l6 6v22a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm11 2.4V9h5.6L18 3.4ZM9 13h14v2H9v-2Zm0 5h14v2H9v-2Zm0 5h9v2H9v-2Z"/></svg></span>
+          <h3>Document &amp; Data Capture</h3>
+          <ul class="svc__chips"><li>Receipts</li><li>Lab PDFs</li><li>Vendor exports</li><li>Validated records</li></ul>
+          <span class="tlink">See it in production <i class="ar">→</i></span>
+        </a>
+
+        <a class="svc" href="services.html#platforms" data-anim="up" data-delay="0.14">
+          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M4 5h24a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm2.4 2.6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM4 16h11v3H5v6h10v3H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm19 0 7 6-7 6v-4h-5v-4h5v-4Z"/></svg></span>
+          <h3>Legacy Modernisation</h3>
+          <ul class="svc__chips"><li>Audit first</li><li>Wrap in an API</li><li>Replace in stages</li></ul>
+          <span class="tlink">Learn more <i class="ar">→</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CASE STUDIES ── -->
   <!-- Six cards, two rows of three. Deliberately short: one line of positioning,
        two sentences of context, three outcomes. The long-form version lives on
@@ -856,117 +967,6 @@
 
       <div class="cta-row" style="justify-content:center;margin-top:44px">
         <a href="case-studies.html" class="btn btn--ghost" data-anim="fade"><span>What we have built <i class="ar">→</i></span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── AUTOMATION &amp; LEGACY ── -->
-  <section class="section section--tight" id="automation">
-    <div class="wrap">
-      <div class="head head--center">
-        <span class="badge" data-anim="fade">Automation &amp; modernisation</span>
-        <h2 class="d2" data-split="lines">The work nobody should<br /><span class="grad">still be doing by hand.</span></h2>
-        <p class="lead" data-anim="fade">Automate the re-keying and paperwork. Modernise the old platform
-          in stages, without stopping the business.</p>
-      </div>
-
-      <!-- one trigger in, an AI layer in the middle, three systems written to.
-           Pure SVG so it scales with the card and needs no JS. -->
-      <div class="autoflow" data-anim="fade">
-        <svg viewBox="0 0 1000 400" role="img"
-             aria-label="An inbound call, a scanned document or a job status change goes into the AI automation layer, which writes to the dispatch board, the CRM and invoicing and payroll.">
-          <defs>
-            <linearGradient id="afWire" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#1c4eff" />
-              <stop offset="52%" stop-color="#12b8b0" />
-              <stop offset="100%" stop-color="#fe881b" />
-            </linearGradient>
-            <linearGradient id="afCore" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#1c4eff" />
-              <stop offset="100%" stop-color="#12b8b0" />
-            </linearGradient>
-          </defs>
-
-          <text class="autoflow__lab" x="10" y="22">WHAT COMES IN</text>
-          <text class="autoflow__lab autoflow__lab--end" x="990" y="22">WHERE IT LANDS</text>
-
-          <g class="autoflow__wires">
-            <path class="autoflow__wire" d="M254 80 C 320 80 320 200 376 200" />
-            <path class="autoflow__wire" d="M254 200 H 376" />
-            <path class="autoflow__wire" d="M254 320 C 320 320 320 200 376 200" />
-            <path class="autoflow__wire" d="M624 200 C 680 200 680 80 746 80" />
-            <path class="autoflow__wire" d="M624 200 H 746" />
-            <path class="autoflow__wire" d="M624 200 C 680 200 680 320 746 320" />
-
-            <path class="autoflow__pulse" d="M254 80 C 320 80 320 200 376 200" />
-            <path class="autoflow__pulse" d="M254 200 H 376" />
-            <path class="autoflow__pulse" d="M254 320 C 320 320 320 200 376 200" />
-            <path class="autoflow__pulse" d="M624 200 C 680 200 680 80 746 80" />
-            <path class="autoflow__pulse" d="M624 200 H 746" />
-            <path class="autoflow__pulse" d="M624 200 C 680 200 680 320 746 320" />
-          </g>
-
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="10" y="48" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="40" cy="80" r="5" />
-            <text class="autoflow__t" x="60" y="87">Inbound call</text>
-          </g>
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="10" y="168" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="40" cy="200" r="5" />
-            <text class="autoflow__t" x="60" y="207">Scanned document</text>
-          </g>
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="10" y="288" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="40" cy="320" r="5" />
-            <text class="autoflow__t" x="60" y="327">Job status change</text>
-          </g>
-
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="746" y="48" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="776" cy="80" r="5" />
-            <text class="autoflow__t" x="796" y="87">Dispatch board</text>
-          </g>
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="746" y="168" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="776" cy="200" r="5" />
-            <text class="autoflow__t" x="796" y="207">CRM record</text>
-          </g>
-          <g class="autoflow__node">
-            <rect class="autoflow__box" x="746" y="288" width="244" height="64" rx="18" />
-            <circle class="autoflow__dot" cx="776" cy="320" r="5" />
-            <text class="autoflow__t" x="796" y="327">Invoice and payroll</text>
-          </g>
-
-          <rect class="autoflow__halo" x="366" y="128" width="268" height="144" rx="38" />
-          <rect class="autoflow__core" x="376" y="138" width="248" height="124" rx="30" />
-          <text class="autoflow__ct" x="500" y="192">AI automation</text>
-          <text class="autoflow__cs" x="500" y="220">extract · decide · route</text>
-          <text class="autoflow__cs autoflow__cs--dim" x="500" y="242">no human in the loop</text>
-        </svg>
-      </div>
-
-      <div class="grid grid--3" style="margin-top:34px">
-        <a class="svc" href="services.html#ai" data-anim="up">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm20 0a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5 12.5h2v3h18v-3h2v5H17v3h-2v-3H5v-5ZM16 21a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg></span>
-          <h3>Workflow Automation</h3>
-          <ul class="svc__chips"><li>n8n</li><li>Make.com</li><li>Custom APIs</li><li>Zero retyping</li></ul>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="case-fluidsdata.html" data-anim="up" data-delay="0.07">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M7 1h12l6 6v22a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2Zm11 2.4V9h5.6L18 3.4ZM9 13h14v2H9v-2Zm0 5h14v2H9v-2Zm0 5h9v2H9v-2Z"/></svg></span>
-          <h3>Document &amp; Data Capture</h3>
-          <ul class="svc__chips"><li>Receipts</li><li>Lab PDFs</li><li>Vendor exports</li><li>Validated records</li></ul>
-          <span class="tlink">See it in production <i class="ar">→</i></span>
-        </a>
-
-        <a class="svc" href="services.html#platforms" data-anim="up" data-delay="0.14">
-          <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M4 5h24a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm2.4 2.6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM4 16h11v3H5v6h10v3H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm19 0 7 6-7 6v-4h-5v-4h5v-4Z"/></svg></span>
-          <h3>Legacy Modernisation</h3>
-          <ul class="svc__chips"><li>Audit first</li><li>Wrap in an API</li><li>Replace in stages</li></ul>
-          <span class="tlink">Learn more <i class="ar">→</i></span>
-        </a>
       </div>
     </div>
   </section>
