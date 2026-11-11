@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261111b" />
+<link rel="stylesheet" href="css/style.css?v=20261111c" />
 <link rel="stylesheet" href="css/growth.css?v=20261028c" />
 <!-- New A2 design system: navy canvas, blue system colour, gold as accent only.
      Loaded after style.css so it only has to restate tokens. -->
@@ -1054,23 +1054,33 @@
         <h2 class="d2" data-split="lines">The questions<br /><span class="grad">people actually ask.</span></h2>
       </div>
 
-      <div class="faq">
+      <div class="faq faq--split">
+        <aside class="faq__side" data-anim="up">
+          <span class="faq__big" aria-hidden="true">?</span>
+          <h3>Still have a question?</h3>
+          <p>Ask our AI assistant right now, or put it to Abdullah on a 20-minute call.</p>
+          <div class="faq__ctas">
+            <button type="button" class="btn" data-chat-open="text"><span>Ask the AI <i class="ar">→</i></span></button>
+            <a href="#contact" class="faq__call">Book a call <i class="ar">→</i></a>
+          </div>
+        </aside>
+
         <div class="acc" id="acc">
           <div class="acc__item">
-            <button class="acc__q">Deep expertise in transport operations <i></i></button>
+            <button class="acc__q"><b class="acc__n">01</b><span>Deep expertise in transport operations</span> <i></i></button>
             <div class="acc__a"><p>We&#39;ve built the dispatch dashboard, the driver apps and the
               tracking layer for a vehicle-relocation network running across 48 states and
               Canada. We understand load assignment, driver state and offline sync because
               we&#39;ve shipped them.</p></div>
           </div>
           <div class="acc__item">
-            <button class="acc__q">AI already running in production <i></i></button>
+            <button class="acc__q"><b class="acc__n">02</b><span>AI already running in production</span> <i></i></button>
             <div class="acc__a"><p>Voice agents answering real customer calls, OCR microservices,
               agentic assistants wired into live CRMs. We treat AI as engineering with a
               measurable job to do, not as a line on a slide.</p></div>
           </div>
           <div class="acc__item">
-            <button class="acc__q">Can you re-engineer our legacy system? <i></i></button>
+            <button class="acc__q"><b class="acc__n">03</b><span>Can you re-engineer our legacy system?</span> <i></i></button>
             <div class="acc__a"><p>Yes, and we do it without a big bang rewrite. We map what the
               old system actually does, wrap it in an API, then move module by module onto a
               modern Laravel or Node stack while the business keeps running. Your data,
@@ -1078,14 +1088,14 @@
               retyping orders.</p></div>
           </div>
           <div class="acc__item">
-            <button class="acc__q">What can we actually automate? <i></i></button>
+            <button class="acc__q"><b class="acc__n">04</b><span>What can we actually automate?</span> <i></i></button>
             <div class="acc__a"><p>The work that eats your team&#39;s day: dispatch assignment, rate
               and invoice entry, document OCR, status updates to customers, driver check ins,
               reconciliation between systems that don&#39;t talk. We start with the one workflow
               costing you the most hours, prove the hours saved, then widen it.</p></div>
           </div>
           <div class="acc__item">
-            <button class="acc__q">Canadian front door, senior global bench <i></i></button>
+            <button class="acc__q"><b class="acc__n">05</b><span>Canadian front door, senior global bench</span> <i></i></button>
             <div class="acc__a"><p>Abdullah is your principal in Alberta. Same timezone, same
               contracts, accountable by name. Behind him is a senior engineering team that
               keeps budgets realistic without dropping the standard.</p></div>
@@ -1344,7 +1354,7 @@
     io.observe(el);
   })();
 </script>
-<script src="js/main.js?v=20261028c"></script>
+<script src="js/main.js?v=20261111"></script>
 <script src="js/growth.js?v=20261028c"></script>
 <script src="js/audit.js?v=20261110"></script>
 </body>

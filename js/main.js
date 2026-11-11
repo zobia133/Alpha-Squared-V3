@@ -1048,7 +1048,7 @@
 
     function goTo(hash) {
       var t = document.querySelector(hash);
-      if (!t) return;
+      if (!t) { window.location.href = 'index.html' + hash; return; }
       if (lenis) lenis.scrollTo(t, { offset: -90 });
       else t.scrollIntoView({ behavior: 'smooth' });
     }
@@ -1663,6 +1663,50 @@
   /* ══════════════════════════════════════════════════════════════════
      Boot
      ══════════════════════════════════════════════════════════════════ */
+  // index.html ships the chat markup; every other page gets the same block injected.
+  function injectChat() {
+    if (document.getElementById('a2chat')) return;
+    var X = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3 1.4 1.4Z"/></svg>';
+    var wrap = document.createElement('div');
+    wrap.innerHTML =
+      '<div class="chat" id="a2chat" hidden>' +
+        '<div class="chat__scrim" data-chat-close></div>' +
+        '<section class="chat__panel" role="dialog" aria-modal="true" aria-labelledby="chatTitle">' +
+          '<header class="chat__head">' +
+            '<span class="chat__avatar" aria-hidden="true"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>' +
+            '<span class="chat__id"><strong id="chatTitle">Alpha Squared AI</strong><span class="chat__status"><i></i> Online · answers in seconds</span></span>' +
+            '<button class="chat__x" type="button" data-chat-close aria-label="Close chat">' + X + '</button>' +
+          '</header>' +
+          '<div class="chat__modes" role="tablist" aria-label="Chat mode">' +
+            '<button type="button" class="chat__mode is-on" role="tab" aria-selected="true" data-mode="text">Text</button>' +
+            '<button type="button" class="chat__mode" role="tab" aria-selected="false" data-mode="voice">Voice</button>' +
+          '</div>' +
+          '<div class="chat__log" id="chatLog" role="log" aria-live="polite"></div>' +
+          '<div class="chat__chips" id="chatChips"></div>' +
+          '<div class="chat__voice" id="chatVoice" hidden>' +
+            '<button type="button" class="chat__orb" id="chatOrb" aria-label="Start talking"><span class="chat__orb-ring" aria-hidden="true"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3.5 3.5 0 0 0 3.5-3.5v-5a3.5 3.5 0 0 0-7 0v5A3.5 3.5 0 0 0 12 14Zm6-3.5a6 6 0 0 1-5 5.92V20h-2v-3.58a6 6 0 0 1-5-5.92h2a4 4 0 0 0 8 0h2Z"/></svg></button>' +
+            '<p class="chat__vstate" id="chatVState">Tap to talk</p>' +
+            '<div class="chat__vwave" id="chatVWave" aria-hidden="true"></div>' +
+          '</div>' +
+          '<form class="chat__form" id="chatForm" autocomplete="off">' +
+            '<input class="chat__input" id="chatInput" type="text" name="message" placeholder="Ask about trucking, AI, timelines…" aria-label="Message" maxlength="400" />' +
+            '<button class="chat__send" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10.2 15.5 12 3.4 13.8v6.6Z"/></svg></button>' +
+          '</form>' +
+          '<p class="chat__foot">Demo assistant · <button type="button" class="chat__link" data-chat-goto="#contact">talk to a human</button></p>' +
+        '</section>' +
+      '</div>' +
+      '<div class="botdock" id="botDock">' +
+        '<div class="botdock__hint" id="botHint">' +
+          '<span class="botdock__msg"><b>Ask me anything</b><em>Pricing, timelines, or book a call</em></span>' +
+          '<button class="botdock__x" type="button" id="botHintX" aria-label="Dismiss">' + X + '</button>' +
+        '</div>' +
+        '<button class="botfab" type="button" data-chat-open="text" aria-label="Chat with Alpha Squared AI">' +
+          '<span class="botfab__ping" aria-hidden="true"></span>' +
+          '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="3.6" r="2.2"/><path d="M15 5.4h2V9h-2z"/><path fill-rule="evenodd" d="M9.5 9h13a5.5 5.5 0 0 1 5.5 5.5v6a5.5 5.5 0 0 1-5.5 5.5h-13A5.5 5.5 0 0 1 4 20.5v-6A5.5 5.5 0 0 1 9.5 9Zm2.5 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>' +
+        '</button>' +
+      '</div>';
+    while (wrap.firstChild) document.body.appendChild(wrap.firstChild);
+  }
   // Each step is isolated: a decorative visual that throws must never take
   // down the rest of the page. Learned the hard way — one bad character in
   // the map's base64 threw during init, so the loader never ran and the
@@ -1694,6 +1738,7 @@
     safely('whyTabs', whyTabs);
     safely('agentWave', agentWave);
     safely('agentLine', agentLine);
+    safely('injectChat', injectChat);
     safely('chatBot', chatBot);
     safely('botDock', botDock);
     safely('radarViz', radarViz);
