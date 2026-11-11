@@ -24,8 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028c" />
-<link rel="stylesheet" href="css/theme-a2.css?v=20261028c" />
+<link rel="stylesheet" href="css/style.css?v=20261110" />
+<link rel="stylesheet" href="css/growth.css?v=20261028c" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20261110" />
 <link rel="stylesheet" href="css/cases.css?v=20261028c" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 </head>
@@ -51,6 +52,7 @@
     <nav class="nav__links">
       <a href="trucking.html">Trucking &amp; Transport</a>
       <a href="services.html" class="is-active">Services</a>
+      <a href="#growth">AI Growth</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About Us</a>
     </nav>
@@ -80,21 +82,20 @@
     <h1 class="d1" data-split="lines">Routine work,<br /><span class="grad">handled by software.</span></h1>
 
     <p class="hero__sub" data-anim="fade" data-delay="0.5">
-      Voice agents, document OCR, workflow automation and the integrations that wire
-      them into the systems you already run, so the work happens without anyone chasing it.
+      Voice agents, OCR, workflows and integrations. The work happens without anyone chasing it.
     </p>
 
     <div class="cta-row" data-anim="fade" data-delay="0.65">
       <a href="#contact" class="btn"><span>Book a 20-minute call <i class="ar">→</i></span></a>
-      <a href="#work" class="btn btn--ghost"><span>What we automate <i class="ar">→</i></span></a>
-      <a href="index.html#site-check" class="btn btn--ghost"><span>Test your website free</span></a>
+      <a href="#work" class="btn btn--ghost"><span>What we build <i class="ar">→</i></span></a>
+      <a href="website-check.html" class="btn btn--ghost"><span>Test your website free</span></a>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════ PROOF ═══════════════════════ -->
-<!-- .ix and .met are the dark-tuned components from cases.css, so this band and
-     the process strip below stay above the white sheet, not inside it. -->
+<!-- .ix and .met are the dark-tuned components from cases.css, so this band
+     stays above the white sheet, not inside it. -->
 <section class="section section--tight">
   <div class="wrap">
     <div class="ix ix--proof" data-anim="up">
@@ -182,48 +183,42 @@
         <a class="svc" id="ai" href="case-ai-front-desk.html" data-anim="up">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
           <h3>AI &amp; Automation</h3>
-          <p>Voice agents that answer, book and write to your CRM. OCR that reads a
-            crumpled receipt. Workflows that run themselves.</p>
+          <ul class="svc__chips"><li>Voice agents</li><li>OCR</li><li>CRM sync</li><li>Workflows</li></ul>
           <span class="tlink">A receptionist that never sleeps <i class="ar">→</i></span>
         </a>
 
         <a class="svc" id="platforms" href="case-alliance-driveaway.html" data-anim="up" data-delay="0.07">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
           <h3>Operations Platforms</h3>
-          <p>Dispatch boards, portals and the APIs behind them, built around your
-            exceptions rather than a generic CRUD app with your logo on it.</p>
+          <ul class="svc__chips"><li>Dispatch boards</li><li>Portals</li><li>Dashboards</li><li>APIs</li></ul>
           <span class="tlink">350+ drivers on one board <i class="ar">→</i></span>
         </a>
 
         <a class="svc" id="mobile" href="case-who-i-follow.html" data-anim="up" data-delay="0.14">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
           <h3>Mobile Apps</h3>
-          <p>Native iOS and Android for people working offline, in a yard or on a field.
-            Data syncs when the signal comes back.</p>
+          <ul class="svc__chips"><li>iOS</li><li>Android</li><li>Offline sync</li><li>GPS</li></ul>
           <span class="tlink">Live scoring from the field <i class="ar">→</i></span>
         </a>
 
         <a class="svc" id="design" href="case-fluidsdata.html" data-anim="up">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
           <h3>Product &amp; UX Design</h3>
-          <p>Dense, technical software made legible. Our principal leads UX at Levi Strauss
-            and was Prebuild Design Lead on Salesforce's AT&amp;T OneCare build.</p>
+          <ul class="svc__chips"><li>Research</li><li>UX / UI</li><li>Prototypes</li><li>Data-dense apps</li></ul>
           <span class="tlink">Drilling data made readable <i class="ar">→</i></span>
         </a>
 
         <a class="svc" id="teams" href="case-foodies-express.html" data-anim="up" data-delay="0.07">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
           <h3>Dedicated Teams</h3>
-          <p>A senior pod embedded with yours, assembled around your stack. Capacity
-            without a twelve-week hiring cycle.</p>
+          <ul class="svc__chips"><li>Senior pods</li><li>Your stack</li><li>Embedded</li></ul>
           <span class="tlink">No discontinuities on their side <i class="ar">→</i></span>
         </a>
 
         <a class="svc" id="cloud" href="trust.html" data-anim="up" data-delay="0.14">
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
           <h3>Cloud, DevOps &amp; Support</h3>
-          <p>AWS, CI/CD and monitoring, with uptime and response times agreed in writing
-            before launch instead of after an incident.</p>
+          <ul class="svc__chips"><li>AWS</li><li>CI/CD</li><li>Monitoring</li><li>SLAs in writing</li></ul>
           <span class="tlink">How we structure SLAs <i class="ar">→</i></span>
         </a>
       </div>
@@ -234,71 +229,407 @@
     </div>
   </section>
 
-</div><!-- /page-light -->
+  <!-- ── HOW IT CONNECTS ── -->
+  <section class="section section--tight" id="flow">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">How it connects</span>
+        <h2 class="d2" data-split="lines">One trigger in.<br /><span class="grad">Every system updated.</span></h2>
+      </div>
 
-<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
-<!-- Sits between the two light sheets so the dark .ix panel keeps its contrast. -->
-<section class="section">
-  <div class="wrap">
-    <div class="ix" data-anim="up">
-      <p class="ix__label">Click a stage</p>
-      <h2 class="ix__title">From first call to live.</h2>
+      <!-- one trigger in, an AI layer in the middle, three systems written to.
+           Pure SVG so it scales with the card and needs no JS. -->
+      <div class="autoflow" data-anim="fade">
+        <svg viewBox="0 0 1000 400" role="img"
+             aria-label="An inbound call, a scanned document or a job status change goes into the AI automation layer, which writes to the dispatch board, the CRM and invoicing and payroll.">
+          <defs>
+            <linearGradient id="afWire" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="52%" stop-color="#12b8b0" />
+              <stop offset="100%" stop-color="#fe881b" />
+            </linearGradient>
+            <linearGradient id="afCore" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1c4eff" />
+              <stop offset="100%" stop-color="#12b8b0" />
+            </linearGradient>
+          </defs>
 
-      <div class="proc" data-tabs>
-        <div class="ix__tabs" role="tablist">
-          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st0"><span class="k">01</span>Audit</button>
-          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st1"><span class="k">02</span>Design</button>
-          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st2"><span class="k">03</span>Ship</button>
-          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st3"><span class="k">04</span>Operate</button>
+          <text class="autoflow__lab" x="10" y="22">WHAT COMES IN</text>
+          <text class="autoflow__lab autoflow__lab--end" x="990" y="22">WHERE IT LANDS</text>
+
+          <g class="autoflow__wires">
+            <path class="autoflow__wire" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__wire" d="M254 200 H 376" />
+            <path class="autoflow__wire" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__wire" d="M624 200 H 746" />
+            <path class="autoflow__wire" d="M624 200 C 680 200 680 320 746 320" />
+
+            <path class="autoflow__pulse" d="M254 80 C 320 80 320 200 376 200" />
+            <path class="autoflow__pulse" d="M254 200 H 376" />
+            <path class="autoflow__pulse" d="M254 320 C 320 320 320 200 376 200" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 80 746 80" />
+            <path class="autoflow__pulse" d="M624 200 H 746" />
+            <path class="autoflow__pulse" d="M624 200 C 680 200 680 320 746 320" />
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="80" r="5" />
+            <text class="autoflow__t" x="60" y="87">Inbound call</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="200" r="5" />
+            <text class="autoflow__t" x="60" y="207">Scanned document</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="10" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="40" cy="320" r="5" />
+            <text class="autoflow__t" x="60" y="327">Job status change</text>
+          </g>
+
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="48" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="80" r="5" />
+            <text class="autoflow__t" x="796" y="87">Dispatch board</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="168" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="200" r="5" />
+            <text class="autoflow__t" x="796" y="207">CRM record</text>
+          </g>
+          <g class="autoflow__node">
+            <rect class="autoflow__box" x="746" y="288" width="244" height="64" rx="18" />
+            <circle class="autoflow__dot" cx="776" cy="320" r="5" />
+            <text class="autoflow__t" x="796" y="327">Invoice and payroll</text>
+          </g>
+
+          <rect class="autoflow__halo" x="366" y="128" width="268" height="144" rx="38" />
+          <rect class="autoflow__core" x="376" y="138" width="248" height="124" rx="30" />
+          <text class="autoflow__ct" x="500" y="192">AI automation</text>
+          <text class="autoflow__cs" x="500" y="220">extract · decide · route</text>
+          <text class="autoflow__cs autoflow__cs--dim" x="500" y="242">no human in the loop</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <!-- ── AI GROWTH SYSTEM ── seven services, one interactive showcase.
+       Styles: css/growth.css · behaviour: js/growth.js -->
+  <section class="section section--tight" id="growth">
+    <div class="wrap">
+      <div class="head head--center">
+        <span class="badge" data-anim="fade">AI growth system</span>
+        <h2 class="d2" data-split="lines">Seven AI systems.<br /><span class="grad">One pipeline that never sleeps.</span></h2>
+        <p class="lead" data-anim="fade">Pick one to start, or let us run all seven.</p>
+      </div>
+
+      <div class="gs" id="gs" data-anim="fade">
+        <div class="gs__tabs" role="tablist" aria-label="AI growth services" aria-orientation="vertical">
+          <button class="gs__tab" role="tab" id="gs-t1" aria-controls="gs-p1" aria-selected="true" data-name="website">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span>
+            <span class="gs__tab-t"><b>Fast website</b><small>Attract · turn visitors into leads</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t2" aria-controls="gs-p2" aria-selected="false" tabindex="-1" data-name="receptionist">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></span>
+            <span class="gs__tab-t"><b>AI receptionist</b><small>Capture · answers every call</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t3" aria-controls="gs-p3" aria-selected="false" tabindex="-1" data-name="nurturing">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H5.2L4 17.2z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <span class="gs__tab-t"><b>Website lead nurturing</b><small>Capture · replies in seconds</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t4" aria-controls="gs-p4" aria-selected="false" tabindex="-1" data-name="reactivation">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span>
+            <span class="gs__tab-t"><b>AI lead reactivation</b><small>Convert · wakes up old leads</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t5" aria-controls="gs-p5" aria-selected="false" tabindex="-1" data-name="sales-coach">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+            <span class="gs__tab-t"><b>AI sales coach</b><small>Convert · scores every call</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t6" aria-controls="gs-p6" aria-selected="false" tabindex="-1" data-name="reviews">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span>
+            <span class="gs__tab-t"><b>Reviews &amp; referrals</b><small>Grow · reputation on autopilot</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
+          <button class="gs__tab" role="tab" id="gs-t7" aria-controls="gs-p7" aria-selected="false" tabindex="-1" data-name="ads">
+            <span class="gs__tab-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8v18l-18-8z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3"/></svg></span>
+            <span class="gs__tab-t"><b>Facebook &amp; Instagram ads</b><small>Attract · new customers daily</small></span>
+            <span class="gs__prog" aria-hidden="true"><i></i></span>
+          </button>
         </div>
 
-        <div class="proc__body">
-          <div class="ix__panel" id="st0" role="tabpanel">
-            <span class="proc__n">01</span>
-            <h4>Audit</h4>
-            <p>Two weeks. We map the workflow as it actually runs and cost out the manual
-              hours. You get the integration plan as a document, yours to keep whether or
-              not you build with us.</p>
-            <ul class="proc__meta"><li>2 weeks</li><li>Paid</li><li>You keep the plan</li></ul>
+        <div class="gs__stage">
+          <!-- 1 · Fast website -->
+          <div class="gs__panel is-on" role="tabpanel" id="gs-p1" aria-labelledby="gs-t1">
+            <div>
+              <p class="gs__kick">01 · Attract</p>
+              <h3>A fast website that turns visitors into leads</h3>
+              <ul class="gs__list">
+                <li>Built to load in under 2 seconds on a phone</li>
+                <li>Click-to-call, booking and AI chat built in</li>
+                <li>Google Analytics and Meta tracking from day one</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar"><span>yourbusiness.com</span><span class="gs__live">Live</span></div>
+              <div class="gs-site">
+                <div class="gs-browser gs-in" style="--d:.1s">
+                  <div class="gs-browser__top"><i></i><i></i><i></i></div>
+                  <div class="gs-browser__body">
+                    <div class="gs-sk gs-sk--h gs-in" style="--d:.3s"></div>
+                    <div class="gs-sk gs-in" style="--d:.45s; width:88%"></div>
+                    <div class="gs-sk gs-in" style="--d:.55s; width:72%"></div>
+                    <div class="gs-btns gs-in" style="--d:.7s"><span>Book now</span><span>Call us</span></div>
+                    <div class="gs-sk gs-sk--img gs-in" style="--d:.85s"></div>
+                  </div>
+                </div>
+                <div class="gs-ring gs-in" style="--d:.25s">
+                  <span class="gs-ring__w"><svg viewBox="0 0 86 86"><circle class="bg" cx="43" cy="43" r="36"/><circle class="fg" cx="43" cy="43" r="36"/></svg><b>95+</b></span>
+                  Target speed score
+                </div>
+              </div>
+              <div class="gs-meter gs-in" style="--d:1s"><span>Mobile-friendly<b>Yes</b></span><div class="gs-track"><i style="--w:100%; --d:1.1s"></i></div></div>
+              <div class="gs-meter gs-in" style="--d:1.15s"><span>Clear call to action on every page<b>Yes</b></span><div class="gs-track"><i style="--w:100%; --d:1.25s"></i></div></div>
+            </div>
           </div>
-          <div class="ix__panel" id="st1" role="tabpanel">
-            <span class="proc__n">02</span>
-            <h4>Design</h4>
-            <p>A clickable prototype before a line of production code, so you approve the
-              shape of it while changing it is still cheap.</p>
-            <ul class="proc__meta"><li>Clickable prototype</li><li>Before any code</li></ul>
+
+          <!-- 2 · AI receptionist -->
+          <div class="gs__panel" role="tabpanel" id="gs-p2" aria-labelledby="gs-t2" hidden>
+            <div>
+              <p class="gs__kick">02 · Capture</p>
+              <h3>An AI receptionist that answers every call</h3>
+              <ul class="gs__list">
+                <li>Answers 24/7, including nights and weekends</li>
+                <li>Books straight into your calendar and CRM</li>
+                <li>Hands urgent calls to a person instantly</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar">
+                <span class="gs-call"><span class="gs-call__ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span>Incoming call · 9:47 PM<small>After hours, answered by AI</small></span></span>
+                <span class="gs__live">On call</span>
+              </div>
+              <div class="gs-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <p class="gs-msg gs-in" style="--d:.3s">Hi, I need someone to look at my AC this week.</p>
+              <p class="gs-msg gs-msg--me gs-in" style="--d:1.1s">I can help. I have Thursday at 10:30 or Friday at 2:00. Which works better?</p>
+              <p class="gs-msg gs-in" style="--d:2s">Thursday, please.</p>
+              <span class="gs-chip gs-in" style="--d:2.7s"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Booked Thu 10:30 · saved to CRM · owner texted</span>
+            </div>
           </div>
-          <div class="ix__panel" id="st2" role="tabpanel">
-            <span class="proc__n">03</span>
-            <h4>Ship</h4>
-            <p>Working software in front of you every week, running against your real data
-              and your real edge cases rather than a clean demo set.</p>
-            <ul class="proc__meta"><li>Weekly demo</li><li>Your real data</li></ul>
+
+          <!-- 3 · Lead nurturing -->
+          <div class="gs__panel" role="tabpanel" id="gs-p3" aria-labelledby="gs-t3" hidden>
+            <div>
+              <p class="gs__kick">03 · Capture</p>
+              <h3>Website lead nurturing in under a minute</h3>
+              <ul class="gs__list">
+                <li>Instant first reply, not "we'll get back to you"</li>
+                <li>Follow-ups over days, written in your voice</li>
+                <li>Stops automatically the moment they book</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar"><span>New lead · kitchen quote</span><span class="gs__live">Automation running</span></div>
+              <div class="gs-tl">
+                <div class="gs-tl__row gs-in" style="--d:.2s"><span class="gs-tl__dot"></span><div><small>0:00 · FORM SUBMITTED</small><p>Sam asked for a kitchen renovation quote</p></div></div>
+                <div class="gs-tl__row gs-in" style="--d:.7s"><span class="gs-tl__dot"></span><div><small>0:40 · SMS</small><p>"Hi Sam, thanks for reaching out! Two quick questions so we can price it properly…"</p></div></div>
+                <div class="gs-tl__row gs-in" style="--d:1.2s"><span class="gs-tl__dot"></span><div><small>DAY 1 · EMAIL</small><p>Before-and-after photos from similar projects</p></div></div>
+                <div class="gs-tl__row gs-in" style="--d:1.7s"><span class="gs-tl__dot"></span><div><small>DAY 3 · SMS</small><p>Booking link with two open time slots</p></div></div>
+                <div class="gs-tl__row gs-in" style="--d:2.2s"><span class="gs-tl__dot"></span><div><small>BOOKED</small><p>Sequence stops · moved to "Appointment set"</p></div></div>
+              </div>
+            </div>
           </div>
-          <div class="ix__panel" id="st3" role="tabpanel">
-            <span class="proc__n">04</span>
-            <h4>Operate</h4>
-            <p>Uptime and response times agreed in writing before go-live. Systems we built
-              years ago are still running, and we are still the ones answering for them.</p>
-            <ul class="proc__meta"><li>SLA in writing</li><li>Same team answering</li></ul>
+
+          <!-- 4 · Lead reactivation -->
+          <div class="gs__panel" role="tabpanel" id="gs-p4" aria-labelledby="gs-t4" hidden>
+            <div>
+              <p class="gs__kick">04 · Convert</p>
+              <h3>AI lead reactivation: revenue already in your database</h3>
+              <ul class="gs__list">
+                <li>Send us a spreadsheet of old leads, we do the rest</li>
+                <li>Two-way conversations, not one-off blasts</li>
+                <li>Consent and opt-out handled for SMS rules</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar"><span>Old leads · reactivation campaign</span><span class="gs__live">Sending</span></div>
+              <div class="gs-leads">
+                <div class="gs-lead gs-in" style="--d:.2s"><span class="gs-av">JR</span><span>Jordan R.<small>Roof inspection · 8 months ago</small></span><span class="gs-st gs-st--book">Booked</span></div>
+                <div class="gs-lead gs-in" style="--d:.45s"><span class="gs-av">PM</span><span>Priya M.<small>Bathroom quote · 5 months ago</small></span><span class="gs-st gs-st--rep">Replied</span></div>
+                <div class="gs-lead gs-in" style="--d:.7s"><span class="gs-av">DK</span><span>Daniel K.<small>Deck repair · 1 year ago</small></span><span class="gs-st gs-st--rep">Replied</span></div>
+                <div class="gs-lead gs-in" style="--d:.95s"><span class="gs-av">AL</span><span>Aisha L.<small>Window install · 7 months ago</small></span><span class="gs-st gs-st--sent">Sent</span></div>
+              </div>
+              <p class="gs-msg gs-msg--me gs-in" style="--d:1.3s">Hi Jordan, it's [Business]. You asked about a roof inspection in March. Still on your list?</p>
+              <p class="gs-msg gs-in" style="--d:2s">Yes! Totally forgot. Can someone come next week?</p>
+            </div>
+          </div>
+
+          <!-- 5 · AI sales coach -->
+          <div class="gs__panel" role="tabpanel" id="gs-p5" aria-labelledby="gs-t5" hidden>
+            <div>
+              <p class="gs__kick">05 · Convert</p>
+              <h3>An AI sales coach on every call</h3>
+              <ul class="gs__list">
+                <li>Scorecards built around your sales process</li>
+                <li>Spots missed objections and broken promises</li>
+                <li>Weekly team summary for the owner</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs-score gs-in" style="--d:.1s"><span><b style="display:block">Call review · Alex</b><small style="color:rgba(255,255,255,.6)">Quote follow-up · 14 min</small></span><span class="gs-score__n">7.8</span></div>
+              <div class="gs-meter gs-in" style="--d:.3s"><span>Discovery questions<b>9/10</b></span><div class="gs-track"><i style="--w:90%; --d:.4s"></i></div></div>
+              <div class="gs-meter gs-in" style="--d:.45s"><span>Handling the price objection<b>5/10</b></span><div class="gs-track"><i style="--w:50%; --d:.55s"></i></div></div>
+              <div class="gs-meter gs-in" style="--d:.6s"><span>Clear next step<b>8/10</b></span><div class="gs-track"><i style="--w:80%; --d:.7s"></i></div></div>
+              <div class="gs-meter gs-in" style="--d:.75s"><span>Talk / listen ratio<b>62 / 38</b></span><div class="gs-track"><i style="--w:62%; --d:.85s"></i></div></div>
+              <p class="gs-tip gs-in" style="--d:1.4s"><b>Coach tip:</b> when price came up at 9:12, anchor on the warranty before offering a discount.</p>
+            </div>
+          </div>
+
+          <!-- 6 · Reviews & referrals -->
+          <div class="gs__panel" role="tabpanel" id="gs-p6" aria-labelledby="gs-t6" hidden>
+            <div>
+              <p class="gs__kick">06 · Grow</p>
+              <h3>Reviews &amp; referrals on autopilot</h3>
+              <ul class="gs__list">
+                <li>More Google reviews, a higher spot on Maps</li>
+                <li>AI drafts a polite reply to every review</li>
+                <li>Referral rewards tracked automatically</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar"><span>2 hours after the job</span><span class="gs__live">Sent</span></div>
+              <p class="gs-msg gs-msg--me gs-in" style="--d:.1s">Thanks for choosing [Business]! How did we do today?</p>
+              <div class="gs-stars gs-in" style="--d:.3s">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+              </div>
+              <div class="gs-split gs-in" style="--d:1.3s">
+                <div><b>4–5 stars</b>Sent to your Google review page</div>
+                <div><b>1–3 stars</b>Private feedback to the owner first</div>
+              </div>
+              <div class="gs-ref gs-in" style="--d:1.7s"><span><b>Give [REWARD], get [REWARD]</b></span><code>yourbusiness.com/r/sam</code></div>
+            </div>
+          </div>
+
+          <!-- 7 · Facebook & Instagram ads -->
+          <div class="gs__panel" role="tabpanel" id="gs-p7" aria-labelledby="gs-t7" hidden>
+            <div>
+              <p class="gs__kick">07 · Attract</p>
+              <h3>Facebook &amp; Instagram ads that feed the whole system</h3>
+              <ul class="gs__list">
+                <li>Local targeting around your service area</li>
+                <li>Creative tested and refreshed every month</li>
+                <li>Plain-English report: spend, leads, bookings</li>
+              </ul>
+            </div>
+            <div class="gs__screen" aria-hidden="true">
+              <div class="gs__bar"><span>Campaign · this month</span><span class="gs__live">Running</span></div>
+              <div class="gs-ad">
+                <div class="gs-adcard gs-in" style="--d:.15s">
+                  <div class="gs-adcard__h"><i></i><span>[Your Business]<small>Sponsored</small></span></div>
+                  <div class="gs-adcard__img">Book this week</div>
+                  <div class="gs-adcard__f">Free quote<span>Learn more</span></div>
+                </div>
+                <div class="gs-funnel">
+                  <div style="--d:.4s; width:100%">Reach<b>[#####]</b></div>
+                  <div style="--d:.6s; width:86%">Clicks<b>[####]</b></div>
+                  <div style="--d:.8s; width:70%">Leads<b>[###]</b></div>
+                  <div style="--d:1s; width:54%; background:rgba(47,212,163,.16)">Booked<b>[##]</b></div>
+                </div>
+              </div>
+              <p class="gs__note">Your real numbers appear in your monthly report.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<div class="page-light">
+      <div class="gs__cta" data-anim="fade">
+        <a href="#contact" class="btn"><span>Get a free growth audit <i class="ar">→</i></span></a>
+      </div>
+    </div>
+  </section>
 
   <!-- ── FINAL CTA ── -->
   <section class="final" id="contact">
     <div class="wrap">
       <span class="badge" data-anim="fade">Let's talk</span>
       <h2 class="d2" data-split="lines">Name one thing<br /><span class="grad">your team does twice.</span></h2>
-      <p class="lead" data-anim="fade">We'll tell you what automating it takes, and what it is costing you
-        to leave it alone. One conversation, usually within two business days.</p>
-      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
-        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">→</i></span></a>
+      <p class="lead" data-anim="fade">We'll tell you what automating it takes, and what leaving it costs.</p>
+
+      <div class="contact">
+        <div class="contact__card contact__card--form" data-anim="up">
+          <span class="contact__kicker"><b>01</b> Write to us</span>
+          <h3>Send us the details</h3>
+          <ul class="contact__chips">
+            <li>Answered in 2 business days</li>
+            <li>NDA on request</li>
+          </ul>
+
+          <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website">
+            <input type="hidden" name="form-name" value="enquiry" />
+            <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+            <div class="contact__row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Jane Cooper" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Cooper Logistics" />
+            </label>
+
+            <label class="field">
+              <span>What are you building?</span>
+              <textarea name="message" placeholder="We run 40 trucks and dispatch on a whiteboard and three spreadsheets…" required></textarea>
+            </label>
+
+            <button type="submit" class="btn"><span>Send it over <i class="ar">→</i></span></button>
+            <p class="contact__note">Or email <a href="mailto:info@alphasquared.co">info@alphasquared.co</a> directly.</p>
+          </form>
+        </div>
+
+        <div class="contact__card contact__cal" data-anim="up" data-delay="0.08">
+          <span class="contact__kicker contact__kicker--alt"><b>02</b> Skip the queue</span>
+          <h3>Or book the call now</h3>
+
+          <!-- Cal.com's own event header is hidden below, so the host block lives here
+               instead: bigger photo, and it doubles as the link to Abdullah's site. -->
+          <a class="calhost" href="https://abdullahahmed.com/free-ai-audit/" target="_blank" rel="noopener">
+            <img class="calhost__av" src="assets/team/abdullah.jpg" alt="Abdullah Farooq Ahmed"
+                 width="104" height="104" loading="lazy" decoding="async" />
+            <span class="calhost__txt">
+              <b>Abdullah Farooq Ahmed</b>
+              <em>Principal &middot; Edmonton, Alberta &middot; your single point of contact</em>
+              <span class="calhost__link">Free AI audit &amp; full profile <i class="ar">↗</i></span>
+            </span>
+          </a>
+
+          <ul class="contact__chips">
+            <li>20 minutes</li>
+            <li>Google Meet</li>
+            <li>No sales pitch</li>
+          </ul>
+          <!-- Cal.com inline month view, same account as Abdullah's own site -->
+          <div class="cal-embed" id="a2Cal"></div>
+          <p class="contact__note"><span class="cal-alt">Calendar not loading?
+            <a href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">Open it in a new tab ↗</a>
+            · </span><a href="about.html">Meet the team ↗</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -359,7 +690,47 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<!-- Cal.com embed: the booking calendar in the Let's talk section. Same
+     account and loader as builds/abdullah-personal-site. -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  /* a2CalLazy: Cal.com is ~1MB of script + an iframe, so it now loads only
+     when the booking calendar is about to scroll into view. */
+  (function a2CalLazy() {
+    var go = function () {
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
+      // hideEventTypeDetails drops Cal's own avatar/title/duration column. The card
+      // above already says all of it, and keeping both wasted ~240px of height.
+      Cal("ui", { styles: { branding: { brandColor: "#1c4eff" } }, hideEventTypeDetails: true, layout: "month_view" });
+
+      // If the script is blocked or the calendar isn't up in ~8s, swap the spinner for a direct link.
+      var ready = false;
+      var fail = function () {
+        if (ready) return;
+        ready = true;
+        el.innerHTML = '<div class="cal-fallback"><p>The booking calendar didn&#39;t load here.</p>' +
+          '<a class="btn" href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">' +
+          '<span>Book a 20-minute call <i class="ar">→</i></span></a></div>';
+        var alt = el.parentNode.querySelector(".cal-alt");
+        if (alt) alt.hidden = true;
+      };
+      Cal("on", { action: "linkReady", callback: function () { ready = true; } });
+      Cal("on", { action: "linkFailed", callback: fail });
+      var s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (s) s.addEventListener("error", fail);
+      setTimeout(fail, 8000);
+    };
+    var el = document.getElementById("a2Cal");
+    if (!el || !("IntersectionObserver" in window)) { go(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+    }, { rootMargin: "800px 0px" });
+    io.observe(el);
+  })();
+</script>
 <script src="js/main.js?v=20261028c"></script>
 <script src="js/cases.js?v=20261028c"></script>
+<script src="js/growth.js?v=20261028c"></script>
 </body>
 </html>

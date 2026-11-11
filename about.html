@@ -23,8 +23,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028c" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css?v=20261110" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20261110" />
+<link rel="stylesheet" href="css/cases.css?v=20261028c" />
+<link rel="stylesheet" href="css/about.css?v=20261110" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 <script type="application/ld+json">
 {
@@ -77,6 +80,7 @@
     <nav class="nav__links">
       <a href="trucking.html">Trucking &amp; Transport</a>
       <a href="services.html">Services</a>
+      <a href="index.html#growth">AI Growth</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html" class="is-active">About Us</a>
     </nav>
@@ -97,13 +101,22 @@
   <div class="hero__bloom" data-parallax="0.2"></div>
 
   <div class="wrap hero__inner">
-    <span class="hero__eyebrow grad" data-anim="fade">Who we are</span>
-    <h1 class="d1" data-split="words">Fourteen years of shipping, one accountable team.</h1>
+    <div class="hero__pills" data-anim="fade">
+      <span class="hero__pill">Since 2012</span>
+      <span class="hero__pill">Edmonton, Alberta</span>
+      <span class="hero__pill">17 countries</span>
+    </div>
+
+    <h1 class="d1" data-split="lines">265+ projects shipped.<br /><span class="grad">Still answering the phone.</span></h1>
+
     <p class="hero__sub" data-anim="fade" data-delay="0.5">
-      Alpha Squared is a Canadian software studio, operating out of Edmonton,
-      Alberta since 2012. We build the systems operators depend on, and we're
-      still there after launch.
+      One named principal, a senior bench, and no hand-offs after launch.
     </p>
+
+    <div class="cta-row" data-anim="fade" data-delay="0.65">
+      <a href="#team" class="btn"><span>Meet the team <i class="ar">→</i></span></a>
+      <a href="#story" class="btn btn--ghost"><span>Our journey <i class="ar">→</i></span></a>
+    </div>
   </div>
 
   <!-- Dot-matrix world map, moved off the homepage hero, this is the page
@@ -172,22 +185,120 @@
   </div>
 </section>
 
-<!-- ═══════════════════════ STORY ═══════════════════════ -->
-<section class="section">
+<!-- ═══════════════════════ JOURNEY ═══════════════════════ -->
+<section class="section" id="story">
   <div class="wrap">
     <div class="head head--center">
-      <span class="badge" data-anim="fade">The short version</span>
-      <h2 class="d2" data-split="lines">Started as one designer-developer.<br /><span class="grad">Grew into a studio, not a staffing pool.</span></h2>
-      <p class="lead" data-anim="fade">
-        Alpha Squared began in 2012 in Edmonton, Alberta, building web and
-        mobile products for clients who needed one accountable partner rather
-        than a rotating cast of contractors. Fourteen years and 265+ projects
-        later, that's still the model: a senior engineering bench assembled
-        per engagement, led by a named principal who answers for the whole
-        build. Trucking and transport became our flagship vertical after we
-        built the digital ecosystem behind Alliance Driveaway Solutions. AI moved from experiment to production the same way everything else
-        here does, by shipping it for a real client first.
-      </p>
+      <span class="badge" data-anim="fade">The journey</span>
+      <h2 class="d2" data-split="lines">One designer-developer in 2012.<br /><span class="grad">A senior studio today.</span></h2>
+    </div>
+
+    <ol class="journey">
+      <li class="jstep" data-anim="up">
+        <span class="jstep__k">2012</span>
+        <div class="jstep__card">
+          <span class="jstep__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+          <h3>Founded in Edmonton</h3>
+          <p>One accountable partner, not a rotating cast of contractors.</p>
+        </div>
+      </li>
+
+      <li class="jstep" data-anim="up">
+        <span class="jstep__k">Flagship</span>
+        <a class="jstep__card" href="case-alliance-driveaway.html">
+          <img class="jstep__img" src="assets/work/alliance.jpg" alt="Alliance Driveaway dispatch dashboard and driver app" loading="lazy" decoding="async" />
+          <span class="jstep__tag">Trucking &amp; Transport</span>
+          <h3>350+ drivers on one board</h3>
+          <p>Dispatch, driver apps and invoicing for Alliance Driveaway.</p>
+        </a>
+      </li>
+
+      <li class="jstep" data-anim="up">
+        <span class="jstep__k">Energy</span>
+        <a class="jstep__card" href="case-fluidsdata.html">
+          <img class="jstep__img" src="assets/work/fluidsdata.jpg" alt="FluidsData analytics dashboard" loading="lazy" decoding="async" />
+          <span class="jstep__tag">Energy &amp; Industrial</span>
+          <h3>In use at Chevron, ExxonMobil &amp; ADNOC</h3>
+          <p>FluidsData turns raw drilling data into decisions.</p>
+        </a>
+      </li>
+
+      <li class="jstep" data-anim="up">
+        <span class="jstep__k">Enterprise</span>
+        <a class="jstep__card" href="case-coca-cola-internal-messaging.html">
+          <img class="jstep__img" src="assets/casestudies/25-coca-cola-internal-messaging.jpg" alt="Coca-Cola internal messaging application" loading="lazy" decoding="async" />
+          <span class="jstep__tag">Enterprise &amp; GovTech</span>
+          <h3>Coca-Cola &amp; Safe City</h3>
+          <p>Systems for thousands of staff and public-safety operations.</p>
+        </a>
+      </li>
+
+      <li class="jstep" data-anim="up">
+        <span class="jstep__k">AI</span>
+        <a class="jstep__card" href="case-ai-front-desk.html">
+          <img class="jstep__img" src="assets/work/ai-front-desk.jpg" alt="AI Front Desk voice agent" loading="lazy" decoding="async" />
+          <span class="jstep__tag">AI in production</span>
+          <h3>Voice agents answering real calls</h3>
+          <p>24/7, booking straight into the CRM.</p>
+        </a>
+      </li>
+
+      <li class="jstep jstep--next" data-anim="up">
+        <span class="jstep__k">Next</span>
+        <div class="jstep__card">
+          <span class="jstep__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <h3>Your build.</h3>
+          <p>265+ projects in. Yours is next.</p>
+          <a href="#contact" class="btn"><span>Start a project <i class="ar">→</i></span></a>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+<!-- Sits between the two light sheets so the dark .ix panel keeps its contrast. -->
+<section class="section">
+  <div class="wrap">
+    <div class="ix" data-anim="up">
+      <p class="ix__label">Click a stage</p>
+      <h2 class="ix__title">From first call to live.</h2>
+
+      <div class="proc" data-tabs>
+        <div class="ix__tabs" role="tablist">
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st0"><span class="k">01</span>Audit</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st1"><span class="k">02</span>Design</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st2"><span class="k">03</span>Ship</button>
+          <button class="ix__tab" role="tab" aria-selected="false" aria-controls="st3"><span class="k">04</span>Operate</button>
+        </div>
+
+        <div class="proc__body">
+          <div class="ix__panel" id="st0" role="tabpanel">
+            <span class="proc__n">01</span>
+            <h4>Audit</h4>
+            <p>Two weeks. We map the workflow, cost the manual hours and hand you the plan.</p>
+            <ul class="proc__meta"><li>2 weeks</li><li>Paid</li><li>You keep the plan</li></ul>
+          </div>
+          <div class="ix__panel" id="st1" role="tabpanel">
+            <span class="proc__n">02</span>
+            <h4>Design</h4>
+            <p>A clickable prototype you approve before any production code.</p>
+            <ul class="proc__meta"><li>Clickable prototype</li><li>Before any code</li></ul>
+          </div>
+          <div class="ix__panel" id="st2" role="tabpanel">
+            <span class="proc__n">03</span>
+            <h4>Ship</h4>
+            <p>Working software every week, on your real data and edge cases.</p>
+            <ul class="proc__meta"><li>Weekly demo</li><li>Your real data</li></ul>
+          </div>
+          <div class="ix__panel" id="st3" role="tabpanel">
+            <span class="proc__n">04</span>
+            <h4>Operate</h4>
+            <p>SLAs agreed before go-live, and the same team answering for years.</p>
+            <ul class="proc__meta"><li>SLA in writing</li><li>Same team answering</li></ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -195,100 +306,70 @@
 <!-- ═══════════════════════ WHITE SHEET ═══════════════════════ -->
 <div class="page-light">
 
-  <!-- ── HOW WE WORK ── -->
-  <section class="section section--tight">
-    <div class="wrap">
-      <div class="head head--center">
-        <span class="badge" data-anim="fade">How we work</span>
-        <h2 class="d2" data-split="lines">The same four steps,<br /><span class="grad">every single time.</span></h2>
-        <p class="lead" data-anim="fade">No surprises in the process, because the process doesn't change
-          based on how the last project went.</p>
-      </div>
-
-      <div class="rail">
-        <div class="rail__step is-lit" data-anim="up">
-          <span class="rail__n">STEP 01</span>
-          <h3>Discover</h3>
-          <p>Ride-along process mapping and fixed-price scoping, so we understand the
-            operation before a line of code exists.</p>
-        </div>
-        <div class="rail__step is-lit" data-anim="up" data-delay="0.08">
-          <span class="rail__n">STEP 02</span>
-          <h3>Design</h3>
-          <p>Field-tested UX and a clickable prototype first. You see and approve
-            the shape of it before we build.</p>
-        </div>
-        <div class="rail__step is-lit" data-anim="up" data-delay="0.16">
-          <span class="rail__n">STEP 03</span>
-          <h3>Build</h3>
-          <p>Senior engineers shipping working software weekly. Demos, not status
-            reports; native iOS, Android and web.</p>
-        </div>
-        <div class="rail__step is-lit" data-anim="up" data-delay="0.24">
-          <span class="rail__n">STEP 04</span>
-          <h3>Operate</h3>
-          <p>Monitoring, real SLAs and roadmap ownership. We're still here after
-            launch, when it counts most.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── TEAM ── -->
   <section class="section" id="team">
     <div class="wrap">
       <div class="head head--center">
         <span class="badge" data-anim="fade">Who you work with</span>
         <h2 class="d2" data-split="lines">A named principal,<br /><span class="grad">not an account manager.</span></h2>
-        <p class="lead" data-anim="fade">You get the people who do the work. No layer of middlemen, no
-          rotating cast.</p>
       </div>
 
-      <div class="team__list" style="margin-top:48px;max-width:820px;margin-left:auto;margin-right:auto">
-        <div class="person" data-anim="up">
-          <span class="person__av">AF</span>
-          <div>
-            <h4>Abdullah Farooq Ahmed</h4>
-            <div class="role">Principal &middot; Edmonton, Alberta</div>
-            <p>16+ years across UI/UX design and full-stack development. Currently
-              Product Designer on internal data-science applications at Levi
-              Strauss &amp; Co.; formerly Lead Product Designer at Arcus Power and
-              Prebuild Design Lead on Salesforce's AT&amp;T OneCare project
-              (Customer 360). Earlier still, Scrum Master and UX Developer at
-              Matrikon / Honeywell. BSc Computer Science, Southern Illinois
-              University Edwardsville. Founded Alpha Squared in 2012 and leads
-              every engagement personally. He's your single point of
-              accountability, not a name on a proposal.</p>
+      <div class="crew">
+        <article class="leadcard" data-anim="up">
+          <div class="leadcard__photo">
+            <img src="assets/team/abdullah.jpg" alt="Abdullah Farooq Ahmed" width="320" height="320" loading="lazy" decoding="async" />
+            <span class="leadcard__loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></svg>Edmonton, AB</span>
           </div>
-        </div>
+          <div class="leadcard__body">
+            <span class="leadcard__role">Principal &amp; founder</span>
+            <h3>Abdullah Farooq Ahmed</h3>
+            <ul class="leadcard__facts">
+              <li><b>16+</b><span>years in UX &amp; full-stack</span></li>
+              <li><b>1</b><span>point of contact, start to finish</span></li>
+              <li><b>BSc</b><span>Computer Science, SIUE</span></li>
+            </ul>
+            <p class="leadcard__lab">Product design &amp; engineering for</p>
+            <div class="leadcard__logos">
+              <span class="ltile ltile--red"><img src="assets/logos/levi-strauss.png" alt="Levi Strauss &amp; Co." loading="lazy" /></span>
+              <span class="ltile ltile--sf"><img src="assets/logos/salesforce.svg" alt="Salesforce" loading="lazy" /></span>
+              <span class="ltile"><img src="assets/logos/att.svg" alt="AT&amp;T" loading="lazy" /></span>
+              <span class="ltile"><img src="assets/logos/honeywell.svg" alt="Honeywell" loading="lazy" /></span>
+              <span class="ltile"><img src="assets/logos/matrikon.png" alt="Matrikon" loading="lazy" /></span>
+            </div>
+            <a class="tlink" href="https://abdullahahmed.com/free-ai-audit/" target="_blank" rel="noopener">Full profile <i class="ar">↗</i></a>
+          </div>
+        </article>
 
-        <div class="person" data-anim="up" data-delay="0.1">
-          <span class="person__av">A&sup2;</span>
-          <div>
-            <h4>The engineering bench</h4>
-            <div class="role">Backend &middot; Mobile &middot; QA &middot; DevOps</div>
-            <p>Senior Laravel, Vue, Node, Swift and Kotlin engineers who have
-              shipped together for years, assembled per engagement, never
-              junior-loaded, and never billed as a training exercise on your
-              budget.</p>
-          </div>
-        </div>
+        <article class="benchcard" data-anim="up" data-delay="0.1">
+          <span class="benchcard__k">The engineering bench</span>
+          <h3>Senior engineers who have shipped together for years.</h3>
+          <ul class="bench bench--static">
+            <li><b>Backend</b><span>Laravel · Node · Postgres</span><em>9 yrs avg</em></li>
+            <li><b>Frontend</b><span>Vue · React · TypeScript</span><em>8 yrs avg</em></li>
+            <li><b>Mobile</b><span>Swift · Kotlin</span><em>native</em></li>
+            <li><b>AI</b><span>Python · LLM tooling · RAG · OCR</span><em>6 yrs avg</em></li>
+            <li><b>QA &amp; DevOps</b><span>CI/CD · AWS · monitoring</span><em>7 yrs avg</em></li>
+          </ul>
+          <ul class="benchcard__chips"><li>Never junior-loaded</li><li>Assembled per engagement</li></ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ── TRUST TEASER ── -->
+  <!-- ── TRUST ── -->
   <section class="section section--tight">
     <div class="wrap">
-      <div class="panel" data-anim="up" style="text-align:center">
+      <div class="panel trustpanel" data-anim="up">
         <span class="badge">Documented before day one</span>
-        <h2 class="d2" style="margin-top:14px">NDA, security, process, SLA.<br /><span class="grad">it's all written down.</span></h2>
-        <p class="lead" style="margin:18px auto 0;max-width:56ch;color:var(--on-dark-2)">
-          We lost deals early on because we didn't have an NDA template ready
-          when a client asked for one. That doesn't happen anymore.
-        </p>
-        <div class="cta-row" style="justify-content:center;margin-top:26px">
-          <a href="trust.html" class="btn btn--ghost"><span>Read how we handle trust &amp; security <i class="ar">→</i></span></a>
+        <h2 class="d2">It's all <span class="grad">written down.</span></h2>
+        <div class="docs">
+          <div class="doc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h4"/></svg><b>NDA</b><span>Ready on request</span></div>
+          <div class="doc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 8 7 9 4-1 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg><b>Security</b><span>Access &amp; data handling</span></div>
+          <div class="doc"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg><b>Process</b><span>Same four steps</span></div>
+          <div class="doc"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg><b>SLA</b><span>Agreed before go-live</span></div>
+        </div>
+        <div class="cta-row" style="justify-content:center;margin-top:30px">
+          <a href="trust.html" class="btn btn--ghost"><span>Trust &amp; security <i class="ar">→</i></span></a>
         </div>
       </div>
     </div>
@@ -299,10 +380,74 @@
     <div class="wrap">
       <span class="badge" data-anim="fade">Let's talk</span>
       <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
-      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
-        timeline and the right engagement model, usually within two business days.</p>
-      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
-        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">→</i></span></a>
+      <p class="lead" data-anim="fade">Tell us what you're building. An honest read on scope and timeline within two business days.</p>
+
+      <div class="contact">
+        <div class="contact__card contact__card--form" data-anim="up">
+          <span class="contact__kicker"><b>01</b> Write to us</span>
+          <h3>Send us the details</h3>
+          <ul class="contact__chips">
+            <li>Answered in 2 business days</li>
+            <li>NDA on request</li>
+          </ul>
+
+          <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website">
+            <input type="hidden" name="form-name" value="enquiry" />
+            <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+            <div class="contact__row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Jane Cooper" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Cooper Logistics" />
+            </label>
+
+            <label class="field">
+              <span>What are you building?</span>
+              <textarea name="message" placeholder="We run 40 trucks and dispatch on a whiteboard and three spreadsheets…" required></textarea>
+            </label>
+
+            <button type="submit" class="btn"><span>Send it over <i class="ar">→</i></span></button>
+            <p class="contact__note">Or email <a href="mailto:info@alphasquared.co">info@alphasquared.co</a> directly.</p>
+          </form>
+        </div>
+
+        <div class="contact__card contact__cal" data-anim="up" data-delay="0.08">
+          <span class="contact__kicker contact__kicker--alt"><b>02</b> Skip the queue</span>
+          <h3>Or book the call now</h3>
+
+          <!-- Cal.com's own event header is hidden below, so the host block lives here
+               instead: bigger photo, and it doubles as the link to Abdullah's site. -->
+          <a class="calhost" href="https://abdullahahmed.com/free-ai-audit/" target="_blank" rel="noopener">
+            <img class="calhost__av" src="assets/team/abdullah.jpg" alt="Abdullah Farooq Ahmed"
+                 width="104" height="104" loading="lazy" decoding="async" />
+            <span class="calhost__txt">
+              <b>Abdullah Farooq Ahmed</b>
+              <em>Principal &middot; Edmonton, Alberta &middot; your single point of contact</em>
+              <span class="calhost__link">Free AI audit &amp; full profile <i class="ar">↗</i></span>
+            </span>
+          </a>
+
+          <ul class="contact__chips">
+            <li>20 minutes</li>
+            <li>Google Meet</li>
+            <li>No sales pitch</li>
+          </ul>
+          <!-- Cal.com inline month view, same account as Abdullah's own site -->
+          <div class="cal-embed" id="a2Cal"></div>
+          <p class="contact__note"><span class="cal-alt">Calendar not loading?
+            <a href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">Open it in a new tab ↗</a>
+            · </span><a href="about.html">Meet the team ↗</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -363,6 +508,46 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<!-- Cal.com embed: the booking calendar in the Let's talk section. Same
+     account and loader as builds/abdullah-personal-site. -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  /* a2CalLazy: Cal.com is ~1MB of script + an iframe, so it now loads only
+     when the booking calendar is about to scroll into view. */
+  (function a2CalLazy() {
+    var go = function () {
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
+      // hideEventTypeDetails drops Cal's own avatar/title/duration column. The card
+      // above already says all of it, and keeping both wasted ~240px of height.
+      Cal("ui", { styles: { branding: { brandColor: "#1c4eff" } }, hideEventTypeDetails: true, layout: "month_view" });
+
+      // If the script is blocked or the calendar isn't up in ~8s, swap the spinner for a direct link.
+      var ready = false;
+      var fail = function () {
+        if (ready) return;
+        ready = true;
+        el.innerHTML = '<div class="cal-fallback"><p>The booking calendar didn&#39;t load here.</p>' +
+          '<a class="btn" href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">' +
+          '<span>Book a 20-minute call <i class="ar">→</i></span></a></div>';
+        var alt = el.parentNode.querySelector(".cal-alt");
+        if (alt) alt.hidden = true;
+      };
+      Cal("on", { action: "linkReady", callback: function () { ready = true; } });
+      Cal("on", { action: "linkFailed", callback: fail });
+      var s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (s) s.addEventListener("error", fail);
+      setTimeout(fail, 8000);
+    };
+    var el = document.getElementById("a2Cal");
+    if (!el || !("IntersectionObserver" in window)) { go(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+    }, { rootMargin: "800px 0px" });
+    io.observe(el);
+  })();
+</script>
 <script src="js/main.js?v=20261028c"></script>
+<script src="js/cases.js?v=20261028c"></script>
 </body>
 </html>

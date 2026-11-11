@@ -166,3 +166,64 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* button core was hard-coded teal in style.css */
+.btn > span {
+  background: linear-gradient(90deg, #15328f 0%, #1c4eff 55%, #2ba7ff 100%);
+  background-size: 220% 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Final CTA + contact cards
+   -------------------------------------------------------------------------- */
+.final::before {
+  background:
+    radial-gradient(ellipse 26% 48% at 50% 96%, rgba(245, 165, 36, .26), transparent 64%),
+    radial-gradient(ellipse 48% 60% at 50% 100%, rgba(34, 178, 251, .36), transparent 68%),
+    radial-gradient(ellipse 78% 54% at 50% 108%, rgba(28, 78, 255, .34), transparent 72%);
+}
+
+.contact::before {
+  background:
+    radial-gradient(ellipse 34% 40% at 6% 12%, rgba(28, 78, 255, .22), transparent 68%),
+    radial-gradient(ellipse 36% 44% at 96% 30%, rgba(34, 178, 251, .2), transparent 70%),
+    radial-gradient(ellipse 30% 34% at 70% 100%, rgba(245, 165, 36, .14), transparent 70%);
+}
+
+.contact__card--form {
+  background: linear-gradient(160deg, #14203a 0%, #0b1220 62%, #0f1728 100%);
+  box-shadow: 0 24px 64px rgba(11, 18, 32, .34);
+}
+.contact__card--form::after {
+  background:
+    radial-gradient(circle, rgba(28, 78, 255, .55), transparent 66%),
+    radial-gradient(circle at 70% 40%, rgba(34, 178, 251, .34), transparent 68%);
+  animation: a2Glow 14s ease-in-out infinite alternate;
+}
+@keyframes a2Glow {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(55%, -70%) scale(1.15); }
+}
+
+.contact__cal::before { background: linear-gradient(90deg, #1c4eff 0%, #22b2fb 52%, #f5a524 100%); }
+.contact__cal::after { background: radial-gradient(circle, rgba(34, 178, 251, .2), transparent 68%); }
+.contact__kicker--alt b { background: var(--grad-btn); }
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(28, 78, 255, .45);
+  box-shadow: 0 0 0 3px rgba(28, 78, 255, .12);
+}
+.contact__card--form .field input:focus,
+.contact__card--form .field textarea:focus {
+  border-color: rgba(43, 167, 255, .65);
+  box-shadow: 0 0 0 3px rgba(34, 178, 251, .2);
+}
+
+.calhost:hover { border-color: rgba(28, 78, 255, .35); }
+.calhost__av { box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(28, 78, 255, .35), 0 10px 24px rgba(11, 18, 32, .18); }
+.calhost__link { color: var(--blue); }
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__card--form::after { animation: none; }
+}

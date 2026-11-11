@@ -24,11 +24,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261110" />
+<link rel="stylesheet" href="css/style.css?v=20261111b" />
 <link rel="stylesheet" href="css/growth.css?v=20261028c" />
 <!-- New A2 design system: navy canvas, blue system colour, gold as accent only.
      Loaded after style.css so it only has to restate tokens. -->
-<link rel="stylesheet" href="css/theme-a2.css?v=20261028c" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20261110" />
 <link rel="stylesheet" href="css/audit.css?v=20261110b" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 <script type="application/ld+json">
@@ -588,45 +588,77 @@
         <h2 class="d2" data-split="lines">Everything the product needs,<br /><span class="grad">under one roof.</span></h2>
       </div>
 
-      <div class="grid grid--3" style="margin-top:56px">
-        <a class="svc" href="services.html#platforms" data-anim="up">
+      <div class="roof" aria-hidden="true">
+        <svg class="roof__svg" viewBox="0 -60 1200 210">
+          <defs>
+            <linearGradient id="roofG" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#15328f" />
+              <stop offset="45%" stop-color="#1c4eff" />
+              <stop offset="75%" stop-color="#22b2fb" />
+              <stop offset="100%" stop-color="#ffc65a" />
+            </linearGradient>
+          </defs>
+          <g class="roof__smoke">
+            <circle cx="905" cy="28" r="9" />
+            <circle cx="905" cy="28" r="12" />
+            <circle cx="905" cy="28" r="10" />
+          </g>
+          <path class="roof__chimney" pathLength="1" d="M884 80 V38 H926 V90" />
+          <path class="roof__line" pathLength="1" d="M10 146 L600 16 L1190 146" />
+          <g class="roof__peak">
+            <circle cx="600" cy="16" r="30" />
+            <text x="600" y="27" text-anchor="middle">A²</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="roof-grid">
+        <a class="svc svc--wide" href="services.html#platforms" style="--sc:#1c4eff" data-anim="up">
+          <span class="svc__n">01</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M5 4h22a3 3 0 0 1 3 3v18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm.5 7.5h7v11h-7v-11Zm10 0h10v4.5h-10v-4.5Zm0 6.5h10v4.5h-10V18Z"/></svg></span>
           <h3>Operations Platforms</h3>
+          <p>The dispatch board, portal or dashboard your whole operation runs through.</p>
           <ul class="svc__chips"><li>Dispatch boards</li><li>Dashboards</li><li>Portals</li><li>APIs</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="services.html#mobile" data-anim="up" data-delay="0.07">
+        <a class="svc" href="services.html#mobile" style="--sc:#22b2fb" data-anim="up" data-delay="0.07">
+          <span class="svc__n">02</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M10 2h12a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Zm.5 6v13h11V8h-11Zm4 15.5h3v2.5h-3v-2.5Z"/></svg></span>
           <h3>Mobile Apps</h3>
           <ul class="svc__chips"><li>iOS</li><li>Android</li><li>Offline-ready</li><li>GPS</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="services.html#ai" data-anim="up" data-delay="0.14">
+        <a class="svc" href="services.html#ai" style="--sc:#f5a524" data-anim="up" data-delay="0.14">
+          <span class="svc__n">03</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M12 2h2v3h-2V2Zm6 0h2v3h-2V2ZM9 5h14a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4Zm3.5 6a1.5 1.5 0 0 0-1.5 1.5v7a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5v-7a1.5 1.5 0 0 0-1.5-1.5h-7ZM12 27h2v3h-2v-3Zm6 0h2v3h-2v-3ZM2 12h3v2H2v-2Zm0 6h3v2H2v-2Zm25-6h3v2h-3v-2Zm0 6h3v2h-3v-2Z"/></svg></span>
           <h3>AI &amp; Automation</h3>
           <ul class="svc__chips"><li>Voice agents</li><li>OCR</li><li>LLM assistants</li><li>Workflows</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="services.html#design" data-anim="up">
+        <a class="svc" href="services.html#design" style="--sc:#2ba7ff" data-anim="up">
+          <span class="svc__n">04</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M25.9 6.1a3.6 3.6 0 0 0-5.1 0l-1.4 1.4 5.1 5.1 1.4-1.4a3.6 3.6 0 0 0 0-5.1ZM17.9 9.2 4.9 22.2 3.2 28.8l6.6-1.7 13-13-4.9-4.9Z"/></svg></span>
           <h3>Product &amp; UX Design</h3>
           <ul class="svc__chips"><li>Research</li><li>Strategy</li><li>UX / UI</li><li>Prototypes</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="services.html#teams" data-anim="up" data-delay="0.07">
+        <a class="svc" href="services.html#teams" style="--sc:#15328f" data-anim="up" data-delay="0.07">
+          <span class="svc__n">05</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path d="M12 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 12c5 0 9 2.8 9 6.5V28H3v-5.5C3 18.8 7 16 12 16Zm10-11.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm.6 11.3c3.8.3 6.4 2.7 6.4 5.7V28h-6.2v-5.5c0-2.4-.8-4.5-2.2-6.2.7-.3 1.4-.4 2-.5Z"/></svg></span>
           <h3>Dedicated Teams</h3>
           <ul class="svc__chips"><li>Senior pods</li><li>Embedded</li><li>Start in weeks</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
 
-        <a class="svc" href="services.html#cloud" data-anim="up" data-delay="0.14">
+        <a class="svc svc--wide" href="services.html#cloud" style="--sc:#12b8b0" data-anim="up" data-delay="0.14">
+          <span class="svc__n">06</span>
           <span class="svc__i"><svg viewBox="0 0 32 32"><path fill-rule="evenodd" d="M6 4h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2ZM6 17h20a3 3 0 0 1 3 3v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-5a3 3 0 0 1 3-3Zm1.8 4a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2Z"/></svg></span>
           <h3>Cloud, DevOps &amp; Support</h3>
+          <p>We stay after launch: hosting, releases, monitoring and on-call support.</p>
           <ul class="svc__chips"><li>AWS</li><li>CI/CD</li><li>Monitoring</li><li>SLAs</li></ul>
           <span class="tlink">Learn more <i class="ar">→</i></span>
         </a>
@@ -734,6 +766,47 @@
         <div class="ind" style="--ic:#1c4eff" data-anim="up" data-delay="0.25">
           <span class="ind__i"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M6 4h20a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Zm7.4 6.9v10.2a.9.9 0 0 0 1.4.8l8-5.1a.9.9 0 0 0 0-1.6l-8-5.1a.9.9 0 0 0-1.4.8Z"/></svg></span>
           <h3>Media &amp; Sport</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- industry -> case study tapes; each track's second half duplicates the first for the -50% loop -->
+    <div class="tapes" aria-label="Industries and the case studies behind them">
+      <div class="tape tape--a">
+        <div class="tape__track">
+          <a class="tape__item" href="case-alliance-driveaway.html"><span class="tape__ind">Trucking &amp; Transport</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Alliance Driveaway</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-fluidsdata.html"><span class="tape__ind">Energy &amp; Industrial</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">FluidsData</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-harvard-orthodontic-center.html"><span class="tape__ind">Healthcare &amp; Clinics</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Harvard Orthodontic</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-safe-city-lahore.html"><span class="tape__ind">Public Safety</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Safe City Lahore</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-repairbeat-erp.html"><span class="tape__ind">Field Services</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">RepairBeat ERP</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-foodstretcher-plus-ocr.html"><span class="tape__ind">Fintech &amp; Payments</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">FoodStretcher Plus</span></a><span class="tape__star" aria-hidden="true">✦</span>
+
+          <a class="tape__item" href="case-alliance-driveaway.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Trucking &amp; Transport</span><span class="tape__arrow">→</span><span class="tape__case">Alliance Driveaway</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-fluidsdata.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Energy &amp; Industrial</span><span class="tape__arrow">→</span><span class="tape__case">FluidsData</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-harvard-orthodontic-center.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Healthcare &amp; Clinics</span><span class="tape__arrow">→</span><span class="tape__case">Harvard Orthodontic</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-safe-city-lahore.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Public Safety</span><span class="tape__arrow">→</span><span class="tape__case">Safe City Lahore</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-repairbeat-erp.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Field Services</span><span class="tape__arrow">→</span><span class="tape__case">RepairBeat ERP</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-foodstretcher-plus-ocr.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Fintech &amp; Payments</span><span class="tape__arrow">→</span><span class="tape__case">FoodStretcher Plus</span></a><span class="tape__star" aria-hidden="true">✦</span>
+        </div>
+      </div>
+
+      <div class="tape tape--b">
+        <div class="tape__track">
+          <a class="tape__item" href="case-e-store-mobile-app.html"><span class="tape__ind">Retail &amp; POS</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">E-Store App</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-paladin.html"><span class="tape__ind">Marketplaces</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Paladin</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-rahbar-forklift-training.html"><span class="tape__ind">Education &amp; Training</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Rahbar</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-who-i-follow.html"><span class="tape__ind">Media &amp; Sport</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Who I Follow</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-kingsland.html"><span class="tape__ind">Real Estate</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Kingsland</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-oravia.html"><span class="tape__ind">Travel &amp; Tourism</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Oravia</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-alkanooz.html"><span class="tape__ind">E-commerce</span><span class="tape__arrow" aria-hidden="true">→</span><span class="tape__case">Alkanooz</span></a><span class="tape__star" aria-hidden="true">✦</span>
+
+          <a class="tape__item" href="case-e-store-mobile-app.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Retail &amp; POS</span><span class="tape__arrow">→</span><span class="tape__case">E-Store App</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-paladin.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Marketplaces</span><span class="tape__arrow">→</span><span class="tape__case">Paladin</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-rahbar-forklift-training.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Education &amp; Training</span><span class="tape__arrow">→</span><span class="tape__case">Rahbar</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-who-i-follow.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Media &amp; Sport</span><span class="tape__arrow">→</span><span class="tape__case">Who I Follow</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-kingsland.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Real Estate</span><span class="tape__arrow">→</span><span class="tape__case">Kingsland</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-oravia.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">Travel &amp; Tourism</span><span class="tape__arrow">→</span><span class="tape__case">Oravia</span></a><span class="tape__star" aria-hidden="true">✦</span>
+          <a class="tape__item" href="case-alkanooz.html" aria-hidden="true" tabindex="-1"><span class="tape__ind">E-commerce</span><span class="tape__arrow">→</span><span class="tape__case">Alkanooz</span></a><span class="tape__star" aria-hidden="true">✦</span>
         </div>
       </div>
     </div>
@@ -1244,7 +1317,7 @@
       Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
       // hideEventTypeDetails drops Cal's own avatar/title/duration column. The card
       // above already says all of it, and keeping both wasted ~240px of height.
-      Cal("ui", { styles: { branding: { brandColor: "#12b8b0" } }, hideEventTypeDetails: true, layout: "month_view" });
+      Cal("ui", { styles: { branding: { brandColor: "#1c4eff" } }, hideEventTypeDetails: true, layout: "month_view" });
 
       // If the script is blocked or the calendar isn't up in ~8s, swap the spinner for a direct link.
       var ready = false;

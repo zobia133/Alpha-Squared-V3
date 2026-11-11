@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css?v=20261028c" />
-<link rel="stylesheet" href="css/theme-a2.css?v=20261028c" />
-<link rel="stylesheet" href="css/cases.css?v=20261028c" />
+<link rel="stylesheet" href="css/style.css?v=20261110" />
+<link rel="stylesheet" href="css/theme-a2.css?v=20261110" />
+<link rel="stylesheet" href="css/cases.css?v=20261110" />
 <script src="js/analytics.js?v=20261028c" defer></script>
 </head>
 
@@ -49,6 +49,7 @@
     <nav class="nav__links">
       <a href="trucking.html">Trucking &amp; Transport</a>
       <a href="services.html">Services</a>
+      <a href="index.html#growth">AI Growth</a>
       <a href="case-studies.html" class="is-active">Case Studies</a>
       <a href="about.html">About Us</a>
     </nav>
@@ -68,13 +69,23 @@
   <div class="hero__bloom" data-parallax="0.2"></div>
 
   <div class="wrap hero__inner">
-    <span class="hero__eyebrow grad" data-anim="fade">Selected work</span>
-    <h1 class="d1" data-split="words">Systems running in production,<br />not slides in a deck.</h1>
+    <div class="hero__pills" data-anim="fade">
+      <span class="hero__pill">48 case studies</span>
+      <span class="hero__pill">17 countries</span>
+      <span class="hero__pill">Live in production</span>
+    </div>
+    <h1 class="d1" data-split="lines">Systems running in production.<br /><span class="grad">Not slides in a deck.</span></h1>
     <p class="hero__sub" data-anim="fade" data-delay="0.5">
-      265+ projects since 2012. These 48 are the ones we can show in full:
-      the problem, what we shipped, and what it is doing today.
+      The problem, what we shipped, and what it is doing today.
     </p>
+    <div class="cta-row" data-anim="fade" data-delay="0.65">
+      <a href="#archive" class="btn"><span>Browse the work <i class="ar">&rarr;</i></span></a>
+      <a href="#contact" class="btn btn--ghost"><span>Book a 20-minute call <i class="ar">&rarr;</i></span></a>
+    </div>
   </div>
+
+  <!-- filled by js/cases.js from the cards below; decorative, the grid is the real list -->
+  <div class="cs-wall" data-wall aria-hidden="true" data-anim="fade" data-delay="0.8"></div>
 </section>
 
 <section class="section">
@@ -82,9 +93,6 @@
     <div class="head head--center">
       <span class="badge" data-anim="fade">Our best work, not a sales pitch</span>
       <h2 class="d2" data-split="lines">The work that<br /><span class="grad">speaks for itself.</span></h2>
-      <p class="lead" data-anim="fade">Dispatch running a 350-driver fleet. A voice agent answering
-        calls at 3am. Drilling-fluids analytics in use at Chevron and ExxonMobil. No pitch needed,
-        just what shipped.</p>
     </div>
 
     <div class="cs-feat">
@@ -122,16 +130,15 @@
   </div>
 </section>
 
-<section class="section section--tight">
+<section class="section section--tight" id="archive">
   <div class="wrap">
     <div class="head head--center">
       <span class="badge" data-anim="fade">The wider archive</span>
       <h2 class="d2" data-split="lines">Beyond the flagships,<br /><span class="grad">there's more.</span></h2>
-      <p class="lead" data-anim="fade">The flagships prove what we build for trucking, AI and
-        industrial data. This is everywhere else: Coca-Cola's internal messaging platform, a
-        1,750-channel IPTV app, a diabetes clinic seeing 300 patients a day, and more, across
-        North America, Europe, the Middle East and Asia.</p>
+      <p class="lead" data-anim="fade">Pick an industry. Hover a card for the story.</p>
     </div>
+
+    <div class="cs-filter" data-filter role="toolbar" aria-label="Filter case studies by industry"></div>
 
     <div class="cs-grid" data-cases>
     <a class="ccard" href="case-oravia.html" data-cat="Travel &amp; Tourism" data-anim="up">
@@ -593,10 +600,72 @@
     <div class="wrap">
       <span class="badge" data-anim="fade">Let's talk</span>
       <h2 class="d2" data-split="lines"><span class="grad">One conversation</span> makes your roadmap real.</h2>
-      <p class="lead" data-anim="fade">Tell us what you're building. You'll get an honest read on scope,
-        timeline and the right engagement model, usually within two business days.</p>
-      <div class="cta-row" data-anim="fade" style="justify-content:center;margin-top:32px">
-        <a href="mailto:info@alphasquared.co" class="btn"><span>Book a discovery call <i class="ar">&rarr;</i></span></a>
+      <p class="lead" data-anim="fade">Tell us what you're building. An honest read on scope and timeline
+        within two business days.</p>
+
+      <div class="contact">
+        <div class="contact__card contact__card--form" data-anim="up">
+          <span class="contact__kicker"><b>01</b> Write to us</span>
+          <h3>Send us the details</h3>
+          <ul class="contact__chips">
+            <li>Answered in 2 business days</li>
+            <li>NDA on request</li>
+          </ul>
+
+          <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="company-website">
+            <input type="hidden" name="form-name" value="enquiry" />
+            <p hidden><label>Leave this empty: <input name="company-website" /></label></p>
+
+            <div class="contact__row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" placeholder="Jane Cooper" required />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="email" autocomplete="email" placeholder="jane@company.com" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Cooper Logistics" />
+            </label>
+
+            <label class="field">
+              <span>What are you building?</span>
+              <textarea name="message" placeholder="We run 40 trucks and dispatch on a whiteboard and three spreadsheets…" required></textarea>
+            </label>
+
+            <button type="submit" class="btn"><span>Send it over <i class="ar">&rarr;</i></span></button>
+            <p class="contact__note">Or email <a href="mailto:info@alphasquared.co">info@alphasquared.co</a> directly.</p>
+          </form>
+        </div>
+
+        <div class="contact__card contact__cal" data-anim="up" data-delay="0.08">
+          <span class="contact__kicker contact__kicker--alt"><b>02</b> Skip the queue</span>
+          <h3>Or book the call now</h3>
+
+          <a class="calhost" href="https://abdullahahmed.com/free-ai-audit/" target="_blank" rel="noopener">
+            <img class="calhost__av" src="assets/team/abdullah.jpg" alt="Abdullah Farooq Ahmed"
+                 width="104" height="104" loading="lazy" decoding="async" />
+            <span class="calhost__txt">
+              <b>Abdullah Farooq Ahmed</b>
+              <em>Principal &middot; Edmonton, Alberta &middot; your single point of contact</em>
+              <span class="calhost__link">Free AI audit &amp; full profile <i class="ar">&#8599;</i></span>
+            </span>
+          </a>
+
+          <ul class="contact__chips">
+            <li>20 minutes</li>
+            <li>Google Meet</li>
+            <li>No sales pitch</li>
+          </ul>
+          <div class="cal-embed" id="a2Cal"></div>
+          <p class="contact__note"><span class="cal-alt">Calendar not loading?
+            <a href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">Open it in a new tab &#8599;</a>
+            · </span><a href="about.html">Meet the team &#8599;</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -655,7 +724,39 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+<script>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  /* Cal.com is ~1MB, so it loads only when the booking card nears the viewport. */
+  (function a2CalLazy() {
+    var go = function () {
+      Cal("init", { origin: "https://cal.com" });
+      Cal("inline", { elementOrSelector: "#a2Cal", calLink: "abdullahahmed-alphasquared/20min", layout: "month_view" });
+      Cal("ui", { styles: { branding: { brandColor: "#1c4eff" } }, hideEventTypeDetails: true, layout: "month_view" });
+      var ready = false;
+      var fail = function () {
+        if (ready) return;
+        ready = true;
+        el.innerHTML = '<div class="cal-fallback"><p>The booking calendar didn&#39;t load here.</p>' +
+          '<a class="btn" href="https://cal.com/abdullahahmed-alphasquared/20min" target="_blank" rel="noopener">' +
+          '<span>Book a 20-minute call <i class="ar">→</i></span></a></div>';
+        var alt = el.parentNode.querySelector(".cal-alt");
+        if (alt) alt.hidden = true;
+      };
+      Cal("on", { action: "linkReady", callback: function () { ready = true; } });
+      Cal("on", { action: "linkFailed", callback: fail });
+      var s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+      if (s) s.addEventListener("error", fail);
+      setTimeout(fail, 8000);
+    };
+    var el = document.getElementById("a2Cal");
+    if (!el || !("IntersectionObserver" in window)) { go(); return; }
+    var io = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+    }, { rootMargin: "800px 0px" });
+    io.observe(el);
+  })();
+</script>
 <script src="js/main.js?v=20261028c"></script>
-<script src="js/cases.js?v=20261028c"></script>
+<script src="js/cases.js?v=20261110"></script>
 </body>
 </html>
